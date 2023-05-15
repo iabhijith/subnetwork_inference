@@ -35,7 +35,7 @@ Assuming that the posterior distribution can be estimated, we can factor in the 
 
 $$
 \begin{align}
-p(\mathbf y^* | \mathbf X^*, \mathcal D) = \int p(\mathbf y^* | \mathbf X^*, \mathbf w) p(\mathbf w | \mathbf X, \mathbf y) d\mathbf w
+p(\mathbf y^* | \mathbf X^*, \mathcal D) &= \int p(\mathbf y^* | \mathbf X^*, \mathbf w) p(\mathbf w | \mathbf X, \mathbf y) d\mathbf w
 \end{align}
 $$
 
@@ -125,7 +125,6 @@ For the linearized laplace approximation that the authors use, the posterior dis
 $$
 \begin{align}
 W_2(p(\mathbf w | \mathcal D), p(\mathbf w_S | \mathcal D)) &= ||\mathbf w - \mathbf w_S||_2^2 + Tr(\Sigma + \Sigma_S - 2(\Sigma^{\frac{1}{2}} \Sigma \Sigma_s^{\frac{1}{2}})^{\frac{1}{2}}) \\
-&= \cancel {||\mathbf w - \mathbf w_S||_2^2}+ Tr(\Sigma + \Sigma_S - 2(\Sigma^{\frac{1}{2}} \Sigma \Sigma_s^{\frac{1}{2}})^{\frac{1}{2}}) \\
 &= Tr(H^{-1} + H_{S+}^{-1} - 2(H_{S+}^{-1/2} H^{-1} H_{S+}^{-1/2})^{\frac{1}{2}}) \\
 &= Tr(H^{-1}) + Tr(H_{S+}^{-1}) - 2Tr( H^{-1/2} H_{S+}^{-1/2}) \\
 &=\sum_{d=1}^D \sigma_d^2(1-m_d) 

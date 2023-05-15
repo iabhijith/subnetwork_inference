@@ -55,8 +55,7 @@ $$
 \begin{align}
 \theta_{MAP} &= \arg \min_{\theta} \mathcal L(\mathcal D, \theta) \\
 &= \arg \min_{\theta} -  \log p(\mathcal D | \theta) - \log p(\theta) \\
-\end{align} \\
-
+\end{align} 
 $$
 
 Using Taylor expansion of  $\mathcal L(\mathcal D, \theta)$ around $\theta_{MAP}$ using taylo, and ignoring the higher order terms, we can write
@@ -82,15 +81,19 @@ p(\theta | \mathcal D) &= \frac{1}{Z} p(\mathcal D | \theta) p(\theta) \\
 $$
 
 From the above derivation, we can identify the laplace approximation as follows.
+
 $$
 \begin{align}
 p(\theta | \mathcal D) &= \mathcal N(\theta ; \theta_{MAP}, \mathbf H(\theta_{MAP})^{-1}) \\
 \end{align}
 $$
+
 And the normalizing constant
+
 $$
 Z \approx exp(-\mathcal L(\mathcal D, \theta_{MAP}) (2 \cdot \pi)^{\frac{D}{2}} (det(\mathbf H(\theta_{MAP}))^{-\frac{1}{2}}
 $$ 
+
 where $D$ is the number of parameters in the model. But as seen above the laplace approximation involves calculating the curvature estimates which is the hessian of the loss function with respect to the model parameters and taking an inverse. Hessians can be approximated by either empirical fisher information matrix or by using a generalized gauss-newton approximation. Although, recent advances in second order optimization techniques allow for efficient computation of the hessian, it is still computationally expensive to compute the inverse of the hessian especially for large neural networks. To address this quadratic complexity of taking inverses of large hessian approximations, Daxberger et. al, 2021 proposed a few alterantive methods with different levels of approximation. The most simplest approximation would be to assume a diagonal factorization by ignoring the off-diagonal elements. This approximation is called diagonal laplace approximation. Essentially it assumes that the parameters are independent like the assumptions made in MFVI. 
 
 Alternatively, one can also assume block-diagonal factorizations such as Kronecker-factored approximate curvature (KFAC),  which capture layer-wise dependencies in the model parameters but assume independence between the layers. Further the KFAC-factors approximation can be improved by low-rank approximations of the KFAC factors. Recent works have also proposed to use low-rank approximations of the hessian matrix directly. Daxberger et. al, 2021 empirically found that the performance of the laplace approximation improves when a more expressive covariance approximation is used and that KFAC approximation provides a good trade-off between performance and computational complexity.
@@ -98,6 +101,7 @@ Alternatively, one can also assume block-diagonal factorizations such as Kroneck
 
 ## Subnetwork inference
 As described in the above section, it helps to have a more expressive covariance approximation but we are limited by the size of deep neural networks. In this context, Daxberger et. al, 2021 proposed a method called subnetwork inference that allows us to approximate the posterior distribution of the weights in the neural network by infering over a subset of parameters while keeping the rest of the parameters as point estimates. They propose subnetwork selection strategies to choose a subset S << D without loosing much on the model performance. Since size of the subset is much smaller compared to the size of the neural network, it is possible to use more expressive covariance approximations.  Once the inference is done over the subset of parameters the posterior over the network can be approximated as follows.
+
 $$
 \begin{align}
 p(\mathbf w | \mathcal D) \approx p(\mathbf w_S | \mathcal D) \prod_{r} \delta(\mathbf w_r - \mathbf {\hat w_r}) \\
@@ -110,11 +114,13 @@ The authors propose a subnetwork selection strategy based squared Wasserstein di
 
 ### Wassertein distance
 The wasserstein distance between two Gaussian distributions can be calculated using the closed-form solution as given below.
+
 $$
 \begin{align}
 W_2(\mathcal N(\mathbf u_1, \Sigma_1), \mathcal N(\mathbf u_1, \Sigma_1)) = ||\mathbf u_1 - \mathbf u_2||_2^2 + Tr(\Sigma_1 + \Sigma_2 - 2(\Sigma_1^{\frac{1}{2}} \Sigma_2 \Sigma_1^{\frac{1}{2}})^{\frac{1}{2}})
 \end{align}
 $$
+
 For the linearized laplace approximation that the authors use, the posterior distribution of the weights is approximately Gaussian or in some cases a true Gaussian. Thus, the wasserstein distance between the posterior distributions of the weights can be calculated using the above closed-form solution. But this is still not computationally feasible for large neural networks as we can not compute the full covariance matrix in the first place. To address this issue, the authors propose to use a diagonal approximation of the covariance matrix for the full network and measure the wasserstein distance to select the subnetwork. Once the subnetwork is selected, they propose to use a more expressive covariance approximation for the subnetwork.
 
 $$
@@ -127,6 +133,7 @@ W_2(p(\mathbf w | \mathcal D), p(\mathbf w_S | \mathcal D)) &= ||\mathbf w - \ma
 &=\sum_{d=1}^D \sigma_d^2(1-m_d)
 \end{align}
 $$
+
 where $H_{S+}$ is the Hessian matrix of the subnetwork padded with zeros in the positions corresponding to the weights that are not in the subnetwork and $m_d$ is the mask set to $1$ when the weight is included in the subnetwork or otherwise 0.
 
 The above derivation can be interpreted as selection of weights in the full network with the maximum marginal variance. Intuitively, selecting the weights with the maximum marginal variance is equivalent to selecting the weights that are most uncertain and thus captures the maximum uncertainty. It is important to make a distinction between the strategy proposed by the authors to that of the pruning techniques used in literature where the weights with the smallest magnitude are pruned. The pruning techniques are mainly motivated and optimized to retain the maximum predictive performance where as the goal in the subnetwork inference is to retain the maximum uncertainty. 

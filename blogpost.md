@@ -34,9 +34,9 @@ $$
 Assuming that the posterior distribution can be estimated, we can factor in the uncertainty of the model by marginalizing over the posterior distribution of the parameters. For a new data point $\mathbf x^*$, the predictive distribution is given by
 
 $$
-\begin{equation}
+\begin{align}
 p(\mathbf y^* | \mathbf X^*, \mathcal D) = \int p(\mathbf y^* | \mathbf X^*, \mathbf w) p(\mathbf w | \mathbf X, \mathbf y) d\mathbf w
-\end{equation}
+\end{align}
 $$
 
 Although theoritically it is quite convincing, there are few challenges in the practical implementation of bayesian framework. The posteriors involve integrations over the entire parameter space and considering the size of modern neural network architectures, more often than not it is computationally infeasible. Thus, it is necessary to adopt some form of approximation using inference methods like Mean Field Variational Inference (MFVI), Laplace Approximation (LA) or Markov Chain Monte Carlo (MCMC) to estimate the posterior distribution. Alternatively, one can approach the uncertainty in the models using non-bayesian methods like Monte Carlo Dropout (MC Dropout) [Gal and Ghahramani, 2016] and Deep Ensembles [Lakshminarayanan et al., 2017]. 
@@ -116,7 +116,7 @@ The wasserstein distance between two Gaussian distributions can be calculated us
 
 $$
 \begin{align}
-W_2(\mathcal N(\mathbf u_1, \Sigma_1), \mathcal N(\mathbf u_1, \Sigma_1)) = ||\mathbf u_1 - \mathbf u_2||_2^2 + Tr(\Sigma_1 + \Sigma_2 - 2(\Sigma_1^{\frac{1}{2}} \Sigma_2 \Sigma_1^{\frac{1}{2}})^{\frac{1}{2}}) \\
+W_2(\mathcal N(\mathbf u_1, \Sigma_1), \mathcal N(\mathbf u_1, \Sigma_1)) = ||\mathbf u_1 - \mathbf u_2||_2^2 + Tr(\Sigma_1 + \Sigma_2 - 2(\Sigma_1^{\frac{1}{2}} \Sigma_2 \Sigma_1^{\frac{1}{2}})^{\frac{1}{2}}) 
 \end{align}
 $$
 
@@ -128,7 +128,7 @@ W_2(p(\mathbf w | \mathcal D), p(\mathbf w_S | \mathcal D)) &= ||\mathbf w - \ma
 &= \cancel {||\mathbf w - \mathbf w_S||_2^2}+ Tr(\Sigma + \Sigma_S - 2(\Sigma^{\frac{1}{2}} \Sigma \Sigma_s^{\frac{1}{2}})^{\frac{1}{2}}) \\
 &= Tr(H^{-1} + H_{S+}^{-1} - 2(H_{S+}^{-1/2} H^{-1} H_{S+}^{-1/2})^{\frac{1}{2}}) \\
 &= Tr(H^{-1}) + Tr(H_{S+}^{-1}) - 2Tr( H^{-1/2} H_{S+}^{-1/2}) \\
-&=\sum_{d=1}^D \sigma_d^2(1-m_d) \\
+&=\sum_{d=1}^D \sigma_d^2(1-m_d) 
 \end{align}
 $$
 

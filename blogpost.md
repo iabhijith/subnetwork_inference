@@ -31,11 +31,11 @@ $$
 \end{align} 
 $$
 
-Assuming that the posterior distribution can be estimated, we can factor in the uncertainty of the model by marginalizing over the posterior distribution of the parameters. For a new data point $\mathbf x^\prime$, the predictive distribution is given by
+Assuming that the posterior distribution can be estimated, we can factor in the uncertainty of the model by marginalizing over the posterior distribution of the parameters. For new data points $\mathbf X^\prime$, the predictive distribution is given by
 
 $$
 \begin{align}
-p(\mathbf y^\prime | \mathbf X^\prime, \mathcal D) &= \int p(\mathbf y^\prime | \mathbf x^\prime, \mathbf w) \cdot p(\mathbf w | \mathbf X, \mathbf y)  d \mathbf w
+p(\mathbf y^\prime | \mathbf X^\prime, \mathcal D) &= \int p(\mathbf y^\prime | \mathbf X^\prime, \mathbf w) \cdot p(\mathbf w | \mathcal D)  d \mathbf w
 \end{align}
 $$
 

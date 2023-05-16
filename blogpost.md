@@ -34,9 +34,7 @@ $$
 Assuming that the posterior distribution can be estimated, we can factor in the uncertainty of the model by marginalizing over the posterior distribution of the parameters. For a new data point $\mathbf x^*$, the predictive distribution is given by
 
 $$
-\begin{align}
 p(\mathbf y^* | \mathbf X^*, \mathcal D) &= \int p(\mathbf y^* | \mathbf X^*, \mathbf w) \cdot p(\mathbf w | \mathbf X, \mathbf y)  d \mathbf w
-\end{align}
 $$
 
 Although theoritically it is quite convincing, there are few challenges in the practical implementation of bayesian framework. The posteriors involve integrations over the entire parameter space and considering the size of modern neural network architectures, more often than not it is computationally infeasible. Thus, it is necessary to adopt some form of approximation using inference methods like Mean Field Variational Inference (MFVI), Laplace Approximation (LA) or Markov Chain Monte Carlo (MCMC) to estimate the posterior distribution. Alternatively, one can approach the uncertainty in the models using non-bayesian methods like Monte Carlo Dropout (MC Dropout) [Gal and Ghahramani, 2016] and Deep Ensembles [Lakshminarayanan et al., 2017]. 

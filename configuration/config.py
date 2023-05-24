@@ -30,6 +30,7 @@ class TuningConfig:
 @dataclass
 class TrainerConfig:
     epochs: int
+    patience: int
     lr: float
     batch_size: int
     checkpoint_path: str

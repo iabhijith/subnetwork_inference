@@ -3,6 +3,7 @@ import numpy as np
 import copy
 import math
 import logging
+import torch.nn.functional as F
 
 from torch import nn
 from torch.nn.utils import parameters_to_vector
@@ -15,73 +16,90 @@ from configuration.config import TrainerConfig
 log = logging.getLogger(__name__)
 
 
+class NegativeLogLikelihood(nn.Module):
+    def __init__(self, output_dims=1, sigma=None):
+        super(NegativeLogLikelihood, self).__init__()
+        if sigma is None:
+            self.log_sigma = nn.Parameter(torch.zeros(output_dims))
+        else:
+            self.log_sigma = nn.Parameter(
+                torch.ones(output_dims) * np.log(sigma), requires_grad=False
+            )
+
+    def forward(self, mu, y):
+        sigma = self.log_sigma.exp().clamp(min=1e-4)
+        dist = Normal(mu, sigma)
+        return -dist.log_prob(y)
+
+    def sigma(self):
+        return self.log_sigma.exp().clamp(min=1e-4).item()
+
+
 class ModelTrainer:
     def __init__(self, config: TrainerConfig) -> None:
         self.config = config
 
-    def train(self, model, delta, train_dataloader, val_dataloader):
+    def train(self, model, train_dataloader, val_dataloader):
         model.train()
-        log_sigma = nn.Parameter(-torch.ones(1, requires_grad=True) / 2)
-        params = list(model.parameters())
-        params.append(log_sigma)
-        optimizer = torch.optim.Adam(params, lr=self.config.lr)
+        criteria = NegativeLogLikelihood()
+        params = list(model.parameters()) + list(criteria.parameters())
+        optimizer = torch.optim.SGD(
+            params, lr=self.config.lr, momentum=0.9, weight_decay=1e-4
+        )
+        best_val_nll = math.inf
+        best_epoch = 0
+        best_model = copy.deepcopy(model)
+        best_sigma = 1.0
         for i in range(self.config.epochs):
-            epoch_loss = 0.0
+            epoch_err = 0.0
             epoch_nll = 0.0
             model.train()
             for X, y in train_dataloader:
                 optimizer.zero_grad()
                 theta = parameters_to_vector(model.parameters())
-                out = model(X).squeeze()
-                loss = -Normal(out, log_sigma.exp()).log_prob(y.squeeze()).sum() + (
-                    0.5 * (delta * theta) @ theta
-                )
+                out = model(X)
+                loss = criteria(out, y).mean() # + (0.5 * (10 * theta) @ theta)
                 loss.backward()
                 optimizer.step()
-                epoch_loss += loss.cpu().item() / len(train_dataloader)
-                epoch_nll += (
-                    -Normal(out.detach(), log_sigma.detach().exp()).log_prob(y).sum()
-                )
+                epoch_err += F.mse_loss(out, y, reduction="mean").sqrt() * X.shape[0]
+                epoch_nll += loss * X.shape[0]
+
             epoch_nll = epoch_nll / len(train_dataloader.dataset)
+            epoch_err = epoch_err / len(train_dataloader.dataset)
 
-        val_nll = self.evaluate_map(model, log_sigma.detach(), val_dataloader)
-        return model, log_sigma, val_nll
-
-    def evaluate_map(self, model, log_sigma, dataloader):
-        model.eval()
-        val_nll = 0.0
-        with torch.no_grad():
-            for X, y in dataloader:
-                out = model(X).squeeze()
-                # print(X.shape, y.shape)
-                # print(-Normal(out.detach(), log_sigma.detach().exp()).log_prob(y))
-                val_nll += (
-                    -Normal(out.detach(), log_sigma.detach().exp()).log_prob(y).sum()
-                )
-                print(val_nll)
-
-            val_nll = val_nll / len(dataloader.dataset)
-
-        return val_nll
-
-    def train_map(self, model, dataloader, val_dataloader):
-        delta_grid = np.logspace(-6, -1, 12)
-        best_model = copy.deepcopy(model)
-        best_nll = math.inf
-        best_delta = delta_grid.min()
-        for delta in delta_grid:
-            model, log_sigma, val_nll = self.train(
-                model, delta, dataloader, val_dataloader
+            val_nll, val_err, count = self.evaluate(
+                model, criteria.sigma(), val_dataloader
             )
-            log.info(f"MAP model with delta={delta} has a validation NLL={val_nll}")
-            if val_nll < best_nll:
+            if val_nll < best_val_nll:
+                best_val_nll = val_nll
+                best_epoch = i
                 best_model = copy.deepcopy(model)
-                best_mse = val_nll
-                best_delta = delta
-        log.info(
-            f"Best MAP model found with delta={best_delta} and validation Nll={val_nll}"
-        )
-        return best_model, log_sigma, best_delta
+                best_sigma = criteria.sigma()
+
+            if i - best_epoch > self.config.patience:
+                # log.info(f"Early stopping at epoch {i}")
+                break
+
+        return best_model, best_sigma
+
+    def evaluate(self, model, sigma, dataloader):
+        model.eval()
+        criteria = NegativeLogLikelihood(sigma=sigma)
+        err = 0.0
+        nll = 0.0
+        count = 0
+        for X, y in dataloader:
+            batch_size = X.shape[0]
+            out = model(X)
+            loss = criteria(out, y).mean()
+            err += F.mse_loss(out, y, reduction="mean").sqrt() * batch_size
+            nll += loss.item() * batch_size
+            count += batch_size
+
+        nll = nll / count
+        err = err / count
+
+        return nll, err, count
 
     def train_la_posthoc(
         self,
@@ -90,35 +108,52 @@ class ModelTrainer:
         subset_of_weights,
         hessian_structure,
         sigma_noise,
-        prior_precision,
         prior_mean,
         subnetwork_indices=None,
+        val_dataloader=None,
     ):
-        model.train()
-        if subnetwork_indices is None:
-            la = Laplace(
-                model=model,
-                likelihood="regression",
-                subset_of_weights=subset_of_weights,
-                hessian_structure=hessian_structure,
-                sigma_noise=sigma_noise,
-                prior_precision=prior_precision,
-                prior_mean=prior_mean,
-            )
-        else:
-            la = Laplace(
-                model=model,
-                likelihood="regression",
-                subset_of_weights=subset_of_weights,
-                hessian_structure=hessian_structure,
-                sigma_noise=sigma_noise,
-                prior_precision=prior_precision,
-                prior_mean=prior_mean,
-                subnetwork_indices=subnetwork_indices,
-            )
+        prior_precisions = [10]
+        best_la_nll = np.inf
+        best_prior_precision = prior_precisions[0]
+        for prior_precision in prior_precisions:
+            try:
+                model_copy = copy.deepcopy(model)
+                model_copy.train()
+                if subnetwork_indices is None:
+                    la = Laplace(
+                        model=model,
+                        likelihood="regression",
+                        subset_of_weights=subset_of_weights,
+                        hessian_structure=hessian_structure,
+                        sigma_noise=sigma_noise,
+                        prior_precision=torch.tensor(
+                            prior_precision, dtype=torch.float64
+                        ),
+                        prior_mean=prior_mean,
+                    )
+                else:
+                    la = Laplace(
+                        model=model,
+                        likelihood="regression",
+                        subset_of_weights=subset_of_weights,
+                        hessian_structure=hessian_structure,
+                        sigma_noise=sigma_noise,
+                        prior_precision=torch.tensor(
+                            prior_precision, dtype=torch.float64
+                        ),
+                        prior_mean=prior_mean,
+                        subnetwork_indices=subnetwork_indices,
+                    )
 
-        la.fit(dataloader)
-        return la
+                la.fit(dataloader)
+                la_nll = self.evaluate_la(la, val_dataloader)
+                if la_nll < best_la_nll:
+                    best_la_nll = la_nll
+                    best_prior_precision = prior_precision
+            except Exception as e:
+                print(e)
+                continue
+        return la, best_prior_precision
 
     def train_la_marglik(self, model, train_dataloader, hessian_structure):
         model.train()
@@ -133,28 +168,18 @@ class ModelTrainer:
         )
         return la
 
-    def fit_sigma_noise(self, model, sigma, dataloader):
-        sigma = torch.tensor(sigma, dtype=torch.float64, requires_grad=True)
-        model.eval()
-        optimiser = torch.optim.Adam([sigma], lr=self.config.map_tuning.lr)
-        for epochs in range(self.config.map_tuning.epochs):
-            for X, y in dataloader:
-                optimiser.zero_grad()
-                f_map = model(X)
-                loss = -Normal(f_map, sigma).log_prob(y).mean()
-                loss.backward()
-                optimiser.step()
+    def evaluate_la(self, la, dataloader):
+        ll = 0.0
+        count = 0
+        for X, y in dataloader:
+            f_mu, f_var = la(x=X)
+            f_sigma = torch.sqrt(f_var)
+            pred_std = torch.sqrt(f_sigma**2 + la.sigma_noise**2)
+            ll += self.log_likelihood(y, f_mu, pred_std)
+            count += X.shape[0]
+        return -ll / count
 
-        return sigma
-
-    def fit_sigma_noise_la(self, model, log_sigma):
-        log_sigma = torch.tensor(log_sigma, dtype=torch.float64, requires_grad=True)
-        optimiser = torch.optim.Adam([log_sigma], lr=self.config.la_tuning.lr)
-        for epochs in range(self.config.la_tuning.epochs):
-            optimiser.zero_grad()
-            neg_marginal_likelihood = -model.log_marginal_likelihood(
-                sigma_noise=log_sigma.exp()
-            )
-            neg_marginal_likelihood.backward()
-            optimiser.step()
-        return log_sigma.detach().cpu().numpy()
+    def log_likelihood(self, y, mu, std):
+        dist = Normal(mu.squeeze(), std.squeeze())
+        log_probs = dist.log_prob(y.squeeze())
+        return log_probs.squeeze().sum().item()

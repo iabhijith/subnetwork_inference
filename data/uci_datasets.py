@@ -1,5 +1,6 @@
 import numpy as np
 import zipfile
+import yaml
 
 from pathlib import Path
 from urllib.request import urlretrieve
@@ -20,6 +21,8 @@ DATA = "data"
 DATA_FILE = "data.txt"
 FEATURE_INDICES_FILE = "index_features.txt"
 TARGET_INDICES_FILE = "index_target.txt"
+
+UCI_METADATA = "uci_meta.yaml"
 
 
 class UCIData:
@@ -47,6 +50,10 @@ class UCIData:
             )
         with zipfile.ZipFile(uci_data_zip, "r") as zip_ref:
             zip_ref.extractall(self.data_path)
+
+    def get_metadata(self):
+        uci_meta = yaml.safe_load(self.data_path.joinpath(UCI_METADATA).read_text())
+        return uci_meta
 
     def get_dataloaders(self, dataset, batch_size, seed, val_size, split_index, gap):
         """Get train, validation and test dataloaders for a given dataset.
@@ -149,7 +156,7 @@ class UCIData:
         y_scaler = StandardScaler().fit(y_train.reshape(-1, 1))
 
         X_train = X_scaler.transform(X_train)
-        y_train = y_scaler.transform(y_train.reshape(-1, 1)).reshape(-1)
+        y_train = y_scaler.transform(y_train.reshape(-1, 1))
 
         X_train, X_val, y_train, y_val = train_test_split(
             X_train,
@@ -159,7 +166,7 @@ class UCIData:
         )
 
         X_test = X_scaler.transform(X_test)
-        y_test = y_scaler.transform(y_test.reshape(-1, 1)).reshape(-1)
+        y_test = y_scaler.transform(y_test.reshape(-1, 1))
 
         return (
             RegressionDataset(X_train, y_train),

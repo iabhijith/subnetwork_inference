@@ -1,13 +1,16 @@
 seed: 99
 version: 99
 
+train_map: True
+train_la: True
+
 data:
   seed: 99
   path: data
   name: wine
   val_size: 0.15
-  split_index: 0
-  gap: False
+  split_index: 1
+  gap: True
 
 model:
   input_size: 11
@@ -17,10 +20,12 @@ model:
   output_size: 1
 
 trainer:
-  epochs: 50
+  epochs: 2000
+  patience: 100
   lr: 1e-3
   batch_size: 32
   checkpoint_path: checkpoints
+  results_path: results
   la:
     posthoc: True
     subset_of_weights:
@@ -28,16 +33,11 @@ trainer:
     hessian_structure:
       - full
       - diag
-      - kron
-      
+      - kron    
+    weight_proportion: 1.0
+    selection_strategy: random
     prior_mean: 0.0
     epochs: 100
     lr: 1e-3
-  map_tuning:
-      epochs: 100
-      lr: 1e-3
-  la_tuning:
-      epochs: 100
-      lr: 1e-3
 
 

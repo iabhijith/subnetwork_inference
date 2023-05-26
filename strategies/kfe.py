@@ -198,6 +198,7 @@ class KronckerFactoredEigenSubnetMask(ScoreBasedSubnetMask):
             raise ValueError("Need to pass train loader for subnet selection.")
 
         self.kron_laplace_model.fit(train_loader)
-        K = self.kron_laplace_model.H.to_matrix()
-
-        return None
+        # Make it efficient by combining the eigenvalues of individual blocks
+        K = self.kron_laplace_model.posterior_precision.to_matrix()
+        K = torch.linalg.inv(K)
+        return torch.linalg.eigvalsh(K)

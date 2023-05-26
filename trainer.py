@@ -58,7 +58,7 @@ class ModelTrainer:
                 optimizer.zero_grad()
                 theta = parameters_to_vector(model.parameters())
                 out = model(X)
-                loss = criteria(out, y).mean() # + (0.5 * (10 * theta) @ theta)
+                loss = criteria(out, y).mean()  # + (0.5 * (10 * theta) @ theta)
                 loss.backward()
                 optimizer.step()
                 epoch_err += F.mse_loss(out, y, reduction="mean").sqrt() * X.shape[0]

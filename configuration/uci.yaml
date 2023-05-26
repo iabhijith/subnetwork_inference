@@ -1,19 +1,19 @@
-seed: 99
-version: 99
+seed: 9
+version: 9
 
 train_map: True
 train_la: True
 
 data:
-  seed: 99
+  seed: 9
   path: data
-  name: wine
+  name: Kin8nm
   val_size: 0.15
   split_index: 1
   gap: True
 
 model:
-  input_size: 11
+  input_size: 8
   hidden_sizes:
     - 50
     - 50

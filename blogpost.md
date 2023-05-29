@@ -177,8 +177,8 @@ In the original paper Daxberger et al. 2021 [2], the authors compare their metho
 We propose to use one of the second order derivatives based pruning techniques like Optimal Brain Damage (OBD) (LeCun et al., 1990) or Optimal Brain Surgery (OBS) (Hassibi et al., 1993) to first reduce the network and then apply the subnetwork inference only on the remaining weights. 
 
 This includes the following steps.
-1. Apply OBD to prune the network.
-2. Apply full covariance approximation for the pruned network.
+1. Apply OBD to find the weight indices with maximum saliency.
+2. Apply full covariance approximation for the selected weight parameters while fixing the rest.
 3. Repeat the experiments in the paper and compare the results.
 
 Our hypothesis is that pruning based subnetwork selection strategies shouldn't perform well as the pruning techniques are mainly motivated and optimized to retain the maximum predictive performance where as the goal in the subnetwork inference is to retain the maximum uncertainty as described above. But as we discuss below, our results show that on the contrary, the second-order pruning methods perform much better than the variance based subnetwork selection strategies.

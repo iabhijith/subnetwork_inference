@@ -79,7 +79,7 @@ But as described in the equation (1) the posterior distribution is given by,
 $$
 \begin{align}
 p(\theta | \mathcal D) &= \frac{1}{Z} p(\mathcal D | \theta) p(\theta) \tag{7} \\
-&= \frac{1}{Z} \exp(-\mathcal L(\mathcal D, \theta)) \tag{8} \\
+&= \frac{1}{Z} \exp(- \mathcal L(\mathcal D, \theta)) \tag{8} \\
 &= \frac{1}{Z} \exp(-\frac{1}{2} (\theta - \theta_{MAP})^T \mathbf H(\theta_{MAP}) (\theta - \theta_{MAP})) \tag{9} \\
 \end{align}
 $$
@@ -147,41 +147,43 @@ where $H_{S+}$ is the Hessian matrix of the subnetwork padded with zeros in the 
 The above derivation can be interpreted as selection of weights in the full network with the maximum marginal variance. Intuitively, selecting the weights with the maximum marginal variance is equivalent to selecting the weights with the maximum uncertainty. It is important to make a distinction between the strategy proposed by the authors to that of the pruning techniques used in literature where the weights with the smallest magnitude are pruned. The pruning techniques are mainly motivated and optimized to retain the maximum predictive performance where as the goal in the subnetwork inference is to retain the maximum uncertainty. 
 
 ### Strengths, Weaknesses, Potential
-The main strength of the bayesian deep learning via subnetwork inference as proposed by Daxberger et al. 2021 is that it is provides a posthoc approximation to the posterior distribution that is computationally feasible even for very large neural networks. The authors empirically show that the subnetwork inference is able to capture the uncertainty in the model and is able to outperform other methods in terms of calibration. They show that on smaller tabular datasets like UCI for regression and also do extensive experiments in image classification tasks including distribution shifts by rotating the MNIST dataset images and corrputed CIFAR10 dataset. Their approach consistently outperforms other methods evaluated using Log likelihood and calibration metrics.
+The main strength of the bayesian deep learning via subnetwork inference as proposed by Daxberger et al. 2021 [2] is that it is provides a posthoc approximation to the posterior distribution that is computationally feasible even for very large neural networks. The authors empirically show that the subnetwork inference is able to capture the uncertainty in the model and is able to outperform other methods in terms of calibration. They show that on smaller tabular datasets like UCI [Dua & Graff, 2017] for regression and also do extensive experiments in image classification tasks including distribution shifts by rotating the MNIST dataset [LeCun et al., 1998)] images and corrputed CIFAR10 [Krizhevsky & Hinton, 2009] dataset. Their approach consistently outperforms other methods evaluated using Log likelihood and calibration metrics.
 
 The main weakness of the method is that the subnetwork selection strategy is not theoritically founded. Although empirically the method works well, it is not clear if the subnetwork selection strategy is optimal. The authors also do not provide any theoretical guarantees on the subnetwork selection strategy. Thus, it is open to explore if there are better subnetwork selection strategies motivating the current work.
 
-Yet the paper opens new vistas for applying bayesian deep learning to large neural networks. Since the subnetwork inference using Laplace approximation can be even applied post-hoc without any architectural changes, it is easier to adopt the method in practice.  
+Additionally, the results are quite sensitive to the hyperparameters used. Especially the prior precision used in the laplace approximation has to be tuned using cross-validation. Although the authors give details on how they have tuned the hyperparameters, they  did not publish the hyperparameters used in their experiments. Thus, it is difficult to reproduce the results. The MAP models trained on UCI datasets are also not published. Thus, it is difficult to compare the results with those published in the paper.
+
+Yet the paper opens new vistas for applying bayesian deep learning to large neural networks. Since the subnetwork inference using Laplace approximation can be even applied post-hoc without any architectural changes, it is easier to adopt the method in practice. 
+This motivates us to explore the method further and extend the work of Daxberger et al. 2021 [2] to find alternative subnetwork selection strategies. We started our project by reproducing the results in the paper and then proposed, implemented and experimented with two new subnetwork selection strategies.
 
 ## Novel contribution
-We extend the work of Daxberger et al. 2021 by exploring a novel subnetwork selection strategies going beyond the one proposed by the authors. We mainly experiment with two different approaches.
 
 ### KFAC based subnetwork selection strategy
-As discussed earlier, Daxberger et al. 2021 in ther laplace redux paper show that more expressive covariance approximation perform better in terms of calibration. They empirically show that KFAC works better than diagonal approximation. Thus, we propose to use KFAC approximation for the full network and use the wasserstein distance to select the subnetwork instead of the diagonal approximation proposed by the authors.
+As discussed earlier, Daxberger et al. 2021 [3] in ther laplace redux paper show that more expressive covariance approximation perform better in terms of calibration. They empirically show that KFAC works better than diagonal approximation. In fact, the paper concludes that it is the best choice for the covariance approximation and they provide it as a default in the laplace library. The advantages of KFAC approximation is that it is computationally feasible for large neural networks and it is more expressive than the diagonal approximation. Thus, we proposed to use KFAC approximation for the full network  at the subnetwork selection stage instead of the diagonal approximation proposed by the authors. 
 
-This includes the following steps.
+The main advantage of using a diagonal approximation is that the wasserstein distance has a simple closed form solution and it turns out to be as simple as selecting the weights with the maximum marginal variance.  Although using KFAC at subnetwork selection is intuitively sound, there is no simple closed form solution for the wasserstein distance between the posterior distributions of the full network and the subnetwork.  After a careful literature survey, we found a pruning technique EigenDamage [Wang et. al 2019] that applies older second-order pruning techniques like Optimal Brain Damage (OBD) and Optimal Brain Surgery (OBS) in the Kronecker-factored eigenbasis (KFE). Since in the KFE, the weights have diagonal covariance, it is possible to apply methods like OBD that make a diagonal assumption in the first place without loosing prediction accuracy. 
+
+Building on this idea, we proposed to reparameterize the weights to KFE and then select the weights with the maximum marginal variance in the new basis. The marginal variances in the eigen basis are just the eigenvalues of the covariance matrix. Thus, we can select the weights with the maximum eigenvalues. We call this method KFAC based subnetwork selection strategy. We choose to use the KFAC approximated covariance matrix instead of a full covariance matrix as KFAC can be easily extended to large neural networks.
+
+The proposed method can be implemented as follows.
 
 1. Apply KFAC variant of laplace approximation over the full network
-2. Compute the wasserstein distance between the posterior distribution of the full network and the subnetwork
-    - Derive a closed form solution if possible.
-    - Use the ideas from EigenDamage [Wang et. al 2019] where they select weights for pruning based on network reparametrization using Kronecker-factored eigenbasis.
-    - If none of the above is possible, use ideas from differential masking paper where the masks are learnt using optimization by replacing the discrete masks with stochastic masks during training.
-
-3. Select the subnetwork based on the wasserstein distance computed in the previous step.
-4. Apply full covariance approximation for the subnetwork.
-5. Repeat the experiments in the paper and compare the results.
-
+2. Eigen decompose the covariance matrix to get the eigen basis.
+3. Mask eigen basis vectors with the least eigen values.
+4. Select the weight indices that correspond to the remaining eigen basis.
+5. Use the weight indices for subnetwork inference.
+6. Repeat the experiments in the paper and compare the results.
 
 ### Pruning based subnetwork selection strategy
-We also propose to use one of the second order derivatives based pruning techniques like Optimal Brain Damage (OBD) (LeCun et al., 1990) or Optimal Brain Surgery (OBS) (Hassibi et al., 1993) to first reduce the network and then apply the subnetwork inference only on the remaining weights.
+In the original paper Daxberger et al. 2021 [2], the authors compare their method with very rudimentary pruning techniques like pruning the weights with the smallest magnitude.
+We propose to use one of the second order derivatives based pruning techniques like Optimal Brain Damage (OBD) (LeCun et al., 1990) or Optimal Brain Surgery (OBS) (Hassibi et al., 1993) to first reduce the network and then apply the subnetwork inference only on the remaining weights. 
 
 This includes the following steps.
 1. Apply OBD or OBS to prune the network.
 2. Apply full covariance approximation for the pruned network.
 3. Repeat the experiments in the paper and compare the results.
 
-Our hypothesis is that pruning based subnetwork selection strategies shouldn't perform well as the pruning techniques are mainly motivated and optimized to retain the maximum predictive performance where as the goal in the subnetwork inference is to retain the maximum uncertainty as described above.
-
+Our hypothesis is that pruning based subnetwork selection strategies shouldn't perform well as the pruning techniques are mainly motivated and optimized to retain the maximum predictive performance where as the goal in the subnetwork inference is to retain the maximum uncertainty as described above. But as we discuss below, our results show that on the contrary, the second-order pruning methods perform much better than the variance based subnetwork selection strategies.
 
 ## Experiments and results
 ### Snelson 1D experiments
@@ -264,6 +266,11 @@ TBA
 
 [19] Wang, Chaoqi, Roger Grosse, Sanja Fidler, and Guodong Zhang. “EigenDamage: Structured Pruning in the Kronecker-Factored Eigenbasis.” In Proceedings of the 36th International Conference on Machine Learning, 6566–75. PMLR, 2019. https://proceedings.mlr.press/v97/wang19g.html.
 
+[20] LeCun, Y., Bottou, L., Bengio, Y., and Haffner, P. Gradientbased learning applied to document recognition. Proceedings of the IEEE, 86(11):2278–2324, 1998.
+
+[21] Krizhevsky, A. and Hinton, G. Learning Multiple Layers of Features from Tiny Images. Technical report, University of Toronto, 2009.
+
+[22] Dua, D. and Graff, C. UCI machine learning repository, 2017.
 
 
  

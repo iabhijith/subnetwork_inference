@@ -83,6 +83,7 @@ p(\theta | \mathcal D) &= \frac{1}{Z} p(\mathcal D | \theta) p(\theta) \tag{7} \
 &= \frac{1}{Z} \exp(-\frac{1}{2} (\theta - \theta_{MAP})^T \mathbf H(\theta_{MAP}) (\theta - \theta_{MAP})) \tag{9} \\
 \end{align}
 $$
+
 where $Z$ is the normalizing constant. From the above derivation, we can identify the laplace approximation as follows.
 
 $$

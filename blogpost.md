@@ -234,6 +234,28 @@ We have run the experiments for 5 different seeds and for `n` different splits o
 
 The results are inline with the Snelson 1D experiments. The OBD based strategy outperforms the other methods. But KFAC based strategy consistently outperformed the method proposed by the authors.
 
+### Additional experiments 
+We have done two additional experiments intrigued by the results of different selection strategies. The motivation for these experiments is to find if there are any specific patterns in the subnetworks selected by different strategies. We have used wine gap dataset for these experiments.
+
+#### Overlap between subnetworks selected by different strategies
+For different subset sizes, we have computed the overlap between the subnetworks selected by different strategies. The results are shown below. The overlap is computed as the number of common weights between the subnetworks selected by two different strategies divided by the subset size. The results are shown below. The plot clearly shows that there is a wide variation in the subnetworks selected by different strategies. They have a maximum of 50% overlap and that too when a large subset is selected.
+
+![Overlap](figures/overlap.png)
+
+
+
+#### Selected parameters by layers for different strategies
+
+|30 | 90 |
+|:-------------------------:|:-------------------------:|
+|![30](figures/layers_30.png) |![90](figures/layers_90.png) |
+
+|1200 | 1800 |
+|:-------------------------:|:-------------------------:|
+|![1200](figures/layers_1200.png) |![1800](figures/layers_1800.png) |
+
+We further analyzed how the selected parameters are spread across different layers for different strategies. These results are quite interesting. While the KFE prefers the last layers, LVD mainly selects the parameters from the middle layer. OBD on the other hand selects the parameters from all the layers. We need to do more experiments to understand the reason behind this behavior and if it is consistent across different datasets.
+
 ## Conclusion
 From the above experiments, we can conclude that the pruning methods can not be completely ruled out for subnetwork inference. But since the datasets we have used in the experiments are low dimensional, we can not say for sure that the pruning methods will work better than the approach proposed by the authors. It might be the case that the MAP models used in the experiments are too expressive for the size of the datasets and many of the weights in the network are redundant as is and pruning techniques can easily prune them out. KFAC based strategy seems to be a more reliable choice for subnetwork selection as compared to the method in the paper. It is computationally feasible for larger networks, and it also enables to do a more structured subnetwork inference by considering more complex covariances for example covariance in the same channel in a convolutional layer etc. We propose to extend the experiments to larger datasets and more complex networks and see if the results hold.
 

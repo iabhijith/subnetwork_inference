@@ -18,20 +18,20 @@ tags: [Bayesian Neural Networks, Deep Learning, Uncertainity, Active Learning, R
 
 ## Introduction
 
-Uncertainty is the only certainty there is and it is imperative for any "intelligent" system to recognize and account for the uncertainty inherent in the world around it. In recent years machine learning and deep learning models have become ubiquitous with wide-ranging applications from medical diagosis to self-driving cars. Many of these models are trained on data which is often noisy, incomplete and susceptible to distributional shifts . This leads to uncertainty in the model's predictions. Therefore, it is essential to measure the uncertainty and have human supervision in the loop especially when the model is deployed for making decisions in safety-critical applications.
+Uncertainty is the only certainty there is and it is imperative for any "intelligent" system to recognize and account for the uncertainty inherent in the world around it. In recent years machine learning and deep learning models have become ubiquitous with wide-ranging applications from medical diagosis to self-driving cars. Many of these models are trained on data which is often noisy, incomplete and susceptible to distributional shifts. This leads to uncertainty in the model's predictions. Therefore, it is essential to measure the uncertainty and have human supervision in the loop especially when the model is deployed for making decisions in safety-critical applications.
 
 Neural networks (NNs) are universal function approximators [Cybenko, 1989; Hornik et al., 1989]. Recently, Deep Neural Networks (DNNs) in particular have achieved tremendous success in learning and generalizing complex patterns and relationships in the data ranging from computer vision to natural language. Yet they are prone to overfitting and are often overconfident in their predictions [Guo et al., 2017].  Uncertainty can be braodly classified into two categories - epistemic and aleatoric uncertainity. While aleatoric uncertainity is because of the noise in the data, epistemic uncertainty is caused by lack of data or distributional shift in the data. Bayesian deep learning (BDL) provides a principled framework to address epistemic uncertainity in neural networks. Additionally, bayesian deep learning also provides a way to incorporate prior knowledge into the model, systematically tune the hyperparameters and also help in addressing the problem of catastrophic forgetting [Kirkpatrick et al., 2016] in continual learning.
 
-Inspite of the theoretical advantages as mentioned above, bayesian deep learning has not been widely adopted in practice mainly because of the computational challenges in estimating the posterior distribution of the parameters. In this context, the paper [Bayesian Deep Learning via Subnetwork Inference](https://arxiv.org/abs/2007.06823) by Daxberger et. al, 2021 proposes a simple and cost-effective method to approximate the posterior distribution of the parameters by infering over a subset of network parameters instead of the full network parameters. They empirically show that such a subnetwork inference achieves  In this blogpost, we will mainly discuss the contributions of the paper by Daxberger et. al, 2021 with a special emphasis on subnetwork select strategy based on Wasserstein distance. 
+Inspite of the theoretical advantages as mentioned above, bayesian deep learning has not been widely adopted in practice especially because of the computational challenges in estimating the posterior distribution of the parameters. In this context, the paper [Bayesian Deep Learning via Subnetwork Inference](https://arxiv.org/abs/2007.06823) by Daxberger et. al, 2021 [2] proposes a simple and cost-effective method to approximate the posterior distribution of the parameters by infering over a subset of network parameters instead of the full network parameters. They empirically show that subnetwork inference achieves considerable results on a variety of datasets. In this blogpost, we will mainly discuss the contributions of the paper by Daxberger et. al, 2021 [2] with a special emphasis on their subnetwork select strategy based on Wasserstein distance. Starting with a brief background on bayesian deep learning, we will introduce various popular methods available for estimating the posterior distribution of the parameters, their advantages and disadvantages followed by a detailed exposition of the subnetwork inference method. Finally, we will discuss two new subnetwork selection strategies that we propose as an extension and do a comparative analysis of their performance on various datasets.
 
 
 ## Background
 
-From a probabilistic standpoint, optimizing a neural network is equivalent to finding a point estimate of the parameters of the network. Depending on the loss function used for optimization, it can either viewed as a Maximum Likelihood Estimate (MLE) or a Maximum A Posteriori (MAP) estimate. In either case the uncertainty in the parameters of the model is not captured. Bayesian deep learning on the other hand moves towards estimating the distribution of the parameters. In the bayesian paradigm, given a dataset $\mathcal D = \{(\mathbf x_i, y_i)\}_{i=1}^N$, the goal is to estimate the posterior distribution of the parameters $\mathbf w$ given the data $\mathcal D$. Assuming a prior distribution $p(\mathbf w)$, the posterior distribution is given by
+From a probabilistic standpoint, optimizing a neural network is equivalent to finding a point estimate of the parameters of the network. Depending on the loss function used for optimization, it can either viewed as a Maximum Likelihood Estimate (MLE) or a Maximum A Posteriori (MAP) estimate. In either case the uncertainty in the parameters of the model is not captured. Bayesian deep learning on the other hand moves towards estimating the distribution of the parameters. In the bayesian paradigm, given a dataset $\mathcal D = \{(\mathbf x_i, y_i)\}_{i=1}^N$, where $\mathbf x_i$ and $\mathbf y_i$ are the inputs and target respectively, the goal is to estimate the posterior distribution of the parameters $\mathbf w$ given the data $\mathcal D$. Assuming a prior distribution $p(\mathbf w)$, the posterior distribution is given by
 
 $$
 \begin{align}
- p(\mathbf w| \mathcal D) &= p(\mathbf w | \mathbf y, \mathbf X)  
+ p(\mathbf w| \mathcal D) &= p(\mathbf w | \mathbf y, \mathbf X) \nonumber \\
  &= \frac{p(\mathbf y |  \mathbf X, \mathbf w) p(\mathbf w)}{\int p(\mathbf y |  \mathbf X, \mathbf w) p(\mathbf w) d\mathbf w} \tag{1}
 \end{align} 
 $$
@@ -40,7 +40,7 @@ Assuming that the posterior distribution can be estimated, we can factor in the 
 
 $$
 \begin{align}
-p(\mathbf y^\prime | \mathbf X^\prime, \mathcal D) &= \int p(\mathbf y^\prime | \mathbf X^\prime, \mathbf w) \cdot p(\mathbf w | \mathcal D)  d \mathbf w
+p(\mathbf y^\prime | \mathbf X^\prime, \mathcal D) &= \int p(\mathbf y^\prime | \mathbf X^\prime, \mathbf w) \cdot p(\mathbf w | \mathcal D)  d \mathbf w \tag{2}
 \end{align}
 $$
 
@@ -53,54 +53,58 @@ Variation Inference (VI) is another class of algorithms that approximate the pos
 
 ### Laplace approximation
 
-Laplace Approximation (LA) is a simple and cost-effective [Daxberger et. al, 2021] method to approximate the posterior distribution and does not require any architectural modifications to the neural network. Laplace approximation is essentially a local approximation of the posterior distribution around the local maximum given by the MAP estimate. 
+Laplace Approximation (LA) is a simple and cost-effective [Daxberger et. al, 2021] method to approximate the posterior distribution and does not require any architectural modifications to the neural network. Laplace approximation is essentially a local approximation of the posterior distribution around the local maximum given by the MAP estimate. Given a loss function $\mathcal L(\mathcal D, \theta)$, the MAP estimate is given by
 
 $$
 \begin{align}
-\theta_{MAP} &= \arg \min_{\theta} \mathcal L(\mathcal D, \theta) \\
-&= \arg \min_{\theta} -  \log p(\mathcal D | \theta) - \log p(\theta) \\
+\theta_{MAP} &= \arg \min_{\theta} \mathcal L(\mathcal D, \theta) \tag{3} \\
+&= \arg \min_{\theta} -  \log p(\mathcal D | \theta) - \log p(\theta) \tag{4} \\
 \end{align} 
 $$
 
-Using Taylor expansion of  $\mathcal L(\mathcal D, \theta)$ around $\theta_{MAP}$ using taylo, and ignoring the higher order terms, we can write
+Using Taylor expansion around $\theta_{MAP}$, and ignoring the higher order terms, we can write  $\mathcal L(\mathcal D, \theta)$ as follows.
 
 $$
-\mathcal L(\mathcal D, \theta) \approx \mathcal L(\mathcal D, \theta_{MAP}) + \frac{1}{2} (\theta - \theta_{MAP})^T \mathbf H(\theta_{MAP}) (\theta - \theta_{MAP})
+\mathcal L(\mathcal D, \theta) \approx \mathcal L(\mathcal D, \theta_{MAP}) + \frac{1}{2} (\theta - \theta_{MAP})^T \mathbf H(\theta_{MAP}) (\theta - \theta_{MAP}) \tag{5}
 $$
 
 where $\mathbf H(\theta_{MAP})$ is the Hessian matrix of the loss function evaluated at $\theta_{MAP}$. The first-order term vanishes as $\theta_{MAP}$ is the local minimum. 
 
 $$
-\mathcal L(\mathcal D, \theta) \approx  \frac{1}{2} (\theta - \theta_{MAP})^T \mathbf H(\theta_{MAP}) (\theta - \theta_{MAP})
+\mathcal L(\mathcal D, \theta) \approx  \frac{1}{2} (\theta - \theta_{MAP})^T \mathbf H(\theta_{MAP}) (\theta - \theta_{MAP}) \tag{6}
 $$
 
 But as described in the equation (1) the posterior distribution is given by,
 
 $$
 \begin{align}
-p(\theta | \mathcal D) &= \frac{1}{Z} p(\mathcal D | \theta) p(\theta) \\
-&= \frac{1}{Z} \exp(-\mathcal L(\mathcal D, \theta))  \\
-&= \frac{1}{Z} \exp(-\frac{1}{2} (\theta - \theta_{MAP})^T \mathbf H(\theta_{MAP}) (\theta - \theta_{MAP})) 
+p(\theta | \mathcal D) &= \frac{1}{Z} p(\mathcal D | \theta) p(\theta) \tag{7} \\
+&= \frac{1}{Z} \exp(-\mathcal L(\mathcal D, \theta)) \tag{8} \\
+&= \frac{1}{Z} \exp(-\frac{1}{2} (\theta - \theta_{MAP})^T \mathbf H(\theta_{MAP}) (\theta - \theta_{MAP})) \tag{9} \\
 \end{align}
 $$
-
-From the above derivation, we can identify the laplace approximation as follows.
+where $Z$ is the normalizing constant. From the above derivation, we can identify the laplace approximation as follows.
 
 $$
 \begin{align}
-p(\theta | \mathcal D) &= \mathcal N(\theta ; \theta_{MAP}, \mathbf H(\theta_{MAP})^{-1}) \\
+p(\theta | \mathcal D) &= \mathcal N(\theta ; \theta_{MAP}, \mathbf H(\theta_{MAP})^{-1}) \tag{10} \\
 \end{align}
 $$
 
 And the normalizing constant
 
 $$
-Z \approx exp(-\mathcal L(\mathcal D, \theta_{MAP}) (2 \cdot \pi)^{\frac{D}{2}} (det(\mathbf H(\theta_{MAP}))^{-\frac{1}{2}}
+Z \approx exp(-\mathcal L(\mathcal D, \theta_{MAP}) (2 \cdot \pi)^{\frac{D}{2}} (det(\mathbf H(\theta_{MAP}))^{-\frac{1}{2}} \tag{11}
 $$ 
 
-where $D$ is the number of parameters in the model. But as seen above the laplace approximation involves calculating the curvature estimates which is the hessian of the loss function with respect to the model parameters and taking an inverse. Hessians can be approximated by either empirical fisher information matrix or by using a generalized gauss-newton approximation. Although, recent advances in second order optimization techniques allow for efficient computation of the hessian, it is still computationally expensive to compute the inverse of the hessian especially for large neural networks. To address this quadratic complexity of taking inverses of large hessian approximations, Daxberger et. al, 2021 proposed a few alterantive methods with different levels of approximation. The most simplest approximation would be to assume a diagonal factorization by ignoring the off-diagonal elements. This approximation is called diagonal laplace approximation. Essentially it assumes that the parameters are independent like the assumptions made in MFVI. 
+where $D$ is the number of parameters in the model. But as seen above the laplace approximation involves calculating the curvature estimates which is the hessian of the loss function with respect to the model parameters and taking an inverse. Hessians can be approximated by either empirical fisher information matrix or by using a generalized gauss-newton approximation. Although, recent advances in second order optimization techniques allow for efficient computation of the hessian, it is still computationally expensive to compute the inverse of the hessian especially for large neural networks. To address this quadratic complexity of taking inverses of large hessian approximations, Daxberger et. al, 2021 [3] proposed a few alterantive methods with different levels of approximation. The most simplest approximation would be to assume a diagonal factorization by ignoring the off-diagonal elements. This approximation is called diagonal laplace approximation. Essentially it assumes that the parameters are independent like the assumptions made in MFVI. 
 
-Alternatively, one can also assume block-diagonal factorizations such as Kronecker-factored approximate curvature (KFAC),  which capture layer-wise dependencies in the model parameters but assume independence between the layers. Further the KFAC-factors approximation can be improved by low-rank approximations of the KFAC factors. Recent works have also proposed to use low-rank approximations of the hessian matrix directly. Daxberger et. al, 2021 empirically found that the performance of the laplace approximation improves when a more expressive covariance approximation is used and that KFAC approximation provides a good trade-off between performance and computational complexity.
+#### Hessian Approximations
+| Diag | KFAC|
+|:-------------------------:|:-------------------------:|
+|![Snelson1D_42](figures/snelson_comparison42.png) |![Snelson1D_9](figures/snelson_comparison9.png) |
+
+Alternatively, one can also assume block-diagonal factorizations such as Kronecker-factored approximate curvature (KFAC),  which capture layer-wise dependencies in the model parameters but assume independence between the layers. Further the KFAC-factors approximation can be improved by low-rank approximations of the KFAC factors. Recent works have also proposed to use low-rank approximations of the hessian matrix directly. Daxberger et. al, 2021 [3] empirically found that the performance of the laplace approximation improves when a more expressive covariance approximation is used and that KFAC approximation provides a good trade-off between performance and computational complexity.
 
 
 ## Subnetwork inference
@@ -108,8 +112,8 @@ As described in the above section, it helps to have a more expressive covariance
 
 $$
 \begin{align}
-p(\mathbf w | \mathcal D) \approx p(\mathbf w_S | \mathcal D) \prod_{r} \delta(\mathbf w_r - \mathbf {\hat w_r}) \\
-\approx q(\mathbf w_S)\prod_{r} \delta(\mathbf w_r - \mathbf {\hat w_r}) 
+p(\mathbf w | \mathcal D) \approx p(\mathbf w_S | \mathcal D) \prod_{r} \delta(\mathbf w_r - \mathbf {\hat w_r}) \tag{12} \\
+\approx q(\mathbf w_S)\prod_{r} \delta(\mathbf w_r - \mathbf {\hat w_r})  \tag{13}
 \end{align}
 $$
 
@@ -120,7 +124,7 @@ The wasserstein distance between two Gaussian distributions can be calculated us
 
 $$
 \begin{align}
-W_2(\mathcal N(\mathbf u_1, \Sigma_1), \mathcal N(\mathbf u_1, \Sigma_1)) = \Vert \mathbf u_1 - \mathbf u_2 \Vert_2^2 + Tr(\Sigma_1 + \Sigma_2 - 2(\Sigma_1^{\frac{1}{2}} \Sigma_2 \Sigma_1^{\frac{1}{2}})^{\frac{1}{2}}) 
+W_2(\mathcal N(\mathbf u_1, \Sigma_1), \mathcal N(\mathbf u_1, \Sigma_1)) = \Vert \mathbf u_1 - \mathbf u_2 \Vert_2^2 + Tr(\Sigma_1 + \Sigma_2 - 2(\Sigma_1^{\frac{1}{2}} \Sigma_2 \Sigma_1^{\frac{1}{2}})^{\frac{1}{2}}) \tag{14}
 \end{align}
 $$
 
@@ -128,10 +132,10 @@ For the linearized laplace approximation that the authors use, the posterior dis
 
 $$
 \begin{align}
-W_2(p(\mathbf w | \mathcal D), p(\mathbf w_S | \mathcal D)) &= \cancel {\Vert \mathbf w - \mathbf w_S \Vert_2^2} + Tr(\Sigma + \Sigma_S - 2(\Sigma^{\frac{1}{2}} \Sigma \Sigma_s^{\frac{1}{2}})^{\frac{1}{2}}) \\
-&= Tr(H^{-1} + H_{S+}^{-1} - 2(H_{S+}^{-1/2} H^{-1} H_{S+}^{-1/2})^{\frac{1}{2}}) \\
-&= Tr(H^{-1}) + Tr(H_{S+}^{-1}) - 2Tr( H^{-1/2} H_{S+}^{-1/2}) \\
-&= \sum_{d=1}^D \sigma_d^2(1-m_d) 
+W_2(p(\mathbf w | \mathcal D), p(\mathbf w_S | \mathcal D)) &= \cancel {\Vert \mathbf w - \mathbf w_S \Vert_2^2} + Tr(\Sigma + \Sigma_S - 2(\Sigma^{\frac{1}{2}} \Sigma \Sigma_s^{\frac{1}{2}})^{\frac{1}{2}}) \tag{15} \\
+&= Tr(H^{-1} + H_{S+}^{-1} - 2(H_{S+}^{-1/2} H^{-1} H_{S+}^{-1/2})^{\frac{1}{2}}) \tag{16} \\
+&= Tr(H^{-1}) + Tr(H_{S+}^{-1}) - 2Tr( H^{-1/2} H_{S+}^{-1/2})\tag{17}  \\
+&= \sum_{d=1}^D \sigma_d^2(1-m_d) \tag{18} 
 \end{align}
 $$
 

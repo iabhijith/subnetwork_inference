@@ -32,7 +32,7 @@ From a probabilistic standpoint, optimizing a neural network is equivalent to fi
 $$
 \begin{align}
  p(\mathbf w| \mathcal D) &= p(\mathbf w | \mathbf y, \mathbf X)  
- = \frac{p(\mathbf y |  \mathbf X, \mathbf w) p(\mathbf w)}{\int p(\mathbf y |  \mathbf X, \mathbf w) p(\mathbf w) d\mathbf w}
+ &= \frac{p(\mathbf y |  \mathbf X, \mathbf w) p(\mathbf w)}{\int p(\mathbf y |  \mathbf X, \mathbf w) p(\mathbf w) d\mathbf w} \tag{1}
 \end{align} 
 $$
 

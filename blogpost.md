@@ -169,10 +169,8 @@ The proposed method can be implemented as follows.
 
 1. Apply KFAC variant of laplace approximation over the full network
 2. Eigen decompose the covariance matrix to get the eigen basis.
-3. Mask eigen basis vectors with the least eigen values.
-4. Select the weight indices that correspond to the remaining eigen basis.
-5. Use the weight indices for subnetwork inference.
-6. Repeat the experiments in the paper and compare the results.
+4. Find the indices of largest eigen values and  use them for subnetwork inference.
+5. Repeat the experiments in the paper and compare the results.
 
 ### Pruning based subnetwork selection strategy
 In the original paper Daxberger et al. 2021 [2], the authors compare their method with very rudimentary pruning techniques like pruning the weights with the smallest magnitude.

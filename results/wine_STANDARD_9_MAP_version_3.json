@@ -1,0 +1,1 @@
+{"dataset": "wine", "seed": 3, "split": "STANDARD", "split_index": 9, "model_type": "MAP", "subset_size": 0, "subset_of_weights": null, "hessian_structure": null, "selection_strategy": null, "nll": 1.2950125509411017}

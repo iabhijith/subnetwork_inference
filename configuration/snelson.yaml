@@ -1,0 +1,24 @@
+seed: 42
+
+data:
+  seed: 42
+  path: data/SPGP
+  name: snelson1d
+  val_size: 0.15
+ 
+model:
+  hidden_sizes:
+    - 50
+    - 50
+
+trainer:
+  epochs: 500
+  patience: 100
+  lr: 1e-3
+  batch_size: 32
+  checkpoint_path: checkpoints
+  results_path: results
+  la:
+    prior_mean: 0.0
+
+

@@ -1,0 +1,1 @@
+{"dataset": "kin8nm", "seed": 4, "split": "STANDARD", "split_index": 6, "model_type": "LA_POSTHOC", "subset_of_weights": "subnetwork", "hessian_structure": "full", "selection_strategy": "KFE", "subset_size": 1800, "nll": 0.15114182924254504}

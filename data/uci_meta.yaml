@@ -1,31 +1,17 @@
 protein:
   n_splits: 5
-  input_dim: 9
-  output_dim: 1
-
-protein_gap:
-  n_splits: 9
+  g_splits: 9
   input_dim: 9
   output_dim: 1
 
 wine:
   n_splits: 20
+  g_splits: 11
   input_dim: 11
   output_dim: 1
-
-wine_gap:
-  n_splits: 11
-  input_dim: 11
-  output_dim: 1
-
 
 kin8nm:
   n_splits: 20
+  g_splits: 8
   input_dim: 8
   output_dim: 1
-
-kin8nm_gap:
-  n_splits: 8
-  input_dim: 8
-  output_dim: 1
-

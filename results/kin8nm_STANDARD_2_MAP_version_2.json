@@ -1,0 +1,1 @@
+{"dataset": "kin8nm", "seed": 2, "split": "STANDARD", "split_index": 2, "model_type": "MAP", "subset_size": 0, "subset_of_weights": null, "hessian_structure": null, "selection_strategy": null, "nll": 0.09198405763018297}

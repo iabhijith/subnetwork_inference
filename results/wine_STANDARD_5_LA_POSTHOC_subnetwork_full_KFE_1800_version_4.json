@@ -1,0 +1,1 @@
+{"dataset": "wine", "seed": 4, "split": "STANDARD", "split_index": 5, "model_type": "LA_POSTHOC", "subset_of_weights": "subnetwork", "hessian_structure": "full", "selection_strategy": "KFE", "subset_size": 1800, "nll": 1.1780885659196452}

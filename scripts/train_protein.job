@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --gpus=1
+#SBATCH --partition=gpu
+#SBATCH --time=8:00:00
+
+module purge
+module load 2021
+module load Anaconda3/2021.05
+
+cd $HOME/subnetwork_inference/
+source activate subnetwork_inference
+
+
+srun python main.py --multirun trainer.model_type=MAP trainer.epochs=200 trainer.patience=50 seed="range(0,3)" data.name=protein data.split=GAP data.split_index="range(0,9)"
+srun python main.py --multirun seed="range(0,3)" trainer.epochs=200 trainer.patience=50 data.name=protein data.split=GAP data.split_index="range(0,9)" trainer.la.selection_strategy=LVD,OBD,KFE trainer.la.subset_size=600,1200,1800
+
+srun python main.py --multirun trainer.model_type=MAP trainer.epochs=200 trainer.patience=50 seed="range(0,3)" data.name=protein data.split=STANDARD data.split_index=range"(0,5)"
+srun python main.py --multirun seed="range(0,3)" trainer.epochs=200 trainer.patience=50 data.name=protein data.split=STANDARD data.split_index="range(0,5)" trainer.la.selection_strategy=LVD,OBD,KFE trainer.la.subset_size=600,1200,1800

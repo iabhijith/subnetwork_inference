@@ -8,6 +8,7 @@ log = logging.getLogger(__name__)
 
 
 def nll_map(model, sigma, dataloader):
+    """Evaluate the NLL of the MAP model on the given dataset."""
     log.info(f"Evaluating NLL MAP with sigma={sigma}")
     nll = 0.0
     for X, y in dataloader:
@@ -17,6 +18,7 @@ def nll_map(model, sigma, dataloader):
 
 
 def nll_bayesian(model, dataloader):
+    """Evaluate the NLL of the Bayesian model on the given dataset."""
     log.info(f"Evaluating NLL Bayesian with sigma={model.sigma_noise}")
     nll = 0.0
     for X, y in dataloader:

@@ -1,23 +1,18 @@
-seed: 9
-version: 9
-
-train_map: True
-train_la: True
+seed: 99
 
 data:
-  seed: 9
+  seed: 99
   path: data
-  name: Kin8nm
+  name: wine
   val_size: 0.15
+  split: GAP
   split_index: 1
-  gap: True
+  
 
 model:
-  input_size: 8
   hidden_sizes:
     - 50
     - 50
-  output_size: 1
 
 trainer:
   epochs: 2000
@@ -26,18 +21,12 @@ trainer:
   batch_size: 32
   checkpoint_path: checkpoints
   results_path: results
+  model_type: LA_POSTHOC
   la:
-    posthoc: True
-    subset_of_weights:
-      - all
-    hessian_structure:
-      - full
-      - diag
-      - kron    
-    weight_proportion: 1.0
-    selection_strategy: random
+    subset_of_weights: subnetwork
+    hessian_structure: full 
+    selection_strategy: LVD
+    subset_size: 600
     prior_mean: 0.0
-    epochs: 100
-    lr: 1e-3
 
 

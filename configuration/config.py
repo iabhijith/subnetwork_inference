@@ -4,27 +4,18 @@ from typing import List
 
 @dataclass
 class ModelConfig:
-    input_size: int
     hidden_sizes: List[int]
-    output_size: int
 
 
 @dataclass
 class LAConfig:
-    posthoc: bool
-    subset_of_weights: List[str]
-    hessian_structure: List[str]
+    subset_of_weights: str
+    hessian_structure: str
     sigma_noise: float
     prior_precision: float
     prior_mean: float
-    epochs: int
-    lr: float
-
-
-@dataclass
-class TuningConfig:
-    epochs: int
-    lr: float
+    selection_strategy: str
+    subset_size: int
 
 
 @dataclass
@@ -34,9 +25,8 @@ class TrainerConfig:
     lr: float
     batch_size: int
     checkpoint_path: str
+    model_type: str
     la: LAConfig
-    map_tuning: TuningConfig
-    la_tuning: TuningConfig
 
 
 @dataclass
@@ -52,7 +42,6 @@ class DataConfig:
 @dataclass
 class ExperimentConfig:
     seed: int
-    version: int
     data: DataConfig
     model: ModelConfig
     trainer: TrainerConfig

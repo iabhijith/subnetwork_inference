@@ -6,7 +6,7 @@ from .base import ScoreBasedSubnetMask
 
 
 class KronckerFactoredEigenSubnetMask(ScoreBasedSubnetMask):
-    """Subnetwork mask identifying the parameters with the largest eigen values of the inverse of the posterior covariance matrix
+    """Subnetwork mask identifying the parameters with the largest eigen values of the posterior covariance matrix
     (estimated using a KFAC Laplace approximation over all model parameters).
 
     Parameters

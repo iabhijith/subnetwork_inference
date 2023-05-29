@@ -22,7 +22,7 @@ Uncertainty is the only certainty there is and it is imperative for any "intelli
 
 Neural networks (NNs) are universal function approximators [Cybenko, 1989; Hornik et al., 1989]. Recently, Deep Neural Networks (DNNs) in particular have achieved tremendous success in learning and generalizing complex patterns and relationships in the data ranging from computer vision to natural language. Yet they are prone to overfitting and are often overconfident in their predictions [Guo et al., 2017].  Uncertainty can be braodly classified into two categories - epistemic and aleatoric uncertainity. While aleatoric uncertainity is because of the noise in the data, epistemic uncertainty is caused by lack of data or distributional shift in the data. Bayesian deep learning (BDL) provides a principled framework to address epistemic uncertainity in neural networks. Additionally, bayesian deep learning also provides a way to incorporate prior knowledge into the model, systematically tune the hyperparameters and also help in addressing the problem of catastrophic forgetting [Kirkpatrick et al., 2016] in continual learning.
 
-Inspite of the theoretical advantages as mentioned above, bayesian deep learning has not been widely adopted in practice especially because of the computational challenges in estimating the posterior distribution of the parameters. In this context, the paper [Bayesian Deep Learning via Subnetwork Inference](https://arxiv.org/abs/2007.06823) by Daxberger et. al, 2021 [2] proposes a simple and cost-effective method to approximate the posterior distribution of the parameters by infering over a subset of network parameters instead of the full network parameters. They empirically show that subnetwork inference achieves considerable results on a variety of datasets. In this blogpost, we will mainly discuss the contributions of the paper by Daxberger et. al, 2021 [2] with a special emphasis on their subnetwork select strategy based on Wasserstein distance. Starting with a brief background on bayesian deep learning, we will introduce various popular methods available for estimating the posterior distribution of the parameters, their advantages and disadvantages followed by a detailed exposition of the subnetwork inference method. Finally, we will discuss two new subnetwork selection strategies that we propose as an extension and do a comparative analysis of their performance on various datasets.
+Inspite of the theoretical advantages as mentioned above, bayesian deep learning has not been widely adopted in practice especially because of the computational challenges in estimating the posterior distribution of the parameters. In this context, the paper [Bayesian Deep Learning via Subnetwork Inference](https://arxiv.org/abs/2007.06823) by Daxberger et. al, 2021 [2] proposes a simple and cost-effective method to approximate the posterior distribution of the parameters by infering over a subset of network parameters instead of the full network parameters. They empirically show that subnetwork inference achieves considerable results on a variety of datasets. In this blogpost, we will mainly discuss the contributions of the paper by Daxberger et. al, 2021 [2] with a special emphasis on their subnetwork select strategy based on Wasserstein distance [Givens et al., 1984]. Starting with a brief background on bayesian deep learning, we will introduce various popular methods available for estimating the posterior distribution of the parameters, their advantages and disadvantages followed by a detailed exposition of the subnetwork inference method. Finally, we will discuss two new subnetwork selection strategies that we propose as an extension and do a comparative analysis of their performance on various datasets.
 
 
 ## Background
@@ -120,7 +120,7 @@ p(\mathbf w | \mathcal D) \approx p(\mathbf w_S | \mathcal D) \prod_{r} \delta(\
 \end{align}
 $$
 
-The authors propose a subnetwork selection strategy based squared Wasserstein distance. Though the end goal is to choose a subnetwork such that the predictive posterior constructed from the subnetwork is close to the predictive posterior constructed from the full network, as reasoning directly in the function space is difficult  [Nalisnick & Smyth, 2018; Nalisnick et. al 2021] the authors instead propose to minimize the distance between posterior distributions in the weight space. They choose to minimize the squared Wasserstein distance between the posterior distributions of the weights instead of the KL divergence as it is not well defined for the Dirac delta distributions with disjoint support as derived in equation (10).
+The authors propose a subnetwork selection strategy based squared Wasserstein distance [(Givens et al., 1984]. Though the end goal is to choose a subnetwork such that the predictive posterior constructed from the subnetwork is close to the predictive posterior constructed from the full network, as reasoning directly in the function space is difficult  [Nalisnick & Smyth, 2018; Nalisnick et. al 2021] the authors instead propose to minimize the distance between posterior distributions in the weight space. They choose to minimize the squared Wasserstein distance between the posterior distributions of the weights instead of the KL divergence as it is not well defined for the Dirac delta distributions with disjoint support as derived in equation (10).
 
 ### Wassertein distance
 The wasserstein distance between two Gaussian distributions can be calculated using the closed-form solution as given below.
@@ -187,20 +187,26 @@ Our hypothesis is that pruning based subnetwork selection strategies shouldn't p
 
 ## Experiments and results
 ### Snelson 1D experiments
-#### Snelson 1D Negative Log Likelihood comparison
+We first implemented the above two methods and experimented on simple Snelson 1D dataset [Snelson, 2006]. We first trained a MAP model using the same procedure as proposed in the  Daxberger et al. 2021 [2]. We then applied three different subnetwork selection strategies on the trained model and compared the results. We used Negative Log Likelihood (NLL) as the metric to compare the results. The results for three different seeds are shown in the table below.
 
+#### Snelson 1D Negative Log Likelihood comparison
 
 |Seed 1 | Seed 2 | Seed 3|
 |:-------------------------:|:-------------------------:|:-------------------------:|
 |![Snelson1D_42](figures/snelson_comparison42.png) |![Snelson1D_9](figures/snelson_comparison9.png) |![Snelson1D_999](figures/snelson_comparison999.png)|
 
+OBD based strategy is the best method for this dataset. It consistently outperforms the other methods. At the start of the project, we didn't expect the pruning methods to work better than the appoach proposed by the authors as the pruning methods are not designed to retain the weights with the largest variance. One of the core ideas of the paper is that by doing a subnetwork inference over the weigts with maximum variance, uncertainty is captured better. However, on the Snelson 1D dataset, the pruning methods work better than the approach proposed by the authors. One reason for this could be that the dataset is low dimensional and the network used to model the data is too expressive and there are too many parameters with low saliency and Optimal Brain Damage is able to easily prune them out. This led to us doing some experiments on finding the overlap between the subnetworks selected by different strategies. 
+KFAC based strategy didn't outperform OBD based strategy but it consistently outperformed the method proposed by the authors. The results are inline with the hypothesis that KFAC is a more expressive approximation than diagonal approximation and is a more reliable choice for subnetwork selection. Taking into consideration the covariances between weigts within each layer seems to be important for subnetwork inference. 
+
 #### Snelson 1D predictive distributions with different subnetwork selection strategies
+The predictice distributions for the three different subnetwork selection strategies are shown below. The predictive distributions for the OBD based strategy captures the most uncertainty. This is inline with the NLL metric results. Especially, the diag laplace based strategy fails to capture the inbetween uncertainty well enough. These results are contrary to those reported in the paper.
+
 LargestVarianceDiagLaplaceSubnetMask (LVD)
 | Subnetwork Size 30| Subnetwork Size 300 | Subnetwork Size 1200 |
 |:-------------------------:|:-------------------------:|:-------------------------:|
 |![LVD_30](figures/LVD_30.png) |![LVD_300](figures/LVD_300.png) |![LVD_1200](figures/LVD_1200.png)|
 
-OptimalBrainDamageSubnetMask (OBD)
+OBDSubnetMask (OBD)
 
 | Subnetwork Size 30| Subnetwork Size 300 | Subnetwork Size 1200 |
 |:-------------------------:|:-------------------------:|:-------------------------:|
@@ -213,6 +219,11 @@ KroneckerFactoredEigenbasisSubnetMask (KFE)
 |![KFE_30](figures/KFE_30.png) |![KFE_300](figures/KFE_300.png) |![KFE_1200](figures/KFE_1200.png)|
 
 ### UCI experiments
+Encouraged by the Snelson 1D experiments, we decided to do some experiments on UCI datasets. We have used the same UCI datasets as used by the authors in their experiments.
+The results for wine, wine-gap, kin8nm and kin8nm-gap are reported below.
+
+We have run the experiments for 5 different seeds and for `n` different splits of the dataset. The results for the best split are reported below.
+
 #### Mean Negative Log Likelihood comparison on Wine dataset
 |Wine | Wine-gap |
 |:-------------------------:|:-------------------------:|
@@ -223,8 +234,10 @@ KroneckerFactoredEigenbasisSubnetMask (KFE)
 |:-------------------------:|:-------------------------:|
 |![Snelson1D_42](figures/kin8nm.png) |![Snelson1D_9](figures/kin8nm-gap.png) |
 
+The results are inline with the Snelson 1D experiments. The OBD based strategy outperforms the other methods. But KFAC based strategy consistently outperformed the method proposed by the authors.
+
 ## Conclusion
-TBA
+From the above experiments, we can conclude that the pruning methods can not be completely ruled out for subnetwork inference. But since the datasets we have used in the experiments are low dimensional, we can not say for sure that the pruning methods will work better than the approach proposed by the authors. It might be the case that the MAP models used in the experiments are too expressive for the size of the datasets and many of the weights in the network are redundant as is and pruning techniques can easily prune them out. KFAC based strategy seems to be a more reliable choice for subnetwork selection as compared to the method in the paper. It is computationally feasible for larger networks, and it also enables to do a more structured subnetwork inference by considering more complex covariances for example covariance in the same channel in a convolutional layer etc. We propose to extend the experiments to larger datasets and more complex networks and see if the results hold.
 
 ## References
 
@@ -272,5 +285,10 @@ TBA
 
 [22] Dua, D. and Graff, C. UCI machine learning repository, 2017.
 
+[23] E. Snelson and Z. Ghahramani. Sparse Gaussian processes
+using pseudo-inputs. In Advances in Neural Information
+Processing Systems 18. MIT Press, 2006.
+
+[24] Givens, C. R., Shortt, R. M., et al. A class of wasserstein metrics for probability distributions. The Michigan Mathematical Journal, 31(2):231–240, 1984.
 
  

@@ -94,7 +94,9 @@ $$
 And the normalizing constant
 
 $$
-Z \approx exp(-\mathcal L(\mathcal D, \theta_{MAP}) (2 \cdot \pi)^{\frac{D}{2}} (det(\mathbf H(\theta_{MAP}))^{-\frac{1}{2}} \tag{11}
+\begin{align}
+Z \approx \exp(-\mathcal L(\mathcal D, \theta_{MAP}) (2 \cdot \pi)^{\frac{D}{2}} (det(\mathbf H(\theta_{MAP}))^{-\frac{1}{2}} \tag{11}
+\end{align}
 $$ 
 
 where $D$ is the number of parameters in the model. But as seen above the laplace approximation involves calculating the curvature estimates which is the hessian of the loss function with respect to the model parameters and taking an inverse. Hessians can be approximated by either empirical fisher information matrix or by using a generalized gauss-newton approximation. Although, recent advances in second order optimization techniques allow for efficient computation of the hessian, it is still computationally expensive to compute the inverse of the hessian especially for large neural networks. To address this quadratic complexity of taking inverses of large hessian approximations, Daxberger et. al, 2021 [3] proposed a few alterantive methods with different levels of approximation. The most simplest approximation would be to assume a diagonal factorization by ignoring the off-diagonal elements. This approximation is called diagonal laplace approximation. Essentially it assumes that the parameters are independent like the assumptions made in MFVI. 

@@ -6,16 +6,16 @@ from .base import ScoreBasedSubnetMask
 
 
 class KronckerFactoredEigenSubnetMask(ScoreBasedSubnetMask):
-    """Subnetwork mask identifying the parameters with the largest marginal variances
-    (estimated using a diagonal Laplace approximation over all model parameters).
+    """Subnetwork mask identifying the parameters with the largest eigen values of the inverse of the posterior covariance matrix
+    (estimated using a KFAC Laplace approximation over all model parameters).
 
     Parameters
     ----------
     model : torch.nn.Module
     n_params_subnet : int
         number of parameters in the subnetwork (i.e. number of top-scoring parameters to select)
-    diag_laplace_model : `laplace.baselaplace.DiagLaplace`
-        diagonal Laplace model to use for variance estimation
+    kron_laplace_model : `laplace.baselaplace.KronLaplace`
+        Kron Laplace model to use for variance estimation
     """
 
     def __init__(self, model, n_params_subnet, kron_laplace_model):

@@ -179,7 +179,7 @@ In the original paper Daxberger et al. 2021 [2], the authors compare their metho
 We propose to use one of the second order derivatives based pruning techniques like Optimal Brain Damage (OBD) (LeCun et al., 1990) or Optimal Brain Surgery (OBS) (Hassibi et al., 1993) to first reduce the network and then apply the subnetwork inference only on the remaining weights. 
 
 This includes the following steps.
-1. Apply OBD or OBS to prune the network.
+1. Apply OBD to prune the network.
 2. Apply full covariance approximation for the pruned network.
 3. Repeat the experiments in the paper and compare the results.
 

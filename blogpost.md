@@ -22,7 +22,8 @@ Uncertainty is the only certainty there is and it is imperative for any "intelli
 
 Neural networks (NNs) are universal function approximators [Cybenko, 1989; Hornik et al., 1989]. Recently, Deep Neural Networks (DNNs) in particular have achieved tremendous success in learning and generalizing complex patterns and relationships in the data ranging from computer vision to natural language. Yet they are prone to overfitting and are often overconfident in their predictions [Guo et al., 2017].  Uncertainty can be braodly classified into two categories - epistemic and aleatoric uncertainity. While aleatoric uncertainity is because of the noise in the data, epistemic uncertainty is caused by lack of data or distributional shift in the data. Bayesian deep learning (BDL) provides a principled framework to address epistemic uncertainity in neural networks. Additionally, bayesian deep learning also provides a way to incorporate prior knowledge into the model, systematically tune the hyperparameters and also help in addressing the problem of catastrophic forgetting [Kirkpatrick et al., 2016] in continual learning.
 
-In this blogpost, we will discuss 
+Inspite of the theoretical advantages as mentioned above, bayesian deep learning has not been widely adopted in practice mainly because of the computational challenges in estimating the posterior distribution of the parameters. In this context, the paper [Bayesian Deep Learning via Subnetwork Inference](https://arxiv.org/abs/2007.06823) by Daxberger et. al, 2021 proposes a simple and cost-effective method to approximate the posterior distribution of the parameters by infering over a subset of network parameters instead of the full network parameters. They empirically show that such a subnetwork inference achieves  In this blogpost, we will mainly discuss the contributions of the paper by Daxberger et. al, 2021 with a special emphasis on subnetwork select strategy based on Wasserstein distance. 
+
 
 ## Background
 
@@ -179,20 +180,39 @@ Our hypothesis is that pruning based subnetwork selection strategies shouldn't p
 ### Snelson 1D experiments
 #### Snelson 1D Negative Log Likelihood comparison
 
-| | | |
+
+|Seed 1 | Seed 2 | Seed 3|
 |:-------------------------:|:-------------------------:|:-------------------------:|
 |![Snelson1D_42](figures/snelson_comparison42.png) |![Snelson1D_9](figures/snelson_comparison9.png) |![Snelson1D_999](figures/snelson_comparison999.png)|
 
 #### Snelson 1D predictive distributions with different subnetwork selection strategies
-
-| | | |
+LargestVarianceDiagLaplaceSubnetMask (LVD)
+| Subnetwork Size 30| Subnetwork Size 300 | Subnetwork Size 1200 |
 |:-------------------------:|:-------------------------:|:-------------------------:|
 |![LVD_30](figures/LVD_30.png) |![LVD_300](figures/LVD_300.png) |![LVD_1200](figures/LVD_1200.png)|
+
+OptimalBrainDamageSubnetMask (OBD)
+
+| Subnetwork Size 30| Subnetwork Size 300 | Subnetwork Size 1200 |
+|:-------------------------:|:-------------------------:|:-------------------------:|
 |![OBD_30](figures/OBD_30.png) |![OBD_300](figures/OBD_300.png) |![OBD_1200](figures/OBD_1200.png)|
+
+KroneckerFactoredEigenbasisSubnetMask (KFE)
+
+| Subnetwork Size 30| Subnetwork Size 300 | Subnetwork Size 1200 |
+|:-------------------------:|:-------------------------:|:-------------------------:|
 |![KFE_30](figures/KFE_30.png) |![KFE_300](figures/KFE_300.png) |![KFE_1200](figures/KFE_1200.png)|
 
 ### UCI experiments
+#### Mean Negative Log Likelihood comparison on Wine dataset
+|Standard | Gap |
+|:-------------------------:|:-------------------------:|
+|![Snelson1D_42](figures/wine.png) |![Snelson1D_9](figures/wine-gap.png) |
 
+#### Mean Negative Log Likelihood comparison on Wine dataset
+|Standard | Gap |
+|:-------------------------:|:-------------------------:|
+|![Snelson1D_42](figures/kin8nm.png) |![Snelson1D_9](figures/kin8nm-gap.png) |
 
 ## Conclusion
 TBA

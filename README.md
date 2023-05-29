@@ -25,7 +25,7 @@
     - The results are stored in the `results` folder
     - The models are stored in the `checkpoints` folder
 
-- The code can also be run locally (suggested to run on a gpu)
+- The code can also be run locally (suggest to run on a gpu)
     - To run the code locally use `python main.py`
     - The hyperparameters can be configured using the `configuration/uci.yaml` file 
     - Alternatively, the hyperparameters be configured using the command line
@@ -40,6 +40,10 @@
 ## Running the Snelson1D experiments
 - The experiments can be reproduced by running the `snelson1d.ipynb` notebook
 - The notebook can only be run locally. Please ensure that the environment is installed locally
+- The predictive distribution plots are stored in the `figures` folder
+- The experiments can be run for different seeds by changing the `seed` variable in the `configuration/snelson.yaml` file.
+- Any other hyperparameters can be changed in the `configuration/snelson.yaml` file directly
+
 
 ## Running the additional experiments
 - The experiments can be reproduced by running the `subnetwork_analysis.ipynb` notebook

@@ -1,7 +1,7 @@
-seed: 42
+seed: 999
 
 data:
-  seed: 42
+  seed: 999
   path: data/SPGP
   name: snelson1d
   val_size: 0.15

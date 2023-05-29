@@ -18,9 +18,13 @@ tags: [Bayesian Neural Networks, Deep Learning, Uncertainity, Active Learning, R
 
 ## Introduction
 
-Uncertainty is the only certainty there is and it is imperative for any "intelligent" system to recognize and account for the uncertainty inherent in the world around it. In recent years machine learning and deep learning models have become ubiquitous with wide-ranging applications from medical diagosis to self-driving cars. Many of these models are trained on data which is often noisy and incomplete. This leads to uncertainty in the model's predictions. Therefore, it is essential to measure the uncertainty and have human supervision in the loop especially when the model is deployed for making decisions in safety-critical applications.
+Uncertainty is the only certainty there is and it is imperative for any "intelligent" system to recognize and account for the uncertainty inherent in the world around it. In recent years machine learning and deep learning models have become ubiquitous with wide-ranging applications from medical diagosis to self-driving cars. Many of these models are trained on data which is often noisy, incomplete and susceptible to distributional shifts . This leads to uncertainty in the model's predictions. Therefore, it is essential to measure the uncertainty and have human supervision in the loop especially when the model is deployed for making decisions in safety-critical applications.
 
 Neural networks (NNs) are universal function approximators [Cybenko, 1989; Hornik et al., 1989]. Recently, Deep Neural Networks (DNNs) in particular have achieved tremendous success in learning and generalizing complex patterns and relationships in the data ranging from computer vision to natural language. Yet they are prone to overfitting and are often overconfident in their predictions [Guo et al., 2017].  Uncertainty can be braodly classified into two categories - epistemic and aleatoric uncertainity. While aleatoric uncertainity is because of the noise in the data, epistemic uncertainty is caused by lack of data or distributional shift in the data. Bayesian deep learning (BDL) provides a principled framework to address epistemic uncertainity in neural networks. Additionally, bayesian deep learning also provides a way to incorporate prior knowledge into the model, systematically tune the hyperparameters and also help in addressing the problem of catastrophic forgetting [Kirkpatrick et al., 2016] in continual learning.
+
+In this blogpost, we will discuss 
+
+## Background
 
 From a probabilistic standpoint, optimizing a neural network is equivalent to finding a point estimate of the parameters of the network. Depending on the loss function used for optimization, it can either viewed as a Maximum Likelihood Estimate (MLE) or a Maximum A Posteriori (MAP) estimate. In either case the uncertainty in the parameters of the model is not captured. Bayesian deep learning on the other hand moves towards estimating the distribution of the parameters. In the bayesian paradigm, given a dataset $\mathcal D = \{(\mathbf x_i, y_i)\}_{i=1}^N$, the goal is to estimate the posterior distribution of the parameters $\mathbf w$ given the data $\mathcal D$. Assuming a prior distribution $p(\mathbf w)$, the posterior distribution is given by
 
@@ -41,7 +45,6 @@ $$
 
 Although theoritically it is quite convincing, there are few challenges in the practical implementation of bayesian framework. The posteriors involve integrations over the entire parameter space and considering the size of modern neural network architectures, more often than not it is computationally infeasible. Thus, it is necessary to adopt some form of approximation using inference methods like Mean Field Variational Inference (MFVI), Laplace Approximation (LA) or Markov Chain Monte Carlo (MCMC) to estimate the posterior distribution. Alternatively, one can approach the uncertainty in the models using non-bayesian methods like Monte Carlo Dropout (MC Dropout) [Gal and Ghahramani, 2016] and Deep Ensembles [Lakshminarayanan et al., 2017]. 
 
-## Background
 
 MCMC methods are a class of alogirthms based on sampling and are considered to be gold standard for estimating the posterior distribution. In the limit of number of samples, the estimated distribution theoritically converges to the true distribution. But practically, in very high dimensional spaces sampling is computationally expensive and do not scale well to large neural networks. 
 
@@ -173,7 +176,22 @@ Our hypothesis is that pruning based subnetwork selection strategies shouldn't p
 
 
 ## Experiments and results
-TBA
+### Snelson 1D experiments
+#### Snelson 1D Negative Log Likelihood comparison
+
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|![Snelson1D_42](figures/snelson_comparison42.png) |![Snelson1D_9](figures/snelson_comparison9.png) |![Snelson1D_999](figures/snelson_comparison999.png)|
+
+#### Snelson 1D predictive distributions with different subnetwork selection strategies
+
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|![LVD_30](figures/LVD_30.png) |![LVD_300](figures/LVD_300.png) |![LVD_1200](figures/LVD_1200.png)|
+|![OBD_30](figures/OBD_30.png) |![OBD_300](figures/OBD_300.png) |![OBD_1200](figures/OBD_1200.png)|
+|![KFE_30](figures/KFE_30.png) |![KFE_300](figures/KFE_300.png) |![KFE_1200](figures/KFE_1200.png)|
+
+### UCI experiments
 
 
 ## Conclusion

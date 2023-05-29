@@ -57,21 +57,21 @@ Laplace Approximation (LA) is a simple and cost-effective [Daxberger et. al, 202
 
 $$
 \begin{align}
-\theta_{MAP} &= \arg \min_{\theta} \mathcal L(\mathcal D, \theta) \tag{3} \\
-&= \arg \min_{\theta} -  \log p(\mathcal D | \theta) - \log p(\theta) \tag{4} \\
+\mathbf \theta_{MAP} &= \arg \min_{\mathbf \theta} \mathcal L(\mathcal D, \mathbf \theta) \tag{3} \\
+&= \arg \min_{\mathbf \theta} -  \log p(\mathcal D |\mathbf  \theta) - \log p(\mathbf \theta) \tag{4} \\
 \end{align} 
 $$
 
-Using Taylor expansion around $\theta_{MAP}$, and ignoring the higher order terms, we can write  $\mathcal L(\mathcal D, \theta)$ as follows.
+Using Taylor expansion around $\theta_{MAP}$, and ignoring the higher order terms, we can write  $\mathcal L(\mathcal D, \mathbf  \theta)$ as follows.
 
 $$
-\mathcal L(\mathcal D, \theta) \approx \mathcal L(\mathcal D, \theta_{MAP}) + \frac{1}{2} (\theta - \theta_{MAP})^T \mathbf H(\theta_{MAP}) (\theta - \theta_{MAP}) \tag{5}
+\mathcal L(\mathcal D, \mathbf  \theta) \approx \mathcal L(\mathcal D, \mathbf  \theta_{MAP}) + \frac{1}{2} (\mathbf  \theta - \mathbf \theta_{MAP})^T \mathbf H(\mathbf \theta_{MAP}) (\mathbf \theta - \mathbf \theta_{MAP}) \tag{5}
 $$
 
-where $\mathbf H(\theta_{MAP})$ is the Hessian matrix of the loss function evaluated at $\theta_{MAP}$. The first-order term vanishes as $\theta_{MAP}$ is the local minimum. 
+where $\mathbf H(\mathbf \theta_{MAP})$ is the Hessian matrix of the loss function evaluated at $\mathbf  \theta_{MAP}$. The first-order term vanishes as $\mathbf  \theta_{MAP}$ is the local minimum. 
 
 $$
-\mathcal L(\mathcal D, \theta) \approx  \frac{1}{2} (\theta - \theta_{MAP})^T \mathbf H(\theta_{MAP}) (\theta - \theta_{MAP}) \tag{6}
+\mathcal L(\mathcal D, \mathbf  \theta) \approx  \frac{1}{2} (\mathbf  \theta - \theta_{MAP})^T \mathbf H(\mathbf  \theta_{MAP}) (\mathbf \theta - \mathbf  \theta_{MAP}) \tag{6}
 $$
 
 But as described in the equation (1) the posterior distribution is given by,
@@ -80,21 +80,21 @@ $$
 \begin{align}
 p(\theta | \mathcal D) &= \frac{1}{Z} p(\mathcal D | \theta) p(\theta) \tag{7} \\
 &= \frac{1}{Z} \exp(-\mathcal L(\mathcal D, \theta)) \tag{8} \\
-&= \frac{1}{Z} \exp(-\frac{1}{2} (\theta - \theta_{MAP})^T \mathbf H(\theta_{MAP}) (\theta - \theta_{MAP})) \tag{9} \\
+&= \frac{1}{Z} \exp(-\frac{1}{2} (\mathbf  \theta - \mathbf \theta_{MAP})^T \mathbf H(\mathbf \theta_{MAP}) (\mathbf \theta - \mathbf \theta_{MAP})) \tag{9} \\
 \end{align}
 $$
 where $Z$ is the normalizing constant. From the above derivation, we can identify the laplace approximation as follows.
 
 $$
 \begin{align}
-p(\theta | \mathcal D) &= \mathcal N(\theta ; \theta_{MAP}, \mathbf H(\theta_{MAP})^{-1}) \tag{10} \\
+p(\theta | \mathcal D) &= \mathcal N(\mathbf  \theta ; \mathbf  \theta_{MAP}, \mathbf H(\mathbf  \theta_{MAP})^{-1}) \tag{10} \\
 \end{align}
 $$
 
 And the normalizing constant
 
 $$
-Z \approx exp(-\mathcal L(\mathcal D, \theta_{MAP}) (2 \cdot \pi)^{\frac{D}{2}} (det(\mathbf H(\theta_{MAP}))^{-\frac{1}{2}} \tag{11}
+Z \approx exp(-\mathcal L(\mathcal D, \mathbf  \theta_{MAP}) (2 \cdot \pi)^{\frac{D}{2}} (det(\mathbf H(\mathbf  \theta_{MAP}))^{-\frac{1}{2}} \tag{11}
 $$ 
 
 where $D$ is the number of parameters in the model. But as seen above the laplace approximation involves calculating the curvature estimates which is the hessian of the loss function with respect to the model parameters and taking an inverse. Hessians can be approximated by either empirical fisher information matrix or by using a generalized gauss-newton approximation. Although, recent advances in second order optimization techniques allow for efficient computation of the hessian, it is still computationally expensive to compute the inverse of the hessian especially for large neural networks. To address this quadratic complexity of taking inverses of large hessian approximations, Daxberger et. al, 2021 [3] proposed a few alterantive methods with different levels of approximation. The most simplest approximation would be to assume a diagonal factorization by ignoring the off-diagonal elements. This approximation is called diagonal laplace approximation. Essentially it assumes that the parameters are independent like the assumptions made in MFVI. 

@@ -131,7 +131,7 @@ W_2(\mathcal N(\mathbf u_1, \Sigma_1), \mathcal N(\mathbf u_1, \Sigma_1)) = \Ver
 \end{align}
 $$
 
-Largest variance diagonal laplace approximation (LVD)
+### Largest variance diagonal laplace approximation (LVD)
 
 For the linearized laplace approximation that the authors use, the posterior distribution of the weights is approximately Gaussian or in some cases a true Gaussian. Thus, the Wasserstein distance between the posterior distributions of the weights can be calculated using the above closed-form solution. But this is still not computationally feasible for large neural networks as we can not compute the full covariance matrix in the first place. To address this issue, the authors propose to use a diagonal approximation of the covariance matrix of the full network at the subnetwork selection stage and once the subnetwork is selected, they propose to use a more expressive covariance approximation for the subnetwork. 
 

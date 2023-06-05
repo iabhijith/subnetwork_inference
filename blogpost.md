@@ -182,6 +182,8 @@ $$
 \Delta \mathcal L_{OBD} = \frac{1}{2} (\theta_i^*)^2 H_{ii}
 $$
 
+where $H$ is the Hessian matrix.
+
 
 This includes the following steps.
 1. Apply OBD to find the weight indices with maximum saliency.
@@ -192,7 +194,7 @@ Our hypothesis is that pruning based subnetwork selection strategies shouldn't p
 
 ## Experiments and results
 ### Snelson 1D experiments
-We first implemented the above two methods and experimented on simple Snelson 1D dataset (Snelson, 2006 [[23]](#references)). The dataset is split in-between to create a train and test set as done in Foong et al. 2019 [[4]](#references). We first trained a MAP model using the same procedure as proposed in the  Daxberger et al. 2021 [[2]](#references). We then applied three different subnetwork selection strategies on the trained model and compared the results. We used Negative Log Likelihood (NLL) as the metric to compare the results.  Negative log likelihood is defined as follows.
+We first implemented the above two methods and experimented on simple Snelson 1D dataset (Snelson, 2006 [[23]](#references)). The dataset is split in-between to create a train and test set as done in Foong et al. 2019 [[4]](#references). We first trained a MAP model using the same procedure as proposed in the  Daxberger et al. 2021 [[2]](#references). We have trained a model with 2 hidden layers with 50 hidden units each for 500 epochs and with a learning rate of 1E-3.  We then applied three different subnetwork selection strategies on the trained model and compared the results. We used Negative Log Likelihood (NLL) as the metric to compare the results.  Negative log likelihood is defined as follows.
 
 $$
 NLL = -\frac{1}{N}\sum_{i=1}^{N} \log \mathbb E_{\mathbf w \sim p(\mathbf w | \mathcal D) } p(y_i|x_i, \mathbf w)
@@ -231,7 +233,7 @@ KroneckerFactoredEigenbasisSubnetMask (KFE)
 |![KFE_30](figures/KFE_30.png) |![KFE_300](figures/KFE_300.png) |![KFE_1200](figures/KFE_1200.png)|
 
 ### UCI experiments
-Encouraged by the Snelson 1D experiments, we decided to do some experiments on UCI datasets. We have used the same UCI datasets as used by the authors in their experiments. For more details on the datasets refer to the appendix of Daxberger et al. 2021 [[2]](#references). 
+Encouraged by the Snelson 1D experiments, we decided to do some experiments on UCI datasets. We have used the same UCI datasets as used by the authors in their experiments. For more details on the datasets refer to the appendix of Daxberger et al. 2021 [[2]](#references). We have trained a MAP model with 2 hidden layers with 50 hidden units each for 2000 epochs and with a learning rate of 1E-3. The training procedure is early stopped with a patience of 100 epochs.
 
 The results for wine, wine-gap, kin8nm and kin8nm-gap are reported below.
 

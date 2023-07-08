@@ -13,7 +13,7 @@ from enum import Enum, auto
 from pathlib import Path
 from collections import defaultdict
 from laplace.utils import LargestVarianceDiagLaplaceSubnetMask
-from strategies.pruning import OBDSubnetMask
+from strategies.pruning import OBDSubnetMask, SPRSubnetMask, MNSubnetMask
 from strategies.kfe import KronckerFactoredEigenSubnetMask
 
 from hydra.core.config_store import ConfigStore
@@ -22,7 +22,7 @@ from omegaconf import OmegaConf
 from configuration.config import ExperimentConfig
 from models.nets import create_mlp
 from data.uci_datasets import UCIData
-from trainer import ModelTrainer
+from regression_trainer import ModelTrainer
 from metrics import nll_bayesian, nll_map
 
 cs = ConfigStore.instance()
@@ -40,6 +40,9 @@ class Strategy(Enum):
     OBD = auto()
     KFE = auto()
     LVD = auto()
+    SPR = auto()
+    MN = auto()
+
 
 
 def model_paths(config: ExperimentConfig):
@@ -296,6 +299,36 @@ def main(config: ExperimentConfig) -> None:
                 )
 
                 subnetwork_mask = OBDSubnetMask(
+                    model_for_selection,
+                    n_params_subnet=config.trainer.la.subset_size,
+                    diag_laplace_model=laplace_model_for_selection,
+                )
+            elif config.trainer.la.selection_strategy == Strategy.SPR.name:
+                laplace_model_for_selection = Laplace(
+                    model=model_for_selection,
+                    likelihood="regression",
+                    subset_of_weights="all",
+                    hessian_structure="diag",
+                    sigma_noise=sigma,
+                    prior_mean=config.trainer.la.prior_mean,
+                )
+
+                subnetwork_mask = SPRSubnetMask(
+                    model_for_selection,
+                    n_params_subnet=config.trainer.la.subset_size,
+                    diag_laplace_model=laplace_model_for_selection,
+                )
+            elif config.trainer.la.selection_strategy == Strategy.MN.name:
+                laplace_model_for_selection = Laplace(
+                    model=model_for_selection,
+                    likelihood="regression",
+                    subset_of_weights="all",
+                    hessian_structure="diag",
+                    sigma_noise=sigma,
+                    prior_mean=config.trainer.la.prior_mean,
+                )
+
+                subnetwork_mask = MNSubnetMask(
                     model_for_selection,
                     n_params_subnet=config.trainer.la.subset_size,
                     diag_laplace_model=laplace_model_for_selection,

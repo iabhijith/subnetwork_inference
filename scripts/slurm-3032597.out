@@ -1,0 +1,235 @@
+[2023-07-07 17:13:41,430][HYDRA] Launching 55 jobs locally
+[2023-07-07 17:13:41,430][HYDRA] 	#0 : trainer.model_type=MAP seed=0 data.name=wine data.split=GAP data.split_index=0
+[2023-07-07 17:13:41,682][main][INFO] - Using device: cuda
+[2023-07-07 17:13:43,617][main][INFO] - Training MAP model
+[2023-07-07 17:13:54,911][main][INFO] - Test NLL=1.165354401897407, Test RMSE=0.7644750236936293
+[2023-07-07 17:13:54,913][HYDRA] 	#1 : trainer.model_type=MAP seed=0 data.name=wine data.split=GAP data.split_index=1
+[2023-07-07 17:13:55,001][main][INFO] - Using device: cuda
+[2023-07-07 17:13:55,320][main][INFO] - Training MAP model
+[2023-07-07 17:14:03,867][main][INFO] - Test NLL=1.1333635135005595, Test RMSE=0.7423688036112346
+[2023-07-07 17:14:03,868][HYDRA] 	#2 : trainer.model_type=MAP seed=0 data.name=wine data.split=GAP data.split_index=2
+[2023-07-07 17:14:03,954][main][INFO] - Using device: cuda
+[2023-07-07 17:14:04,302][main][INFO] - Training MAP model
+[2023-07-07 17:14:09,340][main][INFO] - Test NLL=1.0774938060281325, Test RMSE=0.6979275503903776
+[2023-07-07 17:14:09,341][HYDRA] 	#3 : trainer.model_type=MAP seed=0 data.name=wine data.split=GAP data.split_index=3
+[2023-07-07 17:14:09,429][main][INFO] - Using device: cuda
+[2023-07-07 17:14:09,771][main][INFO] - Training MAP model
+[2023-07-07 17:14:20,189][main][INFO] - Test NLL=1.2313681127373541, Test RMSE=0.7932792800482406
+[2023-07-07 17:14:20,191][HYDRA] 	#4 : trainer.model_type=MAP seed=0 data.name=wine data.split=GAP data.split_index=4
+[2023-07-07 17:14:20,279][main][INFO] - Using device: cuda
+[2023-07-07 17:14:20,609][main][INFO] - Training MAP model
+[2023-07-07 17:14:27,344][main][INFO] - Test NLL=1.0393981250215636, Test RMSE=0.6670649271317022
+[2023-07-07 17:14:27,345][HYDRA] 	#5 : trainer.model_type=MAP seed=0 data.name=wine data.split=GAP data.split_index=5
+[2023-07-07 17:14:27,431][main][INFO] - Using device: cuda
+[2023-07-07 17:14:27,760][main][INFO] - Training MAP model
+[2023-07-07 17:14:33,767][main][INFO] - Test NLL=1.1559088466530558, Test RMSE=0.7597681744657876
+[2023-07-07 17:14:33,768][HYDRA] 	#6 : trainer.model_type=MAP seed=0 data.name=wine data.split=GAP data.split_index=6
+[2023-07-07 17:14:33,854][main][INFO] - Using device: cuda
+[2023-07-07 17:14:34,196][main][INFO] - Training MAP model
+[2023-07-07 17:14:43,622][main][INFO] - Test NLL=1.250199387848242, Test RMSE=0.8123066865452117
+[2023-07-07 17:14:43,623][HYDRA] 	#7 : trainer.model_type=MAP seed=0 data.name=wine data.split=GAP data.split_index=7
+[2023-07-07 17:14:43,708][main][INFO] - Using device: cuda
+[2023-07-07 17:14:44,039][main][INFO] - Training MAP model
+[2023-07-07 17:14:55,402][main][INFO] - Test NLL=1.2063355748259703, Test RMSE=0.7746894342263027
+[2023-07-07 17:14:55,404][HYDRA] 	#8 : trainer.model_type=MAP seed=0 data.name=wine data.split=GAP data.split_index=8
+[2023-07-07 17:14:55,491][main][INFO] - Using device: cuda
+[2023-07-07 17:14:55,811][main][INFO] - Training MAP model
+[2023-07-07 17:15:05,689][main][INFO] - Test NLL=1.1576789305826394, Test RMSE=0.7532357702959951
+[2023-07-07 17:15:05,690][HYDRA] 	#9 : trainer.model_type=MAP seed=0 data.name=wine data.split=GAP data.split_index=9
+[2023-07-07 17:15:05,824][main][INFO] - Using device: cuda
+[2023-07-07 17:15:06,144][main][INFO] - Training MAP model
+[2023-07-07 17:15:11,769][main][INFO] - Test NLL=1.1239494696023793, Test RMSE=0.7367987349127675
+[2023-07-07 17:15:11,770][HYDRA] 	#10 : trainer.model_type=MAP seed=0 data.name=wine data.split=GAP data.split_index=10
+[2023-07-07 17:15:11,856][main][INFO] - Using device: cuda
+[2023-07-07 17:15:12,184][main][INFO] - Training MAP model
+[2023-07-07 17:15:22,078][main][INFO] - Test NLL=1.2815188894958816, Test RMSE=0.8113889419589564
+[2023-07-07 17:15:22,079][HYDRA] 	#11 : trainer.model_type=MAP seed=1 data.name=wine data.split=GAP data.split_index=0
+[2023-07-07 17:15:22,164][main][INFO] - Using device: cuda
+[2023-07-07 17:15:22,500][main][INFO] - Training MAP model
+[2023-07-07 17:15:29,417][main][INFO] - Test NLL=1.1531326353879041, Test RMSE=0.7559317389718007
+[2023-07-07 17:15:29,418][HYDRA] 	#12 : trainer.model_type=MAP seed=1 data.name=wine data.split=GAP data.split_index=1
+[2023-07-07 17:15:29,502][main][INFO] - Using device: cuda
+[2023-07-07 17:15:29,848][main][INFO] - Training MAP model
+[2023-07-07 17:15:40,629][main][INFO] - Test NLL=1.1956722906452266, Test RMSE=0.7611966779000152
+[2023-07-07 17:15:40,630][HYDRA] 	#13 : trainer.model_type=MAP seed=1 data.name=wine data.split=GAP data.split_index=2
+[2023-07-07 17:15:40,716][main][INFO] - Using device: cuda
+[2023-07-07 17:15:41,060][main][INFO] - Training MAP model
+[2023-07-07 17:15:46,011][main][INFO] - Test NLL=1.095345559549011, Test RMSE=0.7094529846919599
+[2023-07-07 17:15:46,012][HYDRA] 	#14 : trainer.model_type=MAP seed=1 data.name=wine data.split=GAP data.split_index=3
+[2023-07-07 17:15:46,098][main][INFO] - Using device: cuda
+[2023-07-07 17:15:46,440][main][INFO] - Training MAP model
+[2023-07-07 17:15:57,238][main][INFO] - Test NLL=1.2644428376960344, Test RMSE=0.8032193938000329
+[2023-07-07 17:15:57,240][HYDRA] 	#15 : trainer.model_type=MAP seed=1 data.name=wine data.split=GAP data.split_index=4
+[2023-07-07 17:15:57,326][main][INFO] - Using device: cuda
+[2023-07-07 17:15:57,668][main][INFO] - Training MAP model
+[2023-07-07 17:16:04,151][main][INFO] - Test NLL=1.0524216588407984, Test RMSE=0.6800629553755712
+[2023-07-07 17:16:04,152][HYDRA] 	#16 : trainer.model_type=MAP seed=1 data.name=wine data.split=GAP data.split_index=5
+[2023-07-07 17:16:04,236][main][INFO] - Using device: cuda
+[2023-07-07 17:16:04,563][main][INFO] - Training MAP model
+[2023-07-07 17:16:10,913][main][INFO] - Test NLL=1.1797858450644356, Test RMSE=0.7773836552893074
+[2023-07-07 17:16:10,914][HYDRA] 	#17 : trainer.model_type=MAP seed=1 data.name=wine data.split=GAP data.split_index=6
+[2023-07-07 17:16:10,998][main][INFO] - Using device: cuda
+[2023-07-07 17:16:11,337][main][INFO] - Training MAP model
+[2023-07-07 17:16:18,940][main][INFO] - Test NLL=1.2237957126498513, Test RMSE=0.80511191770324
+[2023-07-07 17:16:18,941][HYDRA] 	#18 : trainer.model_type=MAP seed=1 data.name=wine data.split=GAP data.split_index=7
+[2023-07-07 17:16:19,026][main][INFO] - Using device: cuda
+[2023-07-07 17:16:19,360][main][INFO] - Training MAP model
+[2023-07-07 17:16:28,843][main][INFO] - Test NLL=1.1985553729870129, Test RMSE=0.7709695606651772
+[2023-07-07 17:16:28,844][HYDRA] 	#19 : trainer.model_type=MAP seed=1 data.name=wine data.split=GAP data.split_index=8
+[2023-07-07 17:16:28,929][main][INFO] - Using device: cuda
+[2023-07-07 17:16:29,275][main][INFO] - Training MAP model
+[2023-07-07 17:16:39,710][main][INFO] - Test NLL=1.1505968261102333, Test RMSE=0.7512357571437492
+[2023-07-07 17:16:39,710][HYDRA] 	#20 : trainer.model_type=MAP seed=1 data.name=wine data.split=GAP data.split_index=9
+[2023-07-07 17:16:39,795][main][INFO] - Using device: cuda
+[2023-07-07 17:16:40,154][main][INFO] - Training MAP model
+[2023-07-07 17:16:47,860][main][INFO] - Test NLL=1.1426303343191455, Test RMSE=0.7442276610439146
+[2023-07-07 17:16:47,861][HYDRA] 	#21 : trainer.model_type=MAP seed=1 data.name=wine data.split=GAP data.split_index=10
+[2023-07-07 17:16:47,948][main][INFO] - Using device: cuda
+[2023-07-07 17:16:48,276][main][INFO] - Training MAP model
+[2023-07-07 17:16:55,560][main][INFO] - Test NLL=1.234130903253443, Test RMSE=0.8014319319504362
+[2023-07-07 17:16:55,561][HYDRA] 	#22 : trainer.model_type=MAP seed=2 data.name=wine data.split=GAP data.split_index=0
+[2023-07-07 17:16:55,646][main][INFO] - Using device: cuda
+[2023-07-07 17:16:55,972][main][INFO] - Training MAP model
+[2023-07-07 17:17:01,412][main][INFO] - Test NLL=1.1508368980298314, Test RMSE=0.7545772242832017
+[2023-07-07 17:17:01,413][HYDRA] 	#23 : trainer.model_type=MAP seed=2 data.name=wine data.split=GAP data.split_index=1
+[2023-07-07 17:17:01,496][main][INFO] - Using device: cuda
+[2023-07-07 17:17:01,816][main][INFO] - Training MAP model
+[2023-07-07 17:17:12,060][main][INFO] - Test NLL=1.1575827423384752, Test RMSE=0.746469410987559
+[2023-07-07 17:17:12,061][HYDRA] 	#24 : trainer.model_type=MAP seed=2 data.name=wine data.split=GAP data.split_index=2
+[2023-07-07 17:17:12,146][main][INFO] - Using device: cuda
+[2023-07-07 17:17:12,513][main][INFO] - Training MAP model
+[2023-07-07 17:17:17,605][main][INFO] - Test NLL=1.0819733799762792, Test RMSE=0.7021902737125193
+[2023-07-07 17:17:17,606][HYDRA] 	#25 : trainer.model_type=MAP seed=2 data.name=wine data.split=GAP data.split_index=3
+[2023-07-07 17:17:17,690][main][INFO] - Using device: cuda
+[2023-07-07 17:17:18,033][main][INFO] - Training MAP model
+[2023-07-07 17:17:29,460][main][INFO] - Test NLL=1.301674894245876, Test RMSE=0.8128382348814579
+[2023-07-07 17:17:29,461][HYDRA] 	#26 : trainer.model_type=MAP seed=2 data.name=wine data.split=GAP data.split_index=4
+[2023-07-07 17:17:29,545][main][INFO] - Using device: cuda
+[2023-07-07 17:17:29,943][main][INFO] - Training MAP model
+[2023-07-07 17:17:39,199][main][INFO] - Test NLL=1.0260755747113195, Test RMSE=0.662624216105144
+[2023-07-07 17:17:39,200][HYDRA] 	#27 : trainer.model_type=MAP seed=2 data.name=wine data.split=GAP data.split_index=5
+[2023-07-07 17:17:39,285][main][INFO] - Using device: cuda
+[2023-07-07 17:17:39,629][main][INFO] - Training MAP model
+[2023-07-07 17:17:46,193][main][INFO] - Test NLL=1.1657977417486443, Test RMSE=0.7681837882752572
+[2023-07-07 17:17:46,194][HYDRA] 	#28 : trainer.model_type=MAP seed=2 data.name=wine data.split=GAP data.split_index=6
+[2023-07-07 17:17:46,280][main][INFO] - Using device: cuda
+[2023-07-07 17:17:46,621][main][INFO] - Training MAP model
+[2023-07-07 17:17:55,597][main][INFO] - Test NLL=1.2402773147058166, Test RMSE=0.8026807663087073
+[2023-07-07 17:17:55,598][HYDRA] 	#29 : trainer.model_type=MAP seed=2 data.name=wine data.split=GAP data.split_index=7
+[2023-07-07 17:17:55,682][main][INFO] - Using device: cuda
+[2023-07-07 17:17:56,020][main][INFO] - Training MAP model
+[2023-07-07 17:18:08,534][main][INFO] - Test NLL=1.2811731768690908, Test RMSE=0.7981861330849513
+[2023-07-07 17:18:08,535][HYDRA] 	#30 : trainer.model_type=MAP seed=2 data.name=wine data.split=GAP data.split_index=8
+[2023-07-07 17:18:08,619][main][INFO] - Using device: cuda
+[2023-07-07 17:18:08,982][main][INFO] - Training MAP model
+[2023-07-07 17:18:19,928][main][INFO] - Test NLL=1.1651842273859143, Test RMSE=0.7549559507358142
+[2023-07-07 17:18:19,929][HYDRA] 	#31 : trainer.model_type=MAP seed=2 data.name=wine data.split=GAP data.split_index=9
+[2023-07-07 17:18:20,013][main][INFO] - Using device: cuda
+[2023-07-07 17:18:20,375][main][INFO] - Training MAP model
+[2023-07-07 17:18:26,765][main][INFO] - Test NLL=1.1364103616665155, Test RMSE=0.7458987879254708
+[2023-07-07 17:18:26,766][HYDRA] 	#32 : trainer.model_type=MAP seed=2 data.name=wine data.split=GAP data.split_index=10
+[2023-07-07 17:18:26,850][main][INFO] - Using device: cuda
+[2023-07-07 17:18:27,179][main][INFO] - Training MAP model
+[2023-07-07 17:18:35,185][main][INFO] - Test NLL=1.2506608817382214, Test RMSE=0.8029698842834005
+[2023-07-07 17:18:35,186][HYDRA] 	#33 : trainer.model_type=MAP seed=3 data.name=wine data.split=GAP data.split_index=0
+[2023-07-07 17:18:35,270][main][INFO] - Using device: cuda
+[2023-07-07 17:18:35,637][main][INFO] - Training MAP model
+[2023-07-07 17:18:40,747][main][INFO] - Test NLL=1.1540460219093167, Test RMSE=0.7589075575211984
+[2023-07-07 17:18:40,748][HYDRA] 	#34 : trainer.model_type=MAP seed=3 data.name=wine data.split=GAP data.split_index=1
+[2023-07-07 17:18:40,832][main][INFO] - Using device: cuda
+[2023-07-07 17:18:41,160][main][INFO] - Training MAP model
+[2023-07-07 17:18:50,959][main][INFO] - Test NLL=1.1677148629937921, Test RMSE=0.7568057987267044
+[2023-07-07 17:18:50,960][HYDRA] 	#35 : trainer.model_type=MAP seed=3 data.name=wine data.split=GAP data.split_index=2
+[2023-07-07 17:18:51,046][main][INFO] - Using device: cuda
+[2023-07-07 17:18:51,365][main][INFO] - Training MAP model
+[2023-07-07 17:18:56,293][main][INFO] - Test NLL=1.0962239505496802, Test RMSE=0.7059707187726444
+[2023-07-07 17:18:56,294][HYDRA] 	#36 : trainer.model_type=MAP seed=3 data.name=wine data.split=GAP data.split_index=3
+[2023-07-07 17:18:56,377][main][INFO] - Using device: cuda
+[2023-07-07 17:18:56,728][main][INFO] - Training MAP model
+[2023-07-07 17:19:08,791][main][INFO] - Test NLL=1.3115921061321039, Test RMSE=0.815300826062751
+[2023-07-07 17:19:08,792][HYDRA] 	#37 : trainer.model_type=MAP seed=3 data.name=wine data.split=GAP data.split_index=4
+[2023-07-07 17:19:08,876][main][INFO] - Using device: cuda
+[2023-07-07 17:19:09,239][main][INFO] - Training MAP model
+[2023-07-07 17:19:15,944][main][INFO] - Test NLL=1.0544144810488656, Test RMSE=0.6810940434365222
+[2023-07-07 17:19:15,944][HYDRA] 	#38 : trainer.model_type=MAP seed=3 data.name=wine data.split=GAP data.split_index=5
+[2023-07-07 17:19:16,028][main][INFO] - Using device: cuda
+[2023-07-07 17:19:16,356][main][INFO] - Training MAP model
+[2023-07-07 17:19:22,689][main][INFO] - Test NLL=1.1669250794075705, Test RMSE=0.7708873084023911
+[2023-07-07 17:19:22,690][HYDRA] 	#39 : trainer.model_type=MAP seed=3 data.name=wine data.split=GAP data.split_index=6
+[2023-07-07 17:19:22,774][main][INFO] - Using device: cuda
+[2023-07-07 17:19:23,101][main][INFO] - Training MAP model
+[2023-07-07 17:19:29,605][main][INFO] - Test NLL=1.2113588092816536, Test RMSE=0.7957847468045046
+[2023-07-07 17:19:29,606][HYDRA] 	#40 : trainer.model_type=MAP seed=3 data.name=wine data.split=GAP data.split_index=7
+[2023-07-07 17:19:29,690][main][INFO] - Using device: cuda
+[2023-07-07 17:19:30,015][main][INFO] - Training MAP model
+[2023-07-07 17:19:41,108][main][INFO] - Test NLL=1.22837846146293, Test RMSE=0.7753513021258627
+[2023-07-07 17:19:41,109][HYDRA] 	#41 : trainer.model_type=MAP seed=3 data.name=wine data.split=GAP data.split_index=8
+[2023-07-07 17:19:41,193][main][INFO] - Using device: cuda
+[2023-07-07 17:19:41,541][main][INFO] - Training MAP model
+[2023-07-07 17:19:52,928][main][INFO] - Test NLL=1.2488598549875065, Test RMSE=0.7920756278872243
+[2023-07-07 17:19:52,929][HYDRA] 	#42 : trainer.model_type=MAP seed=3 data.name=wine data.split=GAP data.split_index=9
+[2023-07-07 17:19:53,015][main][INFO] - Using device: cuda
+[2023-07-07 17:19:53,353][main][INFO] - Training MAP model
+[2023-07-07 17:20:00,196][main][INFO] - Test NLL=1.127574264798064, Test RMSE=0.7354038208029854
+[2023-07-07 17:20:00,196][HYDRA] 	#43 : trainer.model_type=MAP seed=3 data.name=wine data.split=GAP data.split_index=10
+[2023-07-07 17:20:00,281][main][INFO] - Using device: cuda
+[2023-07-07 17:20:00,611][main][INFO] - Training MAP model
+[2023-07-07 17:20:07,493][main][INFO] - Test NLL=1.2525830984473854, Test RMSE=0.8139273780322054
+[2023-07-07 17:20:07,494][HYDRA] 	#44 : trainer.model_type=MAP seed=4 data.name=wine data.split=GAP data.split_index=0
+[2023-07-07 17:20:07,579][main][INFO] - Using device: cuda
+[2023-07-07 17:20:07,922][main][INFO] - Training MAP model
+[2023-07-07 17:20:15,436][main][INFO] - Test NLL=1.1510154108317512, Test RMSE=0.7561154286882175
+[2023-07-07 17:20:15,437][HYDRA] 	#45 : trainer.model_type=MAP seed=4 data.name=wine data.split=GAP data.split_index=1
+[2023-07-07 17:20:15,521][main][INFO] - Using device: cuda
+[2023-07-07 17:20:15,870][main][INFO] - Training MAP model
+[2023-07-07 17:20:25,667][main][INFO] - Test NLL=1.1553782995116362, Test RMSE=0.741309579501426
+[2023-07-07 17:20:25,668][HYDRA] 	#46 : trainer.model_type=MAP seed=4 data.name=wine data.split=GAP data.split_index=2
+[2023-07-07 17:20:25,810][main][INFO] - Using device: cuda
+[2023-07-07 17:20:26,164][main][INFO] - Training MAP model
+[2023-07-07 17:20:31,142][main][INFO] - Test NLL=1.0819788887125337, Test RMSE=0.697788548104748
+[2023-07-07 17:20:31,142][HYDRA] 	#47 : trainer.model_type=MAP seed=4 data.name=wine data.split=GAP data.split_index=3
+[2023-07-07 17:20:31,225][main][INFO] - Using device: cuda
+[2023-07-07 17:20:31,554][main][INFO] - Training MAP model
+[2023-07-07 17:20:44,020][main][INFO] - Test NLL=1.2939303683719103, Test RMSE=0.7996388528879734
+[2023-07-07 17:20:44,021][HYDRA] 	#48 : trainer.model_type=MAP seed=4 data.name=wine data.split=GAP data.split_index=4
+[2023-07-07 17:20:44,105][main][INFO] - Using device: cuda
+[2023-07-07 17:20:44,457][main][INFO] - Training MAP model
+[2023-07-07 17:20:51,327][main][INFO] - Test NLL=1.0451123486668368, Test RMSE=0.6721572628243392
+[2023-07-07 17:20:51,328][HYDRA] 	#49 : trainer.model_type=MAP seed=4 data.name=wine data.split=GAP data.split_index=5
+[2023-07-07 17:20:51,412][main][INFO] - Using device: cuda
+[2023-07-07 17:20:51,753][main][INFO] - Training MAP model
+[2023-07-07 17:20:58,446][main][INFO] - Test NLL=1.1677308151074843, Test RMSE=0.7696750403849526
+[2023-07-07 17:20:58,447][HYDRA] 	#50 : trainer.model_type=MAP seed=4 data.name=wine data.split=GAP data.split_index=6
+[2023-07-07 17:20:58,534][main][INFO] - Using device: cuda
+[2023-07-07 17:20:58,883][main][INFO] - Training MAP model
+[2023-07-07 17:21:05,652][main][INFO] - Test NLL=1.2031313802425325, Test RMSE=0.7882918839032768
+[2023-07-07 17:21:05,653][HYDRA] 	#51 : trainer.model_type=MAP seed=4 data.name=wine data.split=GAP data.split_index=7
+[2023-07-07 17:21:05,739][main][INFO] - Using device: cuda
+[2023-07-07 17:21:06,098][main][INFO] - Training MAP model
+[2023-07-07 17:21:18,858][main][INFO] - Test NLL=1.3548058013584685, Test RMSE=0.8111502099645246
+[2023-07-07 17:21:18,859][HYDRA] 	#52 : trainer.model_type=MAP seed=4 data.name=wine data.split=GAP data.split_index=8
+[2023-07-07 17:21:18,944][main][INFO] - Using device: cuda
+[2023-07-07 17:21:19,322][main][INFO] - Training MAP model
+[2023-07-07 17:21:29,425][main][INFO] - Test NLL=1.1382712535069386, Test RMSE=0.7444268178136967
+[2023-07-07 17:21:29,426][HYDRA] 	#53 : trainer.model_type=MAP seed=4 data.name=wine data.split=GAP data.split_index=9
+[2023-07-07 17:21:29,510][main][INFO] - Using device: cuda
+[2023-07-07 17:21:29,850][main][INFO] - Training MAP model
+[2023-07-07 17:21:35,089][main][INFO] - Test NLL=1.1307620617686558, Test RMSE=0.7410230478081966
+[2023-07-07 17:21:35,090][HYDRA] 	#54 : trainer.model_type=MAP seed=4 data.name=wine data.split=GAP data.split_index=10
+[2023-07-07 17:21:35,174][main][INFO] - Using device: cuda
+[2023-07-07 17:21:35,502][main][INFO] - Training MAP model
+[2023-07-07 17:21:42,890][main][INFO] - Test NLL=1.2319909994576996, Test RMSE=0.7996061974477632
+
+JOB STATISTICS
+==============
+Job ID: 3032597
+Cluster: snellius
+User/Group: abhijith/abhijith
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:07:56
+CPU Efficiency: 5.29% of 02:30:00 core-walltime
+Job Wall-clock time: 00:08:20
+Memory Utilized: 2.28 GB
+Memory Efficiency: 0.00% of 0.00 MB

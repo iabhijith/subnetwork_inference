@@ -1,0 +1,48 @@
+[2023-07-07 10:10:26,069][mnist][INFO] - Running experiment with configuration: 
+seed: 9
+model:
+  architecture: resnet18
+  p_drop: 0
+data:
+  seed: 9
+  path: data/Image
+  name: MNIST
+  workers: 4
+  val_size: 0.15
+trainer:
+  epochs: 90
+  lr: 0.1
+  momentum: 0.9
+  weight_decay: 0.0001
+  milestones:
+  - 40
+  - 70
+  gamma: 0.1
+  batch_size: 2048
+  checkpoint_path: checkpoints/mnist
+  results_path: results/mnist
+  model_type: MAP
+  la:
+    subset_of_weights: all
+    hessian_structure: diag
+    selection_strategy: LVD
+    subset_size: 0
+    prior_mean: 0.0
+    sigma_noise: 1.0
+
+[2023-07-07 10:10:26,411][mnist][INFO] - Running on device cuda
+[2023-07-07 10:10:33,598][mnist][INFO] - Test loss: 0.014369722324609757, classification accuracy: 0.9951
+
+JOB STATISTICS
+==============
+Job ID: 3030665
+Cluster: snellius
+User/Group: abhijith/abhijith
+State: TIMEOUT (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:56:47
+CPU Efficiency: 5.25% of 18:02:24 core-walltime
+Job Wall-clock time: 01:00:08
+Memory Utilized: 3.50 GB
+Memory Efficiency: 0.00% of 0.00 MB

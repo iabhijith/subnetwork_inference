@@ -19,7 +19,7 @@ trainer:
   patience: 100
   lr: 1e-3
   batch_size: 32
-  checkpoint_path: checkpoints
+  checkpoint_path: checkpoints/uci
   results_path: results
   model_type: LA_POSTHOC
   la:

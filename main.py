@@ -12,7 +12,7 @@ from laplace import Laplace
 from enum import Enum, auto
 from pathlib import Path
 from collections import defaultdict
-from laplace.utils import LargestVarianceDiagLaplaceSubnetMask
+from laplace.utils import LargestVarianceDiagLaplaceSubnetMask, LargestMagnitudeSubnetMask
 from strategies.pruning import OBDSubnetMask, SPRSubnetMask, MNSubnetMask
 from strategies.kfe import KronckerFactoredEigenSubnetMask
 
@@ -42,6 +42,7 @@ class Strategy(Enum):
     LVD = auto()
     SPR = auto()
     MN = auto()
+    LMS = auto()
 
 
 
@@ -212,6 +213,7 @@ def initialize_results(config: ExperimentConfig):
 @hydra.main(config_path="configuration", config_name="uci", version_base=None)
 def main(config: ExperimentConfig) -> None:
     set_seed(config.seed)
+    prior_precisions = np.logspace(0.1, 1, num=5, base=10).tolist()[:-1]  + np.logspace(1, 2, num=10, base=10).tolist()
 
     device = get_device()
     log.info(f"Using device: {device}")
@@ -258,7 +260,34 @@ def main(config: ExperimentConfig) -> None:
             val_dataloader=val_dataloader,
         )
         save_model(map_model, model_file_path)
-        save_json({"sigma": sigma}, model_meta_path)
+        hyperparams = {"sigma": sigma}
+        model_for_tuning = copy.deepcopy(map_model)
+        la, prior_precision_diag = trainer.train_la_posthoc(
+                                    model=model_for_tuning,
+                                    dataloader=train_dataloader,
+                                    subset_of_weights="all",
+                                    hessian_structure="diag",
+                                    sigma_noise=sigma,
+                                    prior_mean=config.trainer.la.prior_mean,
+                                    val_dataloader=val_dataloader,
+                                    prior_precisions=prior_precisions
+                                    )
+        
+        hyperparams["prior_precision_diag"] = prior_precision_diag
+        model_for_tuning = copy.deepcopy(map_model)
+        la, prior_precision_kron = trainer.train_la_posthoc(
+                                    model=model_for_tuning,
+                                    dataloader=train_dataloader,
+                                    subset_of_weights="all",
+                                    hessian_structure="kron",
+                                    sigma_noise=sigma,
+                                    prior_mean=config.trainer.la.prior_mean,
+                                    val_dataloader=val_dataloader,
+                                    prior_precisions=prior_precisions
+                                    )
+        hyperparams["prior_precision_kron"] = prior_precision_kron
+        save_json(hyperparams, model_meta_path)
+
         nll, err = trainer.evaluate(
             model=map_model, sigma=sigma, dataloader=test_dataloader
         )
@@ -266,7 +295,10 @@ def main(config: ExperimentConfig) -> None:
         results["nll"] = nll
     else:
         map_model = load_model(model_file_path)
-        sigma = load_json(model_meta_path)["sigma"]
+        hyperparams = load_json(model_meta_path)
+        sigma = hyperparams["sigma"]
+        prior_precision_diag = hyperparams["prior_precision_diag"]
+        prior_precision_kron =  hyperparams["prior_precision_kron"]
 
         if config.trainer.la.subset_of_weights == "subnetwork":
             model_for_selection = copy.deepcopy(map_model)
@@ -281,6 +313,7 @@ def main(config: ExperimentConfig) -> None:
                     hessian_structure="kron",
                     sigma_noise=sigma,
                     prior_mean=config.trainer.la.prior_mean,
+                    prior_precision=prior_precision_kron
                 )
 
                 subnetwork_mask = KronckerFactoredEigenSubnetMask(
@@ -296,6 +329,7 @@ def main(config: ExperimentConfig) -> None:
                     hessian_structure="diag",
                     sigma_noise=sigma,
                     prior_mean=config.trainer.la.prior_mean,
+                    prior_precision=prior_precision_diag
                 )
 
                 subnetwork_mask = OBDSubnetMask(
@@ -311,6 +345,7 @@ def main(config: ExperimentConfig) -> None:
                     hessian_structure="diag",
                     sigma_noise=sigma,
                     prior_mean=config.trainer.la.prior_mean,
+                    prior_precision=prior_precision_diag
                 )
 
                 subnetwork_mask = SPRSubnetMask(
@@ -326,12 +361,18 @@ def main(config: ExperimentConfig) -> None:
                     hessian_structure="diag",
                     sigma_noise=sigma,
                     prior_mean=config.trainer.la.prior_mean,
+                    prior_precision=prior_precision_diag
                 )
 
                 subnetwork_mask = MNSubnetMask(
                     model_for_selection,
                     n_params_subnet=config.trainer.la.subset_size,
                     diag_laplace_model=laplace_model_for_selection,
+                )
+            elif config.trainer.la.selection_strategy == Strategy.LMS.name:
+                subnetwork_mask = LargestMagnitudeSubnetMask(
+                    model_for_selection,
+                    n_params_subnet=config.trainer.la.subset_size,
                 )
             else:
                 laplace_model_for_selection = Laplace(
@@ -341,6 +382,7 @@ def main(config: ExperimentConfig) -> None:
                     hessian_structure="diag",
                     sigma_noise=sigma,
                     prior_mean=config.trainer.la.prior_mean,
+                    prior_precision=prior_precision_diag
                 )
 
                 subnetwork_mask = LargestVarianceDiagLaplaceSubnetMask(
@@ -364,6 +406,7 @@ def main(config: ExperimentConfig) -> None:
                 prior_mean=config.trainer.la.prior_mean,
                 subnetwork_indices=subnetwork_indices,
                 val_dataloader=val_dataloader,
+                prior_precisions=prior_precisions
             )
             nll = trainer.evaluate_la(la, test_dataloader)
             results["nll"] = nll
@@ -378,6 +421,7 @@ def main(config: ExperimentConfig) -> None:
                 sigma_noise=sigma,
                 prior_mean=config.trainer.la.prior_mean,
                 val_dataloader=val_dataloader,
+                prior_precisions=prior_precisions
             )
             nll = trainer.evaluate_la(la, test_dataloader)
             results["nll"] = nll

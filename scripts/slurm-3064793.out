@@ -1,0 +1,56 @@
+[2023-07-14 09:07:26,960][HYDRA] Launching 8 jobs locally
+[2023-07-14 09:07:26,960][HYDRA] 	#0 : seed=0 data.name=kin8nm data.split=GAP data.split_index=0 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-14 09:07:27,395][main][INFO] - Using device: cuda
+[2023-07-14 09:07:28,852][main][INFO] - Training LA_POSTHOC model
+[2023-07-14 09:07:30,526][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-14 09:07:37,497][main][INFO] - Test NLL=0.20458981885037855
+[2023-07-14 09:07:37,502][HYDRA] 	#1 : seed=0 data.name=kin8nm data.split=GAP data.split_index=1 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-14 09:07:37,636][main][INFO] - Using device: cuda
+[2023-07-14 09:07:37,992][main][INFO] - Training LA_POSTHOC model
+[2023-07-14 09:07:37,997][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-14 09:07:43,217][main][INFO] - Test NLL=0.1377773104039429
+[2023-07-14 09:07:43,220][HYDRA] 	#2 : seed=0 data.name=kin8nm data.split=GAP data.split_index=2 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-14 09:07:43,306][main][INFO] - Using device: cuda
+[2023-07-14 09:07:43,645][main][INFO] - Training LA_POSTHOC model
+[2023-07-14 09:07:43,650][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-14 09:07:48,876][main][INFO] - Test NLL=0.3476980823131276
+[2023-07-14 09:07:48,880][HYDRA] 	#3 : seed=0 data.name=kin8nm data.split=GAP data.split_index=3 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-14 09:07:49,000][main][INFO] - Using device: cuda
+[2023-07-14 09:07:49,371][main][INFO] - Training LA_POSTHOC model
+[2023-07-14 09:07:49,376][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-14 09:07:54,604][main][INFO] - Test NLL=0.17355632190358639
+[2023-07-14 09:07:54,606][HYDRA] 	#4 : seed=0 data.name=kin8nm data.split=GAP data.split_index=4 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-14 09:07:54,693][main][INFO] - Using device: cuda
+[2023-07-14 09:07:55,045][main][INFO] - Training LA_POSTHOC model
+[2023-07-14 09:07:55,049][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-14 09:08:00,311][main][INFO] - Test NLL=0.22526014735323546
+[2023-07-14 09:08:00,315][HYDRA] 	#5 : seed=0 data.name=kin8nm data.split=GAP data.split_index=5 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-14 09:08:00,403][main][INFO] - Using device: cuda
+[2023-07-14 09:08:00,801][main][INFO] - Training LA_POSTHOC model
+[2023-07-14 09:08:00,806][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-14 09:08:06,047][main][INFO] - Test NLL=0.17833149929405637
+[2023-07-14 09:08:06,050][HYDRA] 	#6 : seed=0 data.name=kin8nm data.split=GAP data.split_index=6 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-14 09:08:06,137][main][INFO] - Using device: cuda
+[2023-07-14 09:08:06,479][main][INFO] - Training LA_POSTHOC model
+[2023-07-14 09:08:06,483][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-14 09:08:11,733][main][INFO] - Test NLL=0.17243615728854686
+[2023-07-14 09:08:11,736][HYDRA] 	#7 : seed=0 data.name=kin8nm data.split=GAP data.split_index=7 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-14 09:08:11,831][main][INFO] - Using device: cuda
+[2023-07-14 09:08:12,185][main][INFO] - Training LA_POSTHOC model
+[2023-07-14 09:08:12,190][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-14 09:08:17,471][main][INFO] - Test NLL=0.2279693953434706
+
+JOB STATISTICS
+==============
+Job ID: 3064793
+Cluster: snellius
+User/Group: abhijith/abhijith
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:19:12 core-walltime
+Job Wall-clock time: 00:01:04
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 0.00 MB (0.00 MB/node)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.

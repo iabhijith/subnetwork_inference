@@ -1,13 +1,13 @@
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --gpus=2
-#SBATCH --mem-per-gpu=200000M
+#SBATCH --cpus-per-task=1
+#SBATCH --gpus=1
 #SBATCH --partition=gpu
-#SBATCH --time=01:00:00
-#SBATCH --output=run.out
-#SBATCH --error=run.err
+#SBATCH --time=02:00:00
+#SBATCH --job-name=mnist_diag
+#SBATCH --output=run_diag.out
+#SBATCH --error=run_diag.err
 
 module purge
 module load 2021

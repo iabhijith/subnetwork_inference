@@ -15,18 +15,19 @@ from enum import Enum, auto
 from torch.utils.data.distributed import DistributedSampler
 from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.distributed import init_process_group, destroy_process_group
+from torch.nn import CrossEntropyLoss
 
 
 from laplace import Laplace
-from laplace.utils import LargestVarianceDiagLaplaceSubnetMask
-from strategies.pruning import OBDSubnetMask
+from laplace.utils import LargestVarianceDiagLaplaceSubnetMask, LargestVarianceSWAGSubnetMask, fit_diagonal_swag_var
+from strategies.pruning import OBDSubnetMask, SPRSWAGSubnetMask, MNSWAGSubnetMask
 from strategies.kfe import KronckerFactoredEigenSubnetMask
 from laplace.curvature import BackPackGGN
 from backpack import backpack, extend
 
 
 from configuration.mnist import ExperimentConfig
-from data.image_datasets import get_image_loader
+from data.image_datasets import get_image_loader, rotate_load_dataset
 from models.resnets import resnet18, resnet34, resnet50, resnet101
 from data.image_datasets import get_image_loader
 from image_trainer import train_map, validate_map
@@ -176,10 +177,10 @@ def main(config: ExperimentConfig) -> None:
     log.info(f"Test loss: {l}, classification accuracy: {ca}")
 
     train_loader, test_loader, info = get_image_loader(dataset=config.data.name,
-                                                       batch_size=4,
+                                                       batch_size=256,
                                                        gpu=True,
                                                        distributed=False,
-                                                       workers=config.data.workers,
+                                                       workers=4,
                                                        data_path=config.data.path)
     if config.trainer.la.subset_of_weights == "subnetwork":
         model_for_selection = copy.deepcopy(map_model)
@@ -249,21 +250,63 @@ def main(config: ExperimentConfig) -> None:
         # results["nll"] = nll
         # log.info(f"Test NLL={nll}")
     else:
-        model_copy = copy.deepcopy(map_model)
-        model_copy = extend(model_copy, use_converter=True)
+        # log.info("Selecting subnetwork with LargestVarianceSWAGSubnetMask")
+        # model_for_mask = copy.deepcopy(map_model)
+        # subnetwork_mask = LargestVarianceSWAGSubnetMask(model_for_mask, 1000, swag_n_snapshots=256, swag_snapshot_freq=1, swag_lr=0.01)
+        # subnetwork_indices = subnetwork_mask.select(train_loader=train_loader)
+        # subnetwork_indices = torch.tensor(subnetwork_indices.cpu().numpy(), dtype=torch.long)
+
+        # log.info("Selecting subnetwork with SPRSWAGSubnetMask")
+        # criterion = CrossEntropyLoss(reduction='mean')
+        # model_for_swag = copy.deepcopy(map_model)
+        # param_variances = fit_diagonal_swag_var(model_for_swag, train_loader, criterion,
+        #                                         n_snapshots_total=40,
+        #                                         snapshot_freq=1,
+        #                                         lr=0.01)
         
-        la = Laplace(model_copy, 'classification',
-             subset_of_weights='all',
-             hessian_structure='diag',
-             )
+        # model_for_mask = copy.deepcopy(map_model)
+        # subnetwork_mask = SPRSWAGSubnetMask(model=model_for_mask, n_params_subnet=1000, param_variances=param_variances)
+        # subnetwork_indices = subnetwork_mask.select(train_loader=train_loader)
+        # subnetwork_indices = torch.tensor(subnetwork_indices.cpu().numpy(), dtype=torch.long)
+        
+        # log.info(f"Selected subnetwork of size {subnetwork_indices.shape}")
+
+        train_loader, test_loader, info = get_image_loader(dataset=config.data.name,
+                                                       batch_size=16,
+                                                       gpu=True,
+                                                       distributed=False,
+                                                       workers=4,
+                                                       data_path=config.data.path)
+        
+        model_for_la = copy.deepcopy(map_model)
+        model_for_la = extend(model_for_la, use_converter=True)
+
+        log.info("Training LA for the subnetwork")
+        la = Laplace(model=model_for_la,
+                likelihood="classification",
+                subset_of_weights="all",
+                hessian_structure="diag",
+                sigma_noise=1.0,
+                prior_precision=500,)
         la.fit(train_loader)
+
+        log.info("Completed LA training")
+
+        test_loader, info = rotate_load_dataset(dataset=config.data.name,
+                                                angle=60,
+                                                batch_size=16,
+                                                gpu=True,
+                                                workers=4,
+                                                data_path=config.data.path)
+        log.info("Evaluating LA")
+
         targets = torch.cat([y for x, y in test_loader], dim=0)
         targets = targets.to(device, non_blocking=True)
         probs_laplace = predict(test_loader, la, device=device, laplace=True)
         acc_laplace = (probs_laplace.argmax(-1) == targets).float().cpu().numpy().mean()
         nll_laplace = -dists.Categorical(probs_laplace).log_prob(targets).cpu().numpy().mean()
 
-        print(f'[Laplace] Acc.: {acc_laplace:.1%}; NLL: {nll_laplace:.3}')
+        log.info(f'[Laplace] Acc.: {acc_laplace:.1%}; NLL: {nll_laplace:.3}')
 
 
 @torch.no_grad()

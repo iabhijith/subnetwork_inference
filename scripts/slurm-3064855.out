@@ -1,0 +1,14 @@
+
+JOB STATISTICS
+==============
+Job ID: 3064855
+Cluster: snellius
+User/Group: abhijith/abhijith
+State: REQUEUED (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:30:18 core-walltime
+Job Wall-clock time: 00:01:41
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 0.00 MB (0.00 MB/node)

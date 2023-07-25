@@ -1,4 +1,4 @@
-[2023-07-07 10:10:26,069][mnist][INFO] - Running experiment with configuration: 
+[2023-07-09 23:36:36,631][mnist][INFO] - Running experiment with configuration: 
 seed: 9
 model:
   architecture: resnet18
@@ -30,19 +30,23 @@ trainer:
     prior_mean: 0.0
     sigma_noise: 1.0
 
-[2023-07-07 10:10:26,411][mnist][INFO] - Running on device cuda
-[2023-07-07 10:10:33,598][mnist][INFO] - Test loss: 0.014369722324609757, classification accuracy: 0.9951
+[2023-07-09 23:36:36,800][mnist][INFO] - Running on device cuda
+[2023-07-09 23:36:45,689][mnist][INFO] - Test loss: 0.014369722324609757, classification accuracy: 0.9951
+[2023-07-09 23:44:07,826][mnist][INFO] - torch.Size([10000])
+[2023-07-09 23:44:07,826][mnist][INFO] - torch.LongTensor
+[2023-07-09 23:44:07,826][mnist][INFO] - True
+[2023-07-09 23:59:20,917][mnist][INFO] - Completed LA training
 
 JOB STATISTICS
 ==============
-Job ID: 3030665
+Job ID: 3039359
 Cluster: snellius
 User/Group: abhijith/abhijith
-State: TIMEOUT (exit code 0)
+State: FAILED (exit code 1)
 Nodes: 1
 Cores per node: 18
-CPU Utilized: 00:56:47
-CPU Efficiency: 5.25% of 18:02:24 core-walltime
-Job Wall-clock time: 01:00:08
-Memory Utilized: 3.50 GB
+CPU Utilized: 00:28:34
+CPU Efficiency: 6.89% of 06:54:54 core-walltime
+Job Wall-clock time: 00:23:03
+Memory Utilized: 3.24 GB
 Memory Efficiency: 0.00% of 0.00 MB

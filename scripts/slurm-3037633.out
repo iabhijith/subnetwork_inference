@@ -1,0 +1,180 @@
+[2023-07-09 16:24:01,914][HYDRA] Launching 55 jobs locally
+[2023-07-09 16:24:01,914][HYDRA] 	#0 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:02,159][main][INFO] - Using device: cuda
+[2023-07-09 16:24:02,612][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:07,394][HYDRA] 	#1 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:07,481][main][INFO] - Using device: cuda
+[2023-07-09 16:24:07,830][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:09,049][HYDRA] 	#2 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:09,135][main][INFO] - Using device: cuda
+[2023-07-09 16:24:09,470][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:10,733][HYDRA] 	#3 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:10,817][main][INFO] - Using device: cuda
+[2023-07-09 16:24:11,159][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:12,377][HYDRA] 	#4 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:12,462][main][INFO] - Using device: cuda
+[2023-07-09 16:24:12,823][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:14,039][HYDRA] 	#5 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:14,124][main][INFO] - Using device: cuda
+[2023-07-09 16:24:14,505][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:15,727][HYDRA] 	#6 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:15,812][main][INFO] - Using device: cuda
+[2023-07-09 16:24:16,161][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:17,379][HYDRA] 	#7 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:17,464][main][INFO] - Using device: cuda
+[2023-07-09 16:24:17,829][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:19,048][HYDRA] 	#8 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:19,133][main][INFO] - Using device: cuda
+[2023-07-09 16:24:19,501][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:20,719][HYDRA] 	#9 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:20,804][main][INFO] - Using device: cuda
+[2023-07-09 16:24:21,200][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:22,420][HYDRA] 	#10 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:22,505][main][INFO] - Using device: cuda
+[2023-07-09 16:24:22,873][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:24,126][HYDRA] 	#11 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:24,212][main][INFO] - Using device: cuda
+[2023-07-09 16:24:24,538][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:25,759][HYDRA] 	#12 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:25,843][main][INFO] - Using device: cuda
+[2023-07-09 16:24:26,179][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:27,399][HYDRA] 	#13 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:27,486][main][INFO] - Using device: cuda
+[2023-07-09 16:24:27,830][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:29,043][HYDRA] 	#14 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:29,126][main][INFO] - Using device: cuda
+[2023-07-09 16:24:29,486][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:30,698][HYDRA] 	#15 : seed=1 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:30,783][main][INFO] - Using device: cuda
+[2023-07-09 16:24:31,144][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:32,362][HYDRA] 	#16 : seed=1 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:32,450][main][INFO] - Using device: cuda
+[2023-07-09 16:24:32,806][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:34,023][HYDRA] 	#17 : seed=1 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:34,107][main][INFO] - Using device: cuda
+[2023-07-09 16:24:34,459][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:35,676][HYDRA] 	#18 : seed=1 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:35,808][main][INFO] - Using device: cuda
+[2023-07-09 16:24:36,166][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:37,384][HYDRA] 	#19 : seed=1 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:37,469][main][INFO] - Using device: cuda
+[2023-07-09 16:24:37,827][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:39,056][HYDRA] 	#20 : seed=1 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:39,141][main][INFO] - Using device: cuda
+[2023-07-09 16:24:39,510][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:40,728][HYDRA] 	#21 : seed=1 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:40,812][main][INFO] - Using device: cuda
+[2023-07-09 16:24:41,142][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:42,360][HYDRA] 	#22 : seed=2 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:42,445][main][INFO] - Using device: cuda
+[2023-07-09 16:24:42,789][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:44,007][HYDRA] 	#23 : seed=2 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:44,091][main][INFO] - Using device: cuda
+[2023-07-09 16:24:44,479][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:45,703][HYDRA] 	#24 : seed=2 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:45,787][main][INFO] - Using device: cuda
+[2023-07-09 16:24:46,157][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:47,379][HYDRA] 	#25 : seed=2 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:47,464][main][INFO] - Using device: cuda
+[2023-07-09 16:24:47,839][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:49,103][HYDRA] 	#26 : seed=2 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:49,188][main][INFO] - Using device: cuda
+[2023-07-09 16:24:49,547][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:50,769][HYDRA] 	#27 : seed=2 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:50,854][main][INFO] - Using device: cuda
+[2023-07-09 16:24:51,201][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:52,426][HYDRA] 	#28 : seed=2 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:52,510][main][INFO] - Using device: cuda
+[2023-07-09 16:24:52,845][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:54,063][HYDRA] 	#29 : seed=2 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:54,146][main][INFO] - Using device: cuda
+[2023-07-09 16:24:54,525][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:55,745][HYDRA] 	#30 : seed=2 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:55,830][main][INFO] - Using device: cuda
+[2023-07-09 16:24:56,170][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:57,392][HYDRA] 	#31 : seed=2 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:57,476][main][INFO] - Using device: cuda
+[2023-07-09 16:24:57,810][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:24:59,032][HYDRA] 	#32 : seed=2 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:24:59,116][main][INFO] - Using device: cuda
+[2023-07-09 16:24:59,447][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:00,666][HYDRA] 	#33 : seed=3 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:00,750][main][INFO] - Using device: cuda
+[2023-07-09 16:25:01,071][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:02,348][HYDRA] 	#34 : seed=3 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:02,432][main][INFO] - Using device: cuda
+[2023-07-09 16:25:02,765][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:03,989][HYDRA] 	#35 : seed=3 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:04,074][main][INFO] - Using device: cuda
+[2023-07-09 16:25:04,436][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:05,660][HYDRA] 	#36 : seed=3 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:05,745][main][INFO] - Using device: cuda
+[2023-07-09 16:25:06,098][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:07,321][HYDRA] 	#37 : seed=3 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:07,406][main][INFO] - Using device: cuda
+[2023-07-09 16:25:07,739][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:08,955][HYDRA] 	#38 : seed=3 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:09,038][main][INFO] - Using device: cuda
+[2023-07-09 16:25:09,381][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:10,588][HYDRA] 	#39 : seed=3 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:10,672][main][INFO] - Using device: cuda
+[2023-07-09 16:25:11,049][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:12,253][HYDRA] 	#40 : seed=3 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:12,341][main][INFO] - Using device: cuda
+[2023-07-09 16:25:12,666][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:13,872][HYDRA] 	#41 : seed=3 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:13,956][main][INFO] - Using device: cuda
+[2023-07-09 16:25:14,304][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:15,519][HYDRA] 	#42 : seed=3 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:15,647][main][INFO] - Using device: cuda
+[2023-07-09 16:25:16,018][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:17,232][HYDRA] 	#43 : seed=3 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:17,316][main][INFO] - Using device: cuda
+[2023-07-09 16:25:17,671][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:18,885][HYDRA] 	#44 : seed=4 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:18,969][main][INFO] - Using device: cuda
+[2023-07-09 16:25:19,313][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:20,530][HYDRA] 	#45 : seed=4 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:20,614][main][INFO] - Using device: cuda
+[2023-07-09 16:25:20,962][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:22,177][HYDRA] 	#46 : seed=4 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:22,261][main][INFO] - Using device: cuda
+[2023-07-09 16:25:22,620][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:23,835][HYDRA] 	#47 : seed=4 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:23,920][main][INFO] - Using device: cuda
+[2023-07-09 16:25:24,240][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:25,455][HYDRA] 	#48 : seed=4 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:25,539][main][INFO] - Using device: cuda
+[2023-07-09 16:25:25,870][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:27,085][HYDRA] 	#49 : seed=4 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:27,170][main][INFO] - Using device: cuda
+[2023-07-09 16:25:27,508][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:28,721][HYDRA] 	#50 : seed=4 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:28,806][main][INFO] - Using device: cuda
+[2023-07-09 16:25:29,136][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:30,395][HYDRA] 	#51 : seed=4 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:30,479][main][INFO] - Using device: cuda
+[2023-07-09 16:25:30,816][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:32,030][HYDRA] 	#52 : seed=4 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:32,115][main][INFO] - Using device: cuda
+[2023-07-09 16:25:32,453][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:33,669][HYDRA] 	#53 : seed=4 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:33,753][main][INFO] - Using device: cuda
+[2023-07-09 16:25:34,077][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:25:35,293][HYDRA] 	#54 : seed=4 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:25:35,378][main][INFO] - Using device: cuda
+[2023-07-09 16:25:35,713][main][INFO] - Training LA_POSTHOC model
+
+JOB STATISTICS
+==============
+Job ID: 3037633
+Cluster: snellius
+User/Group: abhijith/abhijith
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:01:30
+CPU Efficiency: 4.55% of 00:33:00 core-walltime
+Job Wall-clock time: 00:01:50
+Memory Utilized: 2.52 GB
+Memory Efficiency: 0.00% of 0.00 MB

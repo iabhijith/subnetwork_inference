@@ -1,3 +1,23 @@
-slurmstepd: error: *** JOB 3030665 ON gcn15 CANCELLED AT 2023-07-07T11:10:25 DUE TO TIME LIMIT ***
-srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
-slurmstepd: error: *** STEP 3030665.0 ON gcn15 CANCELLED AT 2023-07-07T11:10:25 DUE TO TIME LIMIT ***
+/home/abhijith/.conda/envs/subnetwork_inference/lib/python3.8/site-packages/backpack/extensions/backprop_extension.py:106: UserWarning: Extension saving to grad_batch does not have an extension for Module <class 'models.resnets.ResNet'> although the module has parameters
+  warnings.warn(
+/home/abhijith/.conda/envs/subnetwork_inference/lib/python3.8/site-packages/backpack/extensions/backprop_extension.py:106: UserWarning: Extension saving to grad_batch does not have an extension for Module <class 'models.resnets.BasicBlock'> although the module has parameters
+  warnings.warn(
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "mnist.py", line 274, in main
+  File "/home/abhijith/.conda/envs/subnetwork_inference/lib/python3.8/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "mnist.py", line 288, in predict
+  File "/home/abhijith/.conda/envs/subnetwork_inference/lib/python3.8/site-packages/laplace/baselaplace.py", line 530, in __call__
+    f_mu, f_var = self._glm_predictive_distribution(x)
+  File "/home/abhijith/.conda/envs/subnetwork_inference/lib/python3.8/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/abhijith/.conda/envs/subnetwork_inference/lib/python3.8/site-packages/laplace/baselaplace.py", line 596, in _glm_predictive_distribution
+    Js, f_mu = self.backend.jacobians(X)
+  File "/home/abhijith/.conda/envs/subnetwork_inference/lib/python3.8/site-packages/laplace/curvature/backpack.py", line 49, in jacobians
+    Jk = torch.cat(to_cat, dim=1)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 10.66 GiB (GPU 0; 39.44 GiB total capacity; 11.38 GiB already allocated; 4.50 GiB free; 33.39 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+srun: error: gcn26: task 0: Exited with exit code 1
+srun: launch/slurm: _step_signal: Terminating StepId=3039359.0

@@ -1,0 +1,54 @@
+[2023-07-10 13:41:55,524][mnist][INFO] - Running experiment with configuration: 
+seed: 9
+model:
+  architecture: resnet18
+  p_drop: 0
+data:
+  seed: 9
+  path: data/Image
+  name: MNIST
+  workers: 4
+  val_size: 0.15
+trainer:
+  epochs: 90
+  lr: 0.1
+  momentum: 0.9
+  weight_decay: 0.0001
+  milestones:
+  - 40
+  - 70
+  gamma: 0.1
+  batch_size: 2048
+  checkpoint_path: checkpoints/mnist
+  results_path: results/mnist
+  model_type: MAP
+  la:
+    subset_of_weights: all
+    hessian_structure: diag
+    selection_strategy: LVD
+    subset_size: 0
+    prior_mean: 0.0
+    sigma_noise: 1.0
+
+[2023-07-10 13:41:55,697][mnist][INFO] - Running on device cuda
+[2023-07-10 13:42:04,749][mnist][INFO] - Test loss: 0.014369722324609757, classification accuracy: 0.9951
+[2023-07-10 13:42:04,791][mnist][INFO] - Selecting subnetwork
+[2023-07-10 13:48:46,504][mnist][INFO] - Selected subnetwork of size torch.Size([1000])
+[2023-07-10 13:48:46,558][mnist][INFO] - Training LA for the subnetwork
+[2023-07-10 14:10:27,575][mnist][INFO] - Completed LA training
+[2023-07-10 14:10:27,582][mnist][INFO] - Evaluating LA
+[2023-07-10 14:14:06,498][mnist][INFO] - [Laplace] Acc.: 36.3%; NLL: 4.02
+
+JOB STATISTICS
+==============
+Job ID: 3042713
+Cluster: snellius
+User/Group: abhijith/abhijith
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:33:57
+CPU Efficiency: 5.81% of 09:44:24 core-walltime
+Job Wall-clock time: 00:32:28
+Memory Utilized: 3.49 GB
+Memory Efficiency: 0.00% of 0.00 MB

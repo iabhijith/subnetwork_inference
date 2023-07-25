@@ -1,0 +1,1413 @@
+[2023-07-09 16:14:16,937][HYDRA] Launching 990 jobs locally
+[2023-07-09 16:14:16,937][HYDRA] 	#0 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:14:17,209][main][INFO] - Using device: cuda
+[2023-07-09 16:14:18,445][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:23,907][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:14:24,725][main][INFO] - Test NLL=1.1624895074805224
+[2023-07-09 16:14:24,731][HYDRA] 	#1 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:14:24,867][main][INFO] - Using device: cuda
+[2023-07-09 16:14:25,189][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:25,191][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:14:26,012][main][INFO] - Test NLL=1.1618017496688524
+[2023-07-09 16:14:26,015][HYDRA] 	#2 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:14:26,101][main][INFO] - Using device: cuda
+[2023-07-09 16:14:26,426][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:26,427][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:14:26,559][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:14:27,292][main][INFO] - Test NLL=1.1613518895335773
+[2023-07-09 16:14:27,294][HYDRA] 	#3 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:14:27,380][main][INFO] - Using device: cuda
+[2023-07-09 16:14:27,696][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:27,697][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:14:28,962][main][INFO] - Test NLL=1.1644408839472045
+[2023-07-09 16:14:28,965][HYDRA] 	#4 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:14:29,051][main][INFO] - Using device: cuda
+[2023-07-09 16:14:29,368][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:29,370][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:14:30,551][main][INFO] - Test NLL=1.1639921447742978
+[2023-07-09 16:14:30,553][HYDRA] 	#5 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:14:30,640][main][INFO] - Using device: cuda
+[2023-07-09 16:14:30,976][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:30,978][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:14:32,207][main][INFO] - Test NLL=1.1630744051519482
+[2023-07-09 16:14:32,211][HYDRA] 	#6 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:14:32,297][main][INFO] - Using device: cuda
+[2023-07-09 16:14:32,615][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:32,616][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:14:33,435][main][INFO] - Test NLL=1.1653299219834905
+[2023-07-09 16:14:33,436][HYDRA] 	#7 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:14:33,522][main][INFO] - Using device: cuda
+[2023-07-09 16:14:33,833][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:33,834][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:14:34,704][main][INFO] - Test NLL=1.165150597377034
+[2023-07-09 16:14:34,707][HYDRA] 	#8 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:14:34,792][main][INFO] - Using device: cuda
+[2023-07-09 16:14:35,115][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:35,116][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:14:35,996][main][INFO] - Test NLL=1.1646134191528723
+[2023-07-09 16:14:35,997][HYDRA] 	#9 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:14:36,083][main][INFO] - Using device: cuda
+[2023-07-09 16:14:36,409][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:36,411][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:14:37,224][main][INFO] - Test NLL=1.1634593600711927
+[2023-07-09 16:14:37,226][HYDRA] 	#10 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:14:37,311][main][INFO] - Using device: cuda
+[2023-07-09 16:14:37,641][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:37,643][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:14:38,470][main][INFO] - Test NLL=1.1628517135341498
+[2023-07-09 16:14:38,472][HYDRA] 	#11 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:14:38,557][main][INFO] - Using device: cuda
+[2023-07-09 16:14:38,921][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:38,923][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:14:39,804][main][INFO] - Test NLL=1.1622960163509304
+[2023-07-09 16:14:39,807][HYDRA] 	#12 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:14:39,892][main][INFO] - Using device: cuda
+[2023-07-09 16:14:40,230][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:40,231][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:14:41,043][main][INFO] - Test NLL=1.1633483125036688
+[2023-07-09 16:14:41,044][HYDRA] 	#13 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:14:41,129][main][INFO] - Using device: cuda
+[2023-07-09 16:14:41,479][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:41,480][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:14:42,346][main][INFO] - Test NLL=1.1627663292139963
+[2023-07-09 16:14:42,348][HYDRA] 	#14 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:14:42,434][main][INFO] - Using device: cuda
+[2023-07-09 16:14:42,773][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:42,775][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:14:43,654][main][INFO] - Test NLL=1.1623011192566826
+[2023-07-09 16:14:43,656][HYDRA] 	#15 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:14:43,742][main][INFO] - Using device: cuda
+[2023-07-09 16:14:44,104][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:44,105][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:14:44,859][main][INFO] - Test NLL=1.1632315724820323
+[2023-07-09 16:14:44,863][HYDRA] 	#16 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:14:44,948][main][INFO] - Using device: cuda
+[2023-07-09 16:14:45,298][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:45,300][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:14:46,069][main][INFO] - Test NLL=1.162651894786867
+[2023-07-09 16:14:46,071][HYDRA] 	#17 : seed=0 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:14:46,157][main][INFO] - Using device: cuda
+[2023-07-09 16:14:46,507][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:46,508][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:14:47,322][main][INFO] - Test NLL=1.1620185540679882
+[2023-07-09 16:14:47,325][HYDRA] 	#18 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:14:47,411][main][INFO] - Using device: cuda
+[2023-07-09 16:14:47,779][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:49,516][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:14:50,326][main][INFO] - Test NLL=1.1304968601813017
+[2023-07-09 16:14:50,327][HYDRA] 	#19 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:14:50,413][main][INFO] - Using device: cuda
+[2023-07-09 16:14:50,784][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:50,786][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:14:51,648][main][INFO] - Test NLL=1.1299135302704133
+[2023-07-09 16:14:51,650][HYDRA] 	#20 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:14:51,737][main][INFO] - Using device: cuda
+[2023-07-09 16:14:52,094][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:52,095][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:14:52,226][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:14:52,961][main][INFO] - Test NLL=1.1296745180949364
+[2023-07-09 16:14:52,963][HYDRA] 	#21 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:14:53,049][main][INFO] - Using device: cuda
+[2023-07-09 16:14:53,385][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:53,386][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:14:54,541][main][INFO] - Test NLL=1.132531696689716
+[2023-07-09 16:14:54,543][HYDRA] 	#22 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:14:54,629][main][INFO] - Using device: cuda
+[2023-07-09 16:14:54,975][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:54,976][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:14:56,146][main][INFO] - Test NLL=1.1320878287586371
+[2023-07-09 16:14:56,148][HYDRA] 	#23 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:14:56,235][main][INFO] - Using device: cuda
+[2023-07-09 16:14:56,600][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:56,602][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:14:57,824][main][INFO] - Test NLL=1.1314903446755338
+[2023-07-09 16:14:57,827][HYDRA] 	#24 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:14:57,913][main][INFO] - Using device: cuda
+[2023-07-09 16:14:58,267][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:58,268][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:14:59,080][main][INFO] - Test NLL=1.1333416595837738
+[2023-07-09 16:14:59,083][HYDRA] 	#25 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:14:59,169][main][INFO] - Using device: cuda
+[2023-07-09 16:14:59,518][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:14:59,519][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:15:00,345][main][INFO] - Test NLL=1.13319255893044
+[2023-07-09 16:15:00,348][HYDRA] 	#26 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:15:00,434][main][INFO] - Using device: cuda
+[2023-07-09 16:15:00,758][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:00,760][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:15:01,680][main][INFO] - Test NLL=1.1328289287385047
+[2023-07-09 16:15:01,682][HYDRA] 	#27 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:15:01,766][main][INFO] - Using device: cuda
+[2023-07-09 16:15:02,107][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:02,109][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:15:02,918][main][INFO] - Test NLL=1.131261525934003
+[2023-07-09 16:15:02,921][HYDRA] 	#28 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:15:03,006][main][INFO] - Using device: cuda
+[2023-07-09 16:15:03,348][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:03,349][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:15:04,176][main][INFO] - Test NLL=1.1307484544361392
+[2023-07-09 16:15:04,179][HYDRA] 	#29 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:15:04,265][main][INFO] - Using device: cuda
+[2023-07-09 16:15:04,615][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:04,617][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:15:05,498][main][INFO] - Test NLL=1.1301741365467843
+[2023-07-09 16:15:05,500][HYDRA] 	#30 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:15:05,585][main][INFO] - Using device: cuda
+[2023-07-09 16:15:05,963][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:05,964][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:15:06,776][main][INFO] - Test NLL=1.131255179418453
+[2023-07-09 16:15:06,778][HYDRA] 	#31 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:15:06,862][main][INFO] - Using device: cuda
+[2023-07-09 16:15:07,214][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:07,215][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:15:08,050][main][INFO] - Test NLL=1.1307382166504658
+[2023-07-09 16:15:08,052][HYDRA] 	#32 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:15:08,137][main][INFO] - Using device: cuda
+[2023-07-09 16:15:08,507][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:08,509][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:15:09,389][main][INFO] - Test NLL=1.1301722743118334
+[2023-07-09 16:15:09,391][HYDRA] 	#33 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:15:09,476][main][INFO] - Using device: cuda
+[2023-07-09 16:15:09,800][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:09,802][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:15:10,594][main][INFO] - Test NLL=1.131255179415368
+[2023-07-09 16:15:10,597][HYDRA] 	#34 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:15:10,682][main][INFO] - Using device: cuda
+[2023-07-09 16:15:11,026][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:11,028][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:15:11,794][main][INFO] - Test NLL=1.1307095695248315
+[2023-07-09 16:15:11,797][HYDRA] 	#35 : seed=0 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:15:11,882][main][INFO] - Using device: cuda
+[2023-07-09 16:15:12,204][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:12,206][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:15:12,271][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:15:13,012][main][INFO] - Test NLL=1.1301712682999128
+[2023-07-09 16:15:13,014][HYDRA] 	#36 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:15:13,115][main][INFO] - Using device: cuda
+[2023-07-09 16:15:13,443][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:15,192][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:15:16,011][main][INFO] - Test NLL=1.0777045346766054
+[2023-07-09 16:15:16,013][HYDRA] 	#37 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:15:16,099][main][INFO] - Using device: cuda
+[2023-07-09 16:15:16,473][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:16,474][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:15:17,308][main][INFO] - Test NLL=1.0777528032071015
+[2023-07-09 16:15:17,311][HYDRA] 	#38 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:15:17,397][main][INFO] - Using device: cuda
+[2023-07-09 16:15:17,731][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:17,733][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:15:18,621][main][INFO] - Test NLL=1.0777552886514556
+[2023-07-09 16:15:18,623][HYDRA] 	#39 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:15:18,708][main][INFO] - Using device: cuda
+[2023-07-09 16:15:19,045][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:19,046][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:15:20,209][main][INFO] - Test NLL=1.0776118108919033
+[2023-07-09 16:15:20,212][HYDRA] 	#40 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:15:20,298][main][INFO] - Using device: cuda
+[2023-07-09 16:15:20,661][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:20,663][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:15:21,880][main][INFO] - Test NLL=1.0776283524192096
+[2023-07-09 16:15:21,882][HYDRA] 	#41 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:15:21,967][main][INFO] - Using device: cuda
+[2023-07-09 16:15:22,312][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:22,313][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:15:23,543][main][INFO] - Test NLL=1.0776004885815889
+[2023-07-09 16:15:23,550][HYDRA] 	#42 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:15:23,636][main][INFO] - Using device: cuda
+[2023-07-09 16:15:23,981][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:23,982][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:15:24,798][main][INFO] - Test NLL=1.0774938302977097
+[2023-07-09 16:15:24,799][HYDRA] 	#43 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:15:24,887][main][INFO] - Using device: cuda
+[2023-07-09 16:15:25,255][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:25,256][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:15:26,086][main][INFO] - Test NLL=1.077491764100761
+[2023-07-09 16:15:26,087][HYDRA] 	#44 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:15:26,172][main][INFO] - Using device: cuda
+[2023-07-09 16:15:26,513][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:26,515][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:15:27,396][main][INFO] - Test NLL=1.0775068787333526
+[2023-07-09 16:15:27,398][HYDRA] 	#45 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:15:27,483][main][INFO] - Using device: cuda
+[2023-07-09 16:15:27,822][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:27,824][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:15:28,637][main][INFO] - Test NLL=1.077609056166412
+[2023-07-09 16:15:28,639][HYDRA] 	#46 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:15:28,724][main][INFO] - Using device: cuda
+[2023-07-09 16:15:29,061][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:29,063][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:15:29,889][main][INFO] - Test NLL=1.0776740697282896
+[2023-07-09 16:15:29,891][HYDRA] 	#47 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:15:29,975][main][INFO] - Using device: cuda
+[2023-07-09 16:15:30,311][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:30,312][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:15:31,237][main][INFO] - Test NLL=1.0777143394560962
+[2023-07-09 16:15:31,239][HYDRA] 	#48 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:15:31,325][main][INFO] - Using device: cuda
+[2023-07-09 16:15:31,659][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:31,661][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:15:32,473][main][INFO] - Test NLL=1.0776138586366644
+[2023-07-09 16:15:32,475][HYDRA] 	#49 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:15:32,561][main][INFO] - Using device: cuda
+[2023-07-09 16:15:32,888][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:32,890][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:15:33,719][main][INFO] - Test NLL=1.0776691453715106
+[2023-07-09 16:15:33,721][HYDRA] 	#50 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:15:33,806][main][INFO] - Using device: cuda
+[2023-07-09 16:15:34,139][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:34,141][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:15:35,022][main][INFO] - Test NLL=1.077707374209846
+[2023-07-09 16:15:35,025][HYDRA] 	#51 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:15:35,110][main][INFO] - Using device: cuda
+[2023-07-09 16:15:35,446][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:35,447][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:15:36,195][main][INFO] - Test NLL=1.0776189700712249
+[2023-07-09 16:15:36,198][HYDRA] 	#52 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:15:36,282][main][INFO] - Using device: cuda
+[2023-07-09 16:15:36,649][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:36,650][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:15:37,413][main][INFO] - Test NLL=1.0776792749250896
+[2023-07-09 16:15:37,416][HYDRA] 	#53 : seed=0 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:15:37,567][main][INFO] - Using device: cuda
+[2023-07-09 16:15:37,903][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:37,904][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:15:38,721][main][INFO] - Test NLL=1.077712088956196
+[2023-07-09 16:15:38,723][HYDRA] 	#54 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:15:38,808][main][INFO] - Using device: cuda
+[2023-07-09 16:15:39,134][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:40,858][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:15:41,714][main][INFO] - Test NLL=1.2256496042968206
+[2023-07-09 16:15:41,717][HYDRA] 	#55 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:15:41,803][main][INFO] - Using device: cuda
+[2023-07-09 16:15:42,144][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:42,145][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:15:42,274][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:15:42,963][main][INFO] - Test NLL=1.2243684242523911
+[2023-07-09 16:15:42,964][HYDRA] 	#56 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:15:43,050][main][INFO] - Using device: cuda
+[2023-07-09 16:15:43,389][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:43,390][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:15:43,521][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:15:44,259][main][INFO] - Test NLL=1.223723561941549
+[2023-07-09 16:15:44,262][HYDRA] 	#57 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:15:44,347][main][INFO] - Using device: cuda
+[2023-07-09 16:15:44,682][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:44,683][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:15:45,841][main][INFO] - Test NLL=1.2297557206136254
+[2023-07-09 16:15:45,844][HYDRA] 	#58 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:15:45,930][main][INFO] - Using device: cuda
+[2023-07-09 16:15:46,313][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:46,314][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:15:47,489][main][INFO] - Test NLL=1.2289777654439953
+[2023-07-09 16:15:47,491][HYDRA] 	#59 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:15:47,577][main][INFO] - Using device: cuda
+[2023-07-09 16:15:47,930][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:47,932][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:15:49,159][main][INFO] - Test NLL=1.227725800054973
+[2023-07-09 16:15:49,161][HYDRA] 	#60 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:15:49,455][main][INFO] - Using device: cuda
+[2023-07-09 16:15:49,789][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:49,791][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:15:50,604][main][INFO] - Test NLL=1.231351629823511
+[2023-07-09 16:15:50,606][HYDRA] 	#61 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:15:50,691][main][INFO] - Using device: cuda
+[2023-07-09 16:15:51,023][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:51,025][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:15:51,901][main][INFO] - Test NLL=1.2311510254143365
+[2023-07-09 16:15:51,904][HYDRA] 	#62 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:15:52,104][main][INFO] - Using device: cuda
+[2023-07-09 16:15:52,454][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:52,456][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:15:53,338][main][INFO] - Test NLL=1.2301618156436094
+[2023-07-09 16:15:53,341][HYDRA] 	#63 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:15:53,427][main][INFO] - Using device: cuda
+[2023-07-09 16:15:53,773][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:53,774][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:15:54,588][main][INFO] - Test NLL=1.2268900087398464
+[2023-07-09 16:15:54,592][HYDRA] 	#64 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:15:54,677][main][INFO] - Using device: cuda
+[2023-07-09 16:15:55,013][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:55,014][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:15:55,844][main][INFO] - Test NLL=1.2257771367678647
+[2023-07-09 16:15:55,846][HYDRA] 	#65 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:15:56,091][main][INFO] - Using device: cuda
+[2023-07-09 16:15:56,472][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:56,474][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:15:56,604][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:15:57,347][main][INFO] - Test NLL=1.2249106119747235
+[2023-07-09 16:15:57,350][HYDRA] 	#66 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:15:57,436][main][INFO] - Using device: cuda
+[2023-07-09 16:15:57,769][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:57,770][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:15:58,584][main][INFO] - Test NLL=1.2268887943483502
+[2023-07-09 16:15:58,587][HYDRA] 	#67 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:15:58,672][main][INFO] - Using device: cuda
+[2023-07-09 16:15:58,999][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:15:59,001][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:15:59,829][main][INFO] - Test NLL=1.225756396681646
+[2023-07-09 16:15:59,832][HYDRA] 	#68 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:15:59,917][main][INFO] - Using device: cuda
+[2023-07-09 16:16:00,249][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:00,251][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:16:00,380][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:16:01,118][main][INFO] - Test NLL=1.2248964101209066
+[2023-07-09 16:16:01,121][HYDRA] 	#69 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:16:01,206][main][INFO] - Using device: cuda
+[2023-07-09 16:16:01,574][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:01,575][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:16:02,384][main][INFO] - Test NLL=1.2268683259923951
+[2023-07-09 16:16:02,386][HYDRA] 	#70 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:16:02,471][main][INFO] - Using device: cuda
+[2023-07-09 16:16:02,829][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:02,831][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:16:03,593][main][INFO] - Test NLL=1.2257559957390736
+[2023-07-09 16:16:03,595][HYDRA] 	#71 : seed=0 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:16:03,680][main][INFO] - Using device: cuda
+[2023-07-09 16:16:04,029][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:04,030][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:16:04,097][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:16:04,837][main][INFO] - Test NLL=1.2248919941786283
+[2023-07-09 16:16:04,839][HYDRA] 	#72 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:16:04,925][main][INFO] - Using device: cuda
+[2023-07-09 16:16:05,269][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:07,003][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:16:07,819][main][INFO] - Test NLL=1.0398164654786848
+[2023-07-09 16:16:07,820][HYDRA] 	#73 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:16:07,906][main][INFO] - Using device: cuda
+[2023-07-09 16:16:08,249][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:08,250][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:16:09,079][main][INFO] - Test NLL=1.0399109774425
+[2023-07-09 16:16:09,082][HYDRA] 	#74 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:16:09,167][main][INFO] - Using device: cuda
+[2023-07-09 16:16:09,510][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:09,512][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:16:10,393][main][INFO] - Test NLL=1.0399578739160096
+[2023-07-09 16:16:10,395][HYDRA] 	#75 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:16:10,479][main][INFO] - Using device: cuda
+[2023-07-09 16:16:10,831][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:10,832][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:16:11,983][main][INFO] - Test NLL=1.0396071893565626
+[2023-07-09 16:16:11,985][HYDRA] 	#76 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:16:12,071][main][INFO] - Using device: cuda
+[2023-07-09 16:16:12,442][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:12,443][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:16:13,600][main][INFO] - Test NLL=1.0396381788460296
+[2023-07-09 16:16:13,604][HYDRA] 	#77 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:16:13,689][main][INFO] - Using device: cuda
+[2023-07-09 16:16:14,038][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:14,039][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:16:15,300][main][INFO] - Test NLL=1.0397125821232667
+[2023-07-09 16:16:15,302][HYDRA] 	#78 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:16:15,387][main][INFO] - Using device: cuda
+[2023-07-09 16:16:15,729][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:15,731][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:16:16,541][main][INFO] - Test NLL=1.0393993010180314
+[2023-07-09 16:16:16,542][HYDRA] 	#79 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:16:16,627][main][INFO] - Using device: cuda
+[2023-07-09 16:16:16,971][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:16,972][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:16:17,798][main][INFO] - Test NLL=1.0394082924487769
+[2023-07-09 16:16:17,801][HYDRA] 	#80 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:16:17,887][main][INFO] - Using device: cuda
+[2023-07-09 16:16:18,250][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:18,251][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:16:19,132][main][INFO] - Test NLL=1.039443414547898
+[2023-07-09 16:16:19,135][HYDRA] 	#81 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:16:19,221][main][INFO] - Using device: cuda
+[2023-07-09 16:16:19,570][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:19,572][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:16:20,383][main][INFO] - Test NLL=1.0396776289250078
+[2023-07-09 16:16:20,386][HYDRA] 	#82 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:16:20,472][main][INFO] - Using device: cuda
+[2023-07-09 16:16:20,808][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:20,809][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:16:21,633][main][INFO] - Test NLL=1.0397790378786267
+[2023-07-09 16:16:21,635][HYDRA] 	#83 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:16:21,719][main][INFO] - Using device: cuda
+[2023-07-09 16:16:22,075][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:22,076][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:16:22,953][main][INFO] - Test NLL=1.0398533911736048
+[2023-07-09 16:16:22,954][HYDRA] 	#84 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:16:23,039][main][INFO] - Using device: cuda
+[2023-07-09 16:16:23,388][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:23,390][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:16:24,194][main][INFO] - Test NLL=1.0396776289250078
+[2023-07-09 16:16:24,197][HYDRA] 	#85 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:16:24,281][main][INFO] - Using device: cuda
+[2023-07-09 16:16:24,660][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:24,661][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:16:25,532][main][INFO] - Test NLL=1.039778923528412
+[2023-07-09 16:16:25,534][HYDRA] 	#86 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:16:25,619][main][INFO] - Using device: cuda
+[2023-07-09 16:16:25,951][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:25,953][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:16:26,828][main][INFO] - Test NLL=1.0398533911736048
+[2023-07-09 16:16:26,831][HYDRA] 	#87 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:16:26,915][main][INFO] - Using device: cuda
+[2023-07-09 16:16:27,257][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:27,258][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:16:27,999][main][INFO] - Test NLL=1.0396776289234775
+[2023-07-09 16:16:28,002][HYDRA] 	#88 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:16:28,353][main][INFO] - Using device: cuda
+[2023-07-09 16:16:28,745][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:28,746][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:16:29,504][main][INFO] - Test NLL=1.0397790048284978
+[2023-07-09 16:16:29,506][HYDRA] 	#89 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:16:29,591][main][INFO] - Using device: cuda
+[2023-07-09 16:16:29,922][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:29,924][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:16:30,730][main][INFO] - Test NLL=1.0398533911723233
+[2023-07-09 16:16:30,733][HYDRA] 	#90 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:16:30,817][main][INFO] - Using device: cuda
+[2023-07-09 16:16:31,142][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:32,852][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:16:33,653][main][INFO] - Test NLL=1.1555930269173798
+[2023-07-09 16:16:33,655][HYDRA] 	#91 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:16:33,740][main][INFO] - Using device: cuda
+[2023-07-09 16:16:34,062][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:34,064][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:16:34,879][main][INFO] - Test NLL=1.1555192778403913
+[2023-07-09 16:16:34,881][HYDRA] 	#92 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:16:34,966][main][INFO] - Using device: cuda
+[2023-07-09 16:16:35,294][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:35,295][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:16:36,163][main][INFO] - Test NLL=1.1554883796030353
+[2023-07-09 16:16:36,165][HYDRA] 	#93 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:16:36,250][main][INFO] - Using device: cuda
+[2023-07-09 16:16:36,594][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:36,595][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:16:37,792][main][INFO] - Test NLL=1.1558413783678125
+[2023-07-09 16:16:37,796][HYDRA] 	#94 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:16:37,881][main][INFO] - Using device: cuda
+[2023-07-09 16:16:38,234][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:38,236][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:16:39,397][main][INFO] - Test NLL=1.1558180358817502
+[2023-07-09 16:16:39,399][HYDRA] 	#95 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:16:39,485][main][INFO] - Using device: cuda
+[2023-07-09 16:16:39,874][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:39,875][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:16:41,088][main][INFO] - Test NLL=1.1557369029866817
+[2023-07-09 16:16:41,090][HYDRA] 	#96 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:16:41,176][main][INFO] - Using device: cuda
+[2023-07-09 16:16:41,513][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:41,514][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:16:42,319][main][INFO] - Test NLL=1.1559094539158348
+[2023-07-09 16:16:42,322][HYDRA] 	#97 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:16:42,408][main][INFO] - Using device: cuda
+[2023-07-09 16:16:42,970][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:42,971][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:16:43,795][main][INFO] - Test NLL=1.1559028480913374
+[2023-07-09 16:16:43,796][HYDRA] 	#98 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:16:43,882][main][INFO] - Using device: cuda
+[2023-07-09 16:16:44,206][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:44,208][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:16:45,081][main][INFO] - Test NLL=1.155884280878225
+[2023-07-09 16:16:45,083][HYDRA] 	#99 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:16:45,168][main][INFO] - Using device: cuda
+[2023-07-09 16:16:45,546][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:45,547][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:16:46,351][main][INFO] - Test NLL=1.155680695082392
+[2023-07-09 16:16:46,353][HYDRA] 	#100 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:16:46,438][main][INFO] - Using device: cuda
+[2023-07-09 16:16:46,778][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:46,780][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:16:47,597][main][INFO] - Test NLL=1.1556257236509224
+[2023-07-09 16:16:47,599][HYDRA] 	#101 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:16:47,685][main][INFO] - Using device: cuda
+[2023-07-09 16:16:48,017][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:48,018][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:16:48,888][main][INFO] - Test NLL=1.155583382460377
+[2023-07-09 16:16:48,890][HYDRA] 	#102 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:16:48,975][main][INFO] - Using device: cuda
+[2023-07-09 16:16:49,317][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:49,319][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:16:50,176][main][INFO] - Test NLL=1.1556758408928334
+[2023-07-09 16:16:50,178][HYDRA] 	#103 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:16:50,263][main][INFO] - Using device: cuda
+[2023-07-09 16:16:50,628][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:50,630][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:16:51,447][main][INFO] - Test NLL=1.1556223505789966
+[2023-07-09 16:16:51,450][HYDRA] 	#104 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:16:51,535][main][INFO] - Using device: cuda
+[2023-07-09 16:16:51,888][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:51,890][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:16:52,764][main][INFO] - Test NLL=1.1555862174157818
+[2023-07-09 16:16:52,767][HYDRA] 	#105 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:16:52,852][main][INFO] - Using device: cuda
+[2023-07-09 16:16:53,204][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:53,206][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:16:53,947][main][INFO] - Test NLL=1.1556617962472078
+[2023-07-09 16:16:53,948][HYDRA] 	#106 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:16:54,033][main][INFO] - Using device: cuda
+[2023-07-09 16:16:54,377][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:54,378][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:16:55,133][main][INFO] - Test NLL=1.1556078844294126
+[2023-07-09 16:16:55,135][HYDRA] 	#107 : seed=0 data.name=wine data.split=GAP data.split_index=5 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:16:55,219][main][INFO] - Using device: cuda
+[2023-07-09 16:16:55,562][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:55,564][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:16:56,371][main][INFO] - Test NLL=1.1555740404323518
+[2023-07-09 16:16:56,372][HYDRA] 	#108 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:16:56,457][main][INFO] - Using device: cuda
+[2023-07-09 16:16:56,813][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:58,525][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:16:59,328][main][INFO] - Test NLL=1.2452197625158588
+[2023-07-09 16:16:59,332][HYDRA] 	#109 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:16:59,417][main][INFO] - Using device: cuda
+[2023-07-09 16:16:59,775][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:16:59,777][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:16:59,903][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:00,584][main][INFO] - Test NLL=1.243923161521756
+[2023-07-09 16:17:00,586][HYDRA] 	#110 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:17:00,670][main][INFO] - Using device: cuda
+[2023-07-09 16:17:01,015][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:01,016][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:17:01,145][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:01,874][main][INFO] - Test NLL=1.2432068835550383
+[2023-07-09 16:17:01,877][HYDRA] 	#111 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:17:01,962][main][INFO] - Using device: cuda
+[2023-07-09 16:17:02,294][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:02,296][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:17:03,498][main][INFO] - Test NLL=1.2485460564566968
+[2023-07-09 16:17:03,501][HYDRA] 	#112 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:17:03,586][main][INFO] - Using device: cuda
+[2023-07-09 16:17:03,935][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:03,937][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:17:05,124][main][INFO] - Test NLL=1.247947286551557
+[2023-07-09 16:17:05,127][HYDRA] 	#113 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:17:05,215][main][INFO] - Using device: cuda
+[2023-07-09 16:17:05,540][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:05,542][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:17:06,012][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:06,751][main][INFO] - Test NLL=1.246953447895308
+[2023-07-09 16:17:06,753][HYDRA] 	#114 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:17:06,838][main][INFO] - Using device: cuda
+[2023-07-09 16:17:07,198][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:07,200][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:17:08,009][main][INFO] - Test NLL=1.2501904796973156
+[2023-07-09 16:17:08,011][HYDRA] 	#115 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:17:08,097][main][INFO] - Using device: cuda
+[2023-07-09 16:17:08,469][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:08,471][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:17:09,289][main][INFO] - Test NLL=1.2500806222058787
+[2023-07-09 16:17:09,291][HYDRA] 	#116 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:17:09,376][main][INFO] - Using device: cuda
+[2023-07-09 16:17:09,742][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:09,743][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:17:10,615][main][INFO] - Test NLL=1.249366266174021
+[2023-07-09 16:17:10,616][HYDRA] 	#117 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:17:10,701][main][INFO] - Using device: cuda
+[2023-07-09 16:17:11,033][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:11,035][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:17:11,837][main][INFO] - Test NLL=1.2463095844182388
+[2023-07-09 16:17:11,838][HYDRA] 	#118 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:17:11,923][main][INFO] - Using device: cuda
+[2023-07-09 16:17:12,249][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:12,251][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:17:13,066][main][INFO] - Test NLL=1.2453163184956906
+[2023-07-09 16:17:13,069][HYDRA] 	#119 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:17:13,153][main][INFO] - Using device: cuda
+[2023-07-09 16:17:13,513][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:13,514][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:17:13,642][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:14,369][main][INFO] - Test NLL=1.244552170627932
+[2023-07-09 16:17:14,371][HYDRA] 	#120 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:17:14,456][main][INFO] - Using device: cuda
+[2023-07-09 16:17:14,803][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:14,805][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:17:15,606][main][INFO] - Test NLL=1.2462780614510873
+[2023-07-09 16:17:15,607][HYDRA] 	#121 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:17:15,760][main][INFO] - Using device: cuda
+[2023-07-09 16:17:16,115][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:16,117][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:17:16,931][main][INFO] - Test NLL=1.2453156747432754
+[2023-07-09 16:17:16,934][HYDRA] 	#122 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:17:17,019][main][INFO] - Using device: cuda
+[2023-07-09 16:17:17,363][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:17,364][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:17:17,494][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:18,223][main][INFO] - Test NLL=1.2445395573781173
+[2023-07-09 16:17:18,226][HYDRA] 	#123 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:17:18,311][main][INFO] - Using device: cuda
+[2023-07-09 16:17:18,677][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:18,679][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:17:19,418][main][INFO] - Test NLL=1.2462776637880948
+[2023-07-09 16:17:19,420][HYDRA] 	#124 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:17:19,505][main][INFO] - Using device: cuda
+[2023-07-09 16:17:19,855][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:19,857][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:17:20,612][main][INFO] - Test NLL=1.245315674723714
+[2023-07-09 16:17:20,613][HYDRA] 	#125 : seed=0 data.name=wine data.split=GAP data.split_index=6 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:17:20,699][main][INFO] - Using device: cuda
+[2023-07-09 16:17:21,022][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:21,023][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:17:21,087][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:21,818][main][INFO] - Test NLL=1.244538616416392
+[2023-07-09 16:17:21,821][HYDRA] 	#126 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:17:21,905][main][INFO] - Using device: cuda
+[2023-07-09 16:17:22,265][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:23,981][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:17:24,783][main][INFO] - Test NLL=1.1998336954627986
+[2023-07-09 16:17:24,786][HYDRA] 	#127 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:17:24,870][main][INFO] - Using device: cuda
+[2023-07-09 16:17:25,203][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:25,205][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:17:25,330][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:26,006][main][INFO] - Test NLL=1.1982687551911921
+[2023-07-09 16:17:26,009][HYDRA] 	#128 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:17:26,094][main][INFO] - Using device: cuda
+[2023-07-09 16:17:26,442][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:26,444][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:17:26,573][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:27,306][main][INFO] - Test NLL=1.1974879633461202
+[2023-07-09 16:17:27,307][HYDRA] 	#129 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:17:27,392][main][INFO] - Using device: cuda
+[2023-07-09 16:17:27,738][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:27,740][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:17:28,958][main][INFO] - Test NLL=1.204561475183421
+[2023-07-09 16:17:28,961][HYDRA] 	#130 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:17:29,046][main][INFO] - Using device: cuda
+[2023-07-09 16:17:29,385][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:29,386][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:17:30,556][main][INFO] - Test NLL=1.2034211462430233
+[2023-07-09 16:17:30,558][HYDRA] 	#131 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:17:30,643][main][INFO] - Using device: cuda
+[2023-07-09 16:17:30,976][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:30,977][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:17:31,449][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:32,180][main][INFO] - Test NLL=1.2016562411464329
+[2023-07-09 16:17:32,183][HYDRA] 	#132 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:17:32,268][main][INFO] - Using device: cuda
+[2023-07-09 16:17:32,611][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:32,613][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:17:33,413][main][INFO] - Test NLL=1.2062630337017222
+[2023-07-09 16:17:33,416][HYDRA] 	#133 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:17:33,501][main][INFO] - Using device: cuda
+[2023-07-09 16:17:33,854][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:33,855][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:17:34,671][main][INFO] - Test NLL=1.205694552318155
+[2023-07-09 16:17:34,673][HYDRA] 	#134 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:17:34,758][main][INFO] - Using device: cuda
+[2023-07-09 16:17:35,107][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:35,109][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:17:35,977][main][INFO] - Test NLL=1.2044297987705337
+[2023-07-09 16:17:35,979][HYDRA] 	#135 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:17:36,063][main][INFO] - Using device: cuda
+[2023-07-09 16:17:36,407][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:36,408][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:17:37,208][main][INFO] - Test NLL=1.2016110827809603
+[2023-07-09 16:17:37,210][HYDRA] 	#136 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:17:37,294][main][INFO] - Using device: cuda
+[2023-07-09 16:17:37,638][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:37,640][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:17:38,452][main][INFO] - Test NLL=1.2005167333708693
+[2023-07-09 16:17:38,454][HYDRA] 	#137 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:17:38,539][main][INFO] - Using device: cuda
+[2023-07-09 16:17:38,865][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:38,866][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:17:38,994][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:39,723][main][INFO] - Test NLL=1.1992493074930997
+[2023-07-09 16:17:39,724][HYDRA] 	#138 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:17:39,809][main][INFO] - Using device: cuda
+[2023-07-09 16:17:40,129][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:40,130][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:17:40,928][main][INFO] - Test NLL=1.2014146831013126
+[2023-07-09 16:17:40,929][HYDRA] 	#139 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:17:41,014][main][INFO] - Using device: cuda
+[2023-07-09 16:17:41,360][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:41,362][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:17:42,175][main][INFO] - Test NLL=1.2001527773713612
+[2023-07-09 16:17:42,179][HYDRA] 	#140 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:17:42,326][main][INFO] - Using device: cuda
+[2023-07-09 16:17:42,669][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:42,671][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:17:42,799][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:43,522][main][INFO] - Test NLL=1.1992761094262487
+[2023-07-09 16:17:43,525][HYDRA] 	#141 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:17:43,610][main][INFO] - Using device: cuda
+[2023-07-09 16:17:43,959][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:43,960][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:17:44,694][main][INFO] - Test NLL=1.201028163135541
+[2023-07-09 16:17:44,696][HYDRA] 	#142 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:17:44,782][main][INFO] - Using device: cuda
+[2023-07-09 16:17:45,137][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:45,139][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:17:45,890][main][INFO] - Test NLL=1.1998026207104573
+[2023-07-09 16:17:45,892][HYDRA] 	#143 : seed=0 data.name=wine data.split=GAP data.split_index=7 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:17:45,978][main][INFO] - Using device: cuda
+[2023-07-09 16:17:46,340][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:46,342][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:17:46,406][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:47,132][main][INFO] - Test NLL=1.1987865177541766
+[2023-07-09 16:17:47,134][HYDRA] 	#144 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:17:47,219][main][INFO] - Using device: cuda
+[2023-07-09 16:17:47,564][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:49,268][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:17:50,066][main][INFO] - Test NLL=1.1544316130165855
+[2023-07-09 16:17:50,068][HYDRA] 	#145 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:17:50,153][main][INFO] - Using device: cuda
+[2023-07-09 16:17:50,486][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:50,488][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:17:50,613][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:51,289][main][INFO] - Test NLL=1.153342921451154
+[2023-07-09 16:17:51,292][HYDRA] 	#146 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:17:51,377][main][INFO] - Using device: cuda
+[2023-07-09 16:17:51,713][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:51,715][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:17:51,842][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:52,568][main][INFO] - Test NLL=1.152666533849319
+[2023-07-09 16:17:52,569][HYDRA] 	#147 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:17:52,687][main][INFO] - Using device: cuda
+[2023-07-09 16:17:53,018][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:53,020][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:17:54,169][main][INFO] - Test NLL=1.1562782338338917
+[2023-07-09 16:17:54,172][HYDRA] 	#148 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:17:54,257][main][INFO] - Using device: cuda
+[2023-07-09 16:17:54,588][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:54,589][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:17:55,770][main][INFO] - Test NLL=1.1557756055003854
+[2023-07-09 16:17:55,772][HYDRA] 	#149 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:17:56,192][main][INFO] - Using device: cuda
+[2023-07-09 16:17:56,584][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:56,586][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:17:57,064][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:17:57,868][main][INFO] - Test NLL=1.1546225757604802
+[2023-07-09 16:17:57,871][HYDRA] 	#150 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:17:57,956][main][INFO] - Using device: cuda
+[2023-07-09 16:17:58,290][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:58,291][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:17:59,101][main][INFO] - Test NLL=1.157662811270928
+[2023-07-09 16:17:59,103][HYDRA] 	#151 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:17:59,355][main][INFO] - Using device: cuda
+[2023-07-09 16:17:59,702][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:17:59,703][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:18:00,530][main][INFO] - Test NLL=1.1574053007720246
+[2023-07-09 16:18:00,532][HYDRA] 	#152 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:18:00,618][main][INFO] - Using device: cuda
+[2023-07-09 16:18:00,965][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:00,967][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:18:01,847][main][INFO] - Test NLL=1.1565658026497656
+[2023-07-09 16:18:01,850][HYDRA] 	#153 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:18:01,935][main][INFO] - Using device: cuda
+[2023-07-09 16:18:02,270][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:02,272][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:18:03,083][main][INFO] - Test NLL=1.1553431557630787
+[2023-07-09 16:18:03,085][HYDRA] 	#154 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:18:03,170][main][INFO] - Using device: cuda
+[2023-07-09 16:18:03,506][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:03,508][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:18:04,333][main][INFO] - Test NLL=1.1546023146292614
+[2023-07-09 16:18:04,335][HYDRA] 	#155 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:18:04,421][main][INFO] - Using device: cuda
+[2023-07-09 16:18:04,774][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:04,775][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:18:04,905][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:18:05,642][main][INFO] - Test NLL=1.153813289910717
+[2023-07-09 16:18:05,643][HYDRA] 	#156 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:18:05,728][main][INFO] - Using device: cuda
+[2023-07-09 16:18:06,086][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:06,088][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:18:06,898][main][INFO] - Test NLL=1.1552824317641592
+[2023-07-09 16:18:06,900][HYDRA] 	#157 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:18:06,984][main][INFO] - Using device: cuda
+[2023-07-09 16:18:07,328][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:07,329][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:18:08,154][main][INFO] - Test NLL=1.1544806600473734
+[2023-07-09 16:18:08,156][HYDRA] 	#158 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:18:08,241][main][INFO] - Using device: cuda
+[2023-07-09 16:18:08,570][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:08,572][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:18:08,701][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:18:09,437][main][INFO] - Test NLL=1.1538499099332127
+[2023-07-09 16:18:09,439][HYDRA] 	#159 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:18:09,524][main][INFO] - Using device: cuda
+[2023-07-09 16:18:09,863][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:09,865][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:18:10,609][main][INFO] - Test NLL=1.1550846521833182
+[2023-07-09 16:18:10,612][HYDRA] 	#160 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:18:10,697][main][INFO] - Using device: cuda
+[2023-07-09 16:18:11,046][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:11,047][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:18:11,873][main][INFO] - Test NLL=1.154350270985428
+[2023-07-09 16:18:11,876][HYDRA] 	#161 : seed=0 data.name=wine data.split=GAP data.split_index=8 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:18:11,961][main][INFO] - Using device: cuda
+[2023-07-09 16:18:12,304][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:12,306][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:18:12,371][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:18:13,101][main][INFO] - Test NLL=1.1536307918200535
+[2023-07-09 16:18:13,104][HYDRA] 	#162 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:18:13,189][main][INFO] - Using device: cuda
+[2023-07-09 16:18:13,572][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:15,287][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:18:16,095][main][INFO] - Test NLL=1.1235504990158502
+[2023-07-09 16:18:16,099][HYDRA] 	#163 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:18:16,184][main][INFO] - Using device: cuda
+[2023-07-09 16:18:16,538][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:16,540][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:18:17,367][main][INFO] - Test NLL=1.1234799819978072
+[2023-07-09 16:18:17,370][HYDRA] 	#164 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:18:17,456][main][INFO] - Using device: cuda
+[2023-07-09 16:18:17,765][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:17,766][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:18:17,896][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:18:18,633][main][INFO] - Test NLL=1.1234458721144909
+[2023-07-09 16:18:18,635][HYDRA] 	#165 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:18:18,719][main][INFO] - Using device: cuda
+[2023-07-09 16:18:19,045][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:19,046][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:18:20,226][main][INFO] - Test NLL=1.1237947870624694
+[2023-07-09 16:18:20,229][HYDRA] 	#166 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:18:20,315][main][INFO] - Using device: cuda
+[2023-07-09 16:18:20,663][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:20,664][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:18:21,911][main][INFO] - Test NLL=1.1237437865282769
+[2023-07-09 16:18:21,912][HYDRA] 	#167 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:18:21,998][main][INFO] - Using device: cuda
+[2023-07-09 16:18:22,341][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:22,343][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:18:23,619][main][INFO] - Test NLL=1.1236478473097171
+[2023-07-09 16:18:23,622][HYDRA] 	#168 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:18:23,707][main][INFO] - Using device: cuda
+[2023-07-09 16:18:24,044][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:24,046][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:18:24,860][main][INFO] - Test NLL=1.1239492953700543
+[2023-07-09 16:18:24,862][HYDRA] 	#169 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:18:24,946][main][INFO] - Using device: cuda
+[2023-07-09 16:18:25,275][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:25,277][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:18:26,107][main][INFO] - Test NLL=1.123941465830233
+[2023-07-09 16:18:26,109][HYDRA] 	#170 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:18:26,194][main][INFO] - Using device: cuda
+[2023-07-09 16:18:26,540][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:26,541][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:18:27,428][main][INFO] - Test NLL=1.1239077891333364
+[2023-07-09 16:18:27,432][HYDRA] 	#171 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:18:27,603][main][INFO] - Using device: cuda
+[2023-07-09 16:18:27,947][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:27,949][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:18:28,757][main][INFO] - Test NLL=1.1236774752689365
+[2023-07-09 16:18:28,760][HYDRA] 	#172 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:18:28,845][main][INFO] - Using device: cuda
+[2023-07-09 16:18:29,197][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:29,198][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:18:30,022][main][INFO] - Test NLL=1.1235954466091185
+[2023-07-09 16:18:30,023][HYDRA] 	#173 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:18:30,108][main][INFO] - Using device: cuda
+[2023-07-09 16:18:30,456][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:30,457][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:18:31,337][main][INFO] - Test NLL=1.1235202972563907
+[2023-07-09 16:18:31,339][HYDRA] 	#174 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:18:31,424][main][INFO] - Using device: cuda
+[2023-07-09 16:18:31,751][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:31,753][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:18:32,563][main][INFO] - Test NLL=1.12366900801687
+[2023-07-09 16:18:32,566][HYDRA] 	#175 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:18:32,651][main][INFO] - Using device: cuda
+[2023-07-09 16:18:32,980][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:32,982][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:18:33,808][main][INFO] - Test NLL=1.123595143501591
+[2023-07-09 16:18:33,810][HYDRA] 	#176 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:18:33,896][main][INFO] - Using device: cuda
+[2023-07-09 16:18:34,243][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:34,244][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:18:35,123][main][INFO] - Test NLL=1.1235257380951074
+[2023-07-09 16:18:35,126][HYDRA] 	#177 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:18:35,210][main][INFO] - Using device: cuda
+[2023-07-09 16:18:35,543][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:35,544][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:18:36,289][main][INFO] - Test NLL=1.1236575912080822
+[2023-07-09 16:18:36,291][HYDRA] 	#178 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:18:36,375][main][INFO] - Using device: cuda
+[2023-07-09 16:18:36,721][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:36,723][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:18:37,481][main][INFO] - Test NLL=1.1235781040895712
+[2023-07-09 16:18:37,483][HYDRA] 	#179 : seed=0 data.name=wine data.split=GAP data.split_index=9 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:18:37,568][main][INFO] - Using device: cuda
+[2023-07-09 16:18:37,901][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:37,903][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:18:38,715][main][INFO] - Test NLL=1.123510624821528
+[2023-07-09 16:18:38,717][HYDRA] 	#180 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:18:38,802][main][INFO] - Using device: cuda
+[2023-07-09 16:18:39,126][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:40,851][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:18:41,659][main][INFO] - Test NLL=1.274173421305462
+[2023-07-09 16:18:41,661][HYDRA] 	#181 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:18:41,746][main][INFO] - Using device: cuda
+[2023-07-09 16:18:42,070][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:42,071][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:18:42,200][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:18:42,956][main][INFO] - Test NLL=1.272435085049401
+[2023-07-09 16:18:42,958][HYDRA] 	#182 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:18:43,044][main][INFO] - Using device: cuda
+[2023-07-09 16:18:43,383][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:43,385][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:18:43,514][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:18:44,249][main][INFO] - Test NLL=1.271330856227932
+[2023-07-09 16:18:44,252][HYDRA] 	#183 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:18:44,337][main][INFO] - Using device: cuda
+[2023-07-09 16:18:44,667][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:44,669][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:18:45,822][main][INFO] - Test NLL=1.2789874765715339
+[2023-07-09 16:18:45,824][HYDRA] 	#184 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:18:45,910][main][INFO] - Using device: cuda
+[2023-07-09 16:18:46,252][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:46,254][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:18:47,459][main][INFO] - Test NLL=1.2780130633790616
+[2023-07-09 16:18:47,461][HYDRA] 	#185 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:18:47,548][main][INFO] - Using device: cuda
+[2023-07-09 16:18:47,878][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:47,879][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:18:49,117][main][INFO] - Test NLL=1.2761070299732136
+[2023-07-09 16:18:49,120][HYDRA] 	#186 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:18:49,206][main][INFO] - Using device: cuda
+[2023-07-09 16:18:49,546][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:49,547][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:18:50,364][main][INFO] - Test NLL=1.2814829735954392
+[2023-07-09 16:18:50,367][HYDRA] 	#187 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:18:50,452][main][INFO] - Using device: cuda
+[2023-07-09 16:18:50,788][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:50,790][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:18:51,621][main][INFO] - Test NLL=1.2810780930778314
+[2023-07-09 16:18:51,623][HYDRA] 	#188 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:18:51,707][main][INFO] - Using device: cuda
+[2023-07-09 16:18:52,031][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:52,033][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:18:52,916][main][INFO] - Test NLL=1.279829032696886
+[2023-07-09 16:18:52,918][HYDRA] 	#189 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:18:53,003][main][INFO] - Using device: cuda
+[2023-07-09 16:18:53,325][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:53,326][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:18:54,141][main][INFO] - Test NLL=1.2765564834651268
+[2023-07-09 16:18:54,144][HYDRA] 	#190 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:18:54,229][main][INFO] - Using device: cuda
+[2023-07-09 16:18:54,557][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:54,558][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:18:55,390][main][INFO] - Test NLL=1.2750124184086584
+[2023-07-09 16:18:55,393][HYDRA] 	#191 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:18:55,478][main][INFO] - Using device: cuda
+[2023-07-09 16:18:55,800][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:55,802][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:18:55,933][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:18:56,672][main][INFO] - Test NLL=1.2737002739880814
+[2023-07-09 16:18:56,674][HYDRA] 	#192 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:18:56,759][main][INFO] - Using device: cuda
+[2023-07-09 16:18:57,062][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:57,063][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:18:57,882][main][INFO] - Test NLL=1.2761176226292947
+[2023-07-09 16:18:57,884][HYDRA] 	#193 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:18:58,045][main][INFO] - Using device: cuda
+[2023-07-09 16:18:58,364][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:58,366][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:18:59,193][main][INFO] - Test NLL=1.2747580349905048
+[2023-07-09 16:18:59,196][HYDRA] 	#194 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:18:59,281][main][INFO] - Using device: cuda
+[2023-07-09 16:18:59,611][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:18:59,612][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:18:59,743][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:19:00,483][main][INFO] - Test NLL=1.2737093664422363
+[2023-07-09 16:19:00,486][HYDRA] 	#195 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:19:00,571][main][INFO] - Using device: cuda
+[2023-07-09 16:19:00,913][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:00,914][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:19:01,665][main][INFO] - Test NLL=1.2757758550874327
+[2023-07-09 16:19:01,667][HYDRA] 	#196 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:19:01,752][main][INFO] - Using device: cuda
+[2023-07-09 16:19:02,082][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:02,084][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:19:02,850][main][INFO] - Test NLL=1.2743793054837862
+[2023-07-09 16:19:02,852][HYDRA] 	#197 : seed=0 data.name=wine data.split=GAP data.split_index=10 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:19:02,937][main][INFO] - Using device: cuda
+[2023-07-09 16:19:03,291][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:03,292][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:19:03,357][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:19:04,099][main][INFO] - Test NLL=1.2732119755072606
+[2023-07-09 16:19:04,102][HYDRA] 	#198 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:19:04,188][main][INFO] - Using device: cuda
+[2023-07-09 16:19:04,556][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:06,300][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:19:07,115][main][INFO] - Test NLL=1.1516759966841175
+[2023-07-09 16:19:07,117][HYDRA] 	#199 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:19:07,203][main][INFO] - Using device: cuda
+[2023-07-09 16:19:07,562][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:07,563][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:19:08,393][main][INFO] - Test NLL=1.1513062925325441
+[2023-07-09 16:19:08,395][HYDRA] 	#200 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:19:08,479][main][INFO] - Using device: cuda
+[2023-07-09 16:19:08,826][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:08,828][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:19:09,714][main][INFO] - Test NLL=1.151035721816778
+[2023-07-09 16:19:09,717][HYDRA] 	#201 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:19:09,802][main][INFO] - Using device: cuda
+[2023-07-09 16:19:10,139][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:10,141][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:19:11,314][main][INFO] - Test NLL=1.1527298775668786
+[2023-07-09 16:19:11,316][HYDRA] 	#202 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:19:11,402][main][INFO] - Using device: cuda
+[2023-07-09 16:19:11,753][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:11,755][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:19:12,935][main][INFO] - Test NLL=1.152433868206362
+[2023-07-09 16:19:12,937][HYDRA] 	#203 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:19:13,022][main][INFO] - Using device: cuda
+[2023-07-09 16:19:13,401][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:13,402][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:19:14,633][main][INFO] - Test NLL=1.1521521930040355
+[2023-07-09 16:19:14,636][HYDRA] 	#204 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:19:14,797][main][INFO] - Using device: cuda
+[2023-07-09 16:19:15,129][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:15,131][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:19:15,932][main][INFO] - Test NLL=1.1531236142974093
+[2023-07-09 16:19:15,935][HYDRA] 	#205 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:19:16,019][main][INFO] - Using device: cuda
+[2023-07-09 16:19:16,380][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:16,382][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:19:17,199][main][INFO] - Test NLL=1.1530553403163637
+[2023-07-09 16:19:17,202][HYDRA] 	#206 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:19:17,287][main][INFO] - Using device: cuda
+[2023-07-09 16:19:17,626][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:17,627][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:19:18,501][main][INFO] - Test NLL=1.1528529931893918
+[2023-07-09 16:19:18,504][HYDRA] 	#207 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:19:18,590][main][INFO] - Using device: cuda
+[2023-07-09 16:19:18,934][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:18,935][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:19:19,739][main][INFO] - Test NLL=1.1521459707631967
+[2023-07-09 16:19:19,742][HYDRA] 	#208 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:19:19,827][main][INFO] - Using device: cuda
+[2023-07-09 16:19:20,196][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:20,197][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:19:21,017][main][INFO] - Test NLL=1.1519135210242384
+[2023-07-09 16:19:21,018][HYDRA] 	#209 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:19:21,104][main][INFO] - Using device: cuda
+[2023-07-09 16:19:21,453][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:21,454][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:19:22,326][main][INFO] - Test NLL=1.1516462200970068
+[2023-07-09 16:19:22,329][HYDRA] 	#210 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:19:22,414][main][INFO] - Using device: cuda
+[2023-07-09 16:19:22,766][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:22,767][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:19:23,570][main][INFO] - Test NLL=1.1521272737896566
+[2023-07-09 16:19:23,571][HYDRA] 	#211 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:19:23,656][main][INFO] - Using device: cuda
+[2023-07-09 16:19:24,005][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:24,006][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:19:24,822][main][INFO] - Test NLL=1.151911316095706
+[2023-07-09 16:19:24,825][HYDRA] 	#212 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:19:24,910][main][INFO] - Using device: cuda
+[2023-07-09 16:19:25,262][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:25,264][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:19:26,134][main][INFO] - Test NLL=1.1516561030680292
+[2023-07-09 16:19:26,136][HYDRA] 	#213 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:19:26,221][main][INFO] - Using device: cuda
+[2023-07-09 16:19:26,548][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:26,549][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:19:27,285][main][INFO] - Test NLL=1.1520956347110582
+[2023-07-09 16:19:27,287][HYDRA] 	#214 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:19:27,372][main][INFO] - Using device: cuda
+[2023-07-09 16:19:27,727][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:27,729][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:19:28,481][main][INFO] - Test NLL=1.1518419133186237
+[2023-07-09 16:19:28,484][HYDRA] 	#215 : seed=1 data.name=wine data.split=GAP data.split_index=0 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:19:28,569][main][INFO] - Using device: cuda
+[2023-07-09 16:19:28,899][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:28,901][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:19:29,704][main][INFO] - Test NLL=1.1515656369906544
+[2023-07-09 16:19:29,707][HYDRA] 	#216 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:19:29,870][main][INFO] - Using device: cuda
+[2023-07-09 16:19:30,220][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:31,927][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:19:32,726][main][INFO] - Test NLL=1.185898836978591
+[2023-07-09 16:19:32,729][HYDRA] 	#217 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:19:32,813][main][INFO] - Using device: cuda
+[2023-07-09 16:19:33,127][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:33,129][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:19:33,255][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:19:33,933][main][INFO] - Test NLL=1.1834887883270528
+[2023-07-09 16:19:33,935][HYDRA] 	#218 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:19:34,019][main][INFO] - Using device: cuda
+[2023-07-09 16:19:34,341][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:34,343][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:19:34,472][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:19:35,202][main][INFO] - Test NLL=1.1823062702745164
+[2023-07-09 16:19:35,204][HYDRA] 	#219 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:19:35,288][main][INFO] - Using device: cuda
+[2023-07-09 16:19:35,619][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:35,620][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:19:36,812][main][INFO] - Test NLL=1.1919488900992334
+[2023-07-09 16:19:36,815][HYDRA] 	#220 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:19:36,901][main][INFO] - Using device: cuda
+[2023-07-09 16:19:37,228][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:37,230][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:19:38,450][main][INFO] - Test NLL=1.190048663253992
+[2023-07-09 16:19:38,454][HYDRA] 	#221 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:19:38,540][main][INFO] - Using device: cuda
+[2023-07-09 16:19:38,878][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:38,879][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:19:40,105][main][INFO] - Test NLL=1.18868319128035
+[2023-07-09 16:19:40,108][HYDRA] 	#222 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:19:40,194][main][INFO] - Using device: cuda
+[2023-07-09 16:19:40,531][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:40,533][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:19:41,336][main][INFO] - Test NLL=1.1954879079111793
+[2023-07-09 16:19:41,338][HYDRA] 	#223 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:19:41,422][main][INFO] - Using device: cuda
+[2023-07-09 16:19:41,762][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:41,764][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:19:42,583][main][INFO] - Test NLL=1.1946278516792046
+[2023-07-09 16:19:42,586][HYDRA] 	#224 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:19:42,671][main][INFO] - Using device: cuda
+[2023-07-09 16:19:43,029][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:43,031][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:19:43,908][main][INFO] - Test NLL=1.1924327691491146
+[2023-07-09 16:19:43,911][HYDRA] 	#225 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:19:43,996][main][INFO] - Using device: cuda
+[2023-07-09 16:19:44,342][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:44,343][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:19:45,153][main][INFO] - Test NLL=1.1876846793934106
+[2023-07-09 16:19:45,156][HYDRA] 	#226 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:19:45,241][main][INFO] - Using device: cuda
+[2023-07-09 16:19:45,588][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:45,589][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:19:46,414][main][INFO] - Test NLL=1.1859470486153314
+[2023-07-09 16:19:46,416][HYDRA] 	#227 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:19:46,501][main][INFO] - Using device: cuda
+[2023-07-09 16:19:46,838][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:46,840][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:19:47,718][main][INFO] - Test NLL=1.1843845229606194
+[2023-07-09 16:19:47,720][HYDRA] 	#228 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:19:47,888][main][INFO] - Using device: cuda
+[2023-07-09 16:19:48,219][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:48,221][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:19:49,028][main][INFO] - Test NLL=1.1876570577586494
+[2023-07-09 16:19:49,031][HYDRA] 	#229 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:19:49,116][main][INFO] - Using device: cuda
+[2023-07-09 16:19:49,472][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:49,474][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:19:50,298][main][INFO] - Test NLL=1.1859226981504412
+[2023-07-09 16:19:50,300][HYDRA] 	#230 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:19:50,385][main][INFO] - Using device: cuda
+[2023-07-09 16:19:50,730][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:50,731][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:19:50,862][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:19:51,599][main][INFO] - Test NLL=1.1843287478697728
+[2023-07-09 16:19:51,603][HYDRA] 	#231 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:19:51,688][main][INFO] - Using device: cuda
+[2023-07-09 16:19:52,040][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:52,042][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:19:52,788][main][INFO] - Test NLL=1.1876570577476042
+[2023-07-09 16:19:52,791][HYDRA] 	#232 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:19:52,876][main][INFO] - Using device: cuda
+[2023-07-09 16:19:53,249][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:53,251][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:19:54,012][main][INFO] - Test NLL=1.1859170166487938
+[2023-07-09 16:19:54,013][HYDRA] 	#233 : seed=1 data.name=wine data.split=GAP data.split_index=1 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:19:54,098][main][INFO] - Using device: cuda
+[2023-07-09 16:19:54,446][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:54,448][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:19:54,512][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:19:55,243][main][INFO] - Test NLL=1.1843164819500385
+[2023-07-09 16:19:55,245][HYDRA] 	#234 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:19:55,330][main][INFO] - Using device: cuda
+[2023-07-09 16:19:55,689][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:57,396][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:19:58,201][main][INFO] - Test NLL=1.095277068898262
+[2023-07-09 16:19:58,204][HYDRA] 	#235 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:19:58,290][main][INFO] - Using device: cuda
+[2023-07-09 16:19:58,642][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:58,644][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:19:59,459][main][INFO] - Test NLL=1.0952382912941017
+[2023-07-09 16:19:59,462][HYDRA] 	#236 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:19:59,547][main][INFO] - Using device: cuda
+[2023-07-09 16:19:59,910][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:19:59,912][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:20:00,777][main][INFO] - Test NLL=1.0952362776222113
+[2023-07-09 16:20:00,779][HYDRA] 	#237 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:20:00,864][main][INFO] - Using device: cuda
+[2023-07-09 16:20:01,225][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:01,227][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:20:02,378][main][INFO] - Test NLL=1.0953817692739818
+[2023-07-09 16:20:02,381][HYDRA] 	#238 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:20:02,466][main][INFO] - Using device: cuda
+[2023-07-09 16:20:02,802][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:02,803][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:20:03,973][main][INFO] - Test NLL=1.0953639441913559
+[2023-07-09 16:20:03,976][HYDRA] 	#239 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:20:04,062][main][INFO] - Using device: cuda
+[2023-07-09 16:20:04,402][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:04,404][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:20:05,630][main][INFO] - Test NLL=1.0953684264948402
+[2023-07-09 16:20:05,631][HYDRA] 	#240 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:20:05,815][main][INFO] - Using device: cuda
+[2023-07-09 16:20:06,164][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:06,165][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:20:06,968][main][INFO] - Test NLL=1.095344986168456
+[2023-07-09 16:20:06,970][HYDRA] 	#241 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:20:07,055][main][INFO] - Using device: cuda
+[2023-07-09 16:20:07,428][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:07,429][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:20:08,246][main][INFO] - Test NLL=1.095334858650598
+[2023-07-09 16:20:08,248][HYDRA] 	#242 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:20:08,333][main][INFO] - Using device: cuda
+[2023-07-09 16:20:08,685][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:08,686][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:20:09,558][main][INFO] - Test NLL=1.0953282307094367
+[2023-07-09 16:20:09,561][HYDRA] 	#243 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:20:09,646][main][INFO] - Using device: cuda
+[2023-07-09 16:20:09,988][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:09,989][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:20:10,793][main][INFO] - Test NLL=1.0951928845175856
+[2023-07-09 16:20:10,796][HYDRA] 	#244 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:20:10,881][main][INFO] - Using device: cuda
+[2023-07-09 16:20:11,227][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:11,229][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:20:12,047][main][INFO] - Test NLL=1.0952036777831822
+[2023-07-09 16:20:12,049][HYDRA] 	#245 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:20:12,134][main][INFO] - Using device: cuda
+[2023-07-09 16:20:12,477][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:12,479][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:20:13,352][main][INFO] - Test NLL=1.0952257144414592
+[2023-07-09 16:20:13,354][HYDRA] 	#246 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:20:13,438][main][INFO] - Using device: cuda
+[2023-07-09 16:20:13,773][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:13,775][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:20:14,581][main][INFO] - Test NLL=1.0951861690511455
+[2023-07-09 16:20:14,583][HYDRA] 	#247 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:20:14,668][main][INFO] - Using device: cuda
+[2023-07-09 16:20:15,039][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:15,041][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:20:15,860][main][INFO] - Test NLL=1.0952093922651853
+[2023-07-09 16:20:15,862][HYDRA] 	#248 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:20:15,946][main][INFO] - Using device: cuda
+[2023-07-09 16:20:16,281][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:16,282][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:20:17,155][main][INFO] - Test NLL=1.0952236329247957
+[2023-07-09 16:20:17,158][HYDRA] 	#249 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:20:17,242][main][INFO] - Using device: cuda
+[2023-07-09 16:20:17,599][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:17,600][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:20:18,340][main][INFO] - Test NLL=1.0952064170463296
+[2023-07-09 16:20:18,342][HYDRA] 	#250 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:20:18,427][main][INFO] - Using device: cuda
+[2023-07-09 16:20:18,810][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:18,812][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:20:19,565][main][INFO] - Test NLL=1.095212244163714
+[2023-07-09 16:20:19,568][HYDRA] 	#251 : seed=1 data.name=wine data.split=GAP data.split_index=2 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:20:19,653][main][INFO] - Using device: cuda
+[2023-07-09 16:20:20,010][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:20,011][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:20:20,818][main][INFO] - Test NLL=1.0952323899088772
+[2023-07-09 16:20:20,821][HYDRA] 	#252 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:20:20,906][main][INFO] - Using device: cuda
+[2023-07-09 16:20:21,244][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:22,959][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:20:23,847][main][INFO] - Test NLL=1.2551984099723805
+[2023-07-09 16:20:23,848][HYDRA] 	#253 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=OBD trainer.la.subset_size=1200
+[2023-07-09 16:20:23,933][main][INFO] - Using device: cuda
+[2023-07-09 16:20:24,297][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:24,299][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:20:24,426][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:20:25,106][main][INFO] - Test NLL=1.25308700983138
+[2023-07-09 16:20:25,108][HYDRA] 	#254 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=OBD trainer.la.subset_size=1800
+[2023-07-09 16:20:25,193][main][INFO] - Using device: cuda
+[2023-07-09 16:20:25,549][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:25,550][main][INFO] - Using OBD strategy for subnetwork selection
+[2023-07-09 16:20:25,679][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:20:26,410][main][INFO] - Test NLL=1.2518996578696464
+[2023-07-09 16:20:26,412][HYDRA] 	#255 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=KFE trainer.la.subset_size=600
+[2023-07-09 16:20:26,497][main][INFO] - Using device: cuda
+[2023-07-09 16:20:26,858][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:26,860][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:20:28,010][main][INFO] - Test NLL=1.2612989046215426
+[2023-07-09 16:20:28,012][HYDRA] 	#256 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=KFE trainer.la.subset_size=1200
+[2023-07-09 16:20:28,098][main][INFO] - Using device: cuda
+[2023-07-09 16:20:28,437][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:28,439][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:20:29,603][main][INFO] - Test NLL=1.2601397203798206
+[2023-07-09 16:20:29,607][HYDRA] 	#257 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=KFE trainer.la.subset_size=1800
+[2023-07-09 16:20:29,693][main][INFO] - Using device: cuda
+[2023-07-09 16:20:30,046][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:30,048][main][INFO] - Using KFE strategy for subnetwork selection
+[2023-07-09 16:20:30,520][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:20:31,253][main][INFO] - Test NLL=1.2590004163301258
+[2023-07-09 16:20:31,255][HYDRA] 	#258 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=LVD trainer.la.subset_size=600
+[2023-07-09 16:20:31,341][main][INFO] - Using device: cuda
+[2023-07-09 16:20:31,726][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:31,728][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:20:32,530][main][INFO] - Test NLL=1.2643727201061434
+[2023-07-09 16:20:32,533][HYDRA] 	#259 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=LVD trainer.la.subset_size=1200
+[2023-07-09 16:20:32,618][main][INFO] - Using device: cuda
+[2023-07-09 16:20:32,974][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:32,976][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:20:33,791][main][INFO] - Test NLL=1.2637204009650187
+[2023-07-09 16:20:33,793][HYDRA] 	#260 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=LVD trainer.la.subset_size=1800
+[2023-07-09 16:20:33,878][main][INFO] - Using device: cuda
+[2023-07-09 16:20:34,228][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:34,230][main][INFO] - Using LVD strategy for subnetwork selection
+[2023-07-09 16:20:35,099][main][INFO] - Test NLL=1.2619271792569537
+[2023-07-09 16:20:35,101][HYDRA] 	#261 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-09 16:20:35,185][main][INFO] - Using device: cuda
+[2023-07-09 16:20:35,542][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:35,543][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:20:36,343][main][INFO] - Test NLL=1.2573181420909503
+[2023-07-09 16:20:36,344][HYDRA] 	#262 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=SPR trainer.la.subset_size=1200
+[2023-07-09 16:20:36,429][main][INFO] - Using device: cuda
+[2023-07-09 16:20:36,760][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:36,761][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:20:37,576][main][INFO] - Test NLL=1.255545199029349
+[2023-07-09 16:20:37,579][HYDRA] 	#263 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=SPR trainer.la.subset_size=1800
+[2023-07-09 16:20:37,663][main][INFO] - Using device: cuda
+[2023-07-09 16:20:38,017][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:38,018][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-09 16:20:38,146][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:20:38,874][main][INFO] - Test NLL=1.2539366558419205
+[2023-07-09 16:20:38,877][HYDRA] 	#264 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=MN trainer.la.subset_size=600
+[2023-07-09 16:20:38,962][main][INFO] - Using device: cuda
+[2023-07-09 16:20:39,345][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:39,346][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:20:40,145][main][INFO] - Test NLL=1.2571794353992236
+[2023-07-09 16:20:40,146][HYDRA] 	#265 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=MN trainer.la.subset_size=1200
+[2023-07-09 16:20:40,231][main][INFO] - Using device: cuda
+[2023-07-09 16:20:40,567][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:40,568][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:20:41,383][main][INFO] - Test NLL=1.2554715888258359
+[2023-07-09 16:20:41,385][HYDRA] 	#266 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=MN trainer.la.subset_size=1800
+[2023-07-09 16:20:41,559][main][INFO] - Using device: cuda
+[2023-07-09 16:20:41,921][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:41,922][main][INFO] - Using MN strategy for subnetwork selection
+[2023-07-09 16:20:42,051][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:20:42,776][main][INFO] - Test NLL=1.2539249472425857
+[2023-07-09 16:20:42,779][HYDRA] 	#267 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=LMS trainer.la.subset_size=600
+[2023-07-09 16:20:42,865][main][INFO] - Using device: cuda
+[2023-07-09 16:20:43,202][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:43,203][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:20:43,938][main][INFO] - Test NLL=1.2571794353955514
+[2023-07-09 16:20:43,940][HYDRA] 	#268 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=LMS trainer.la.subset_size=1200
+[2023-07-09 16:20:44,025][main][INFO] - Using device: cuda
+[2023-07-09 16:20:44,395][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:44,397][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:20:45,149][main][INFO] - Test NLL=1.2554651690134602
+[2023-07-09 16:20:45,152][HYDRA] 	#269 : seed=1 data.name=wine data.split=GAP data.split_index=3 trainer.la.selection_strategy=LMS trainer.la.subset_size=1800
+[2023-07-09 16:20:45,237][main][INFO] - Using device: cuda
+[2023-07-09 16:20:45,595][main][INFO] - Training LA_POSTHOC model
+[2023-07-09 16:20:45,596][main][INFO] - Using LMS strategy for subnetwork selection
+[2023-07-09 16:20:45,660][regression_trainer][ERROR] - Exception training LA with prior pecision 0.0001
+[2023-07-09 16:20:46,391][main][INFO] - Test NLL=1.2539209750897573
+[2023-07-09 16:20:46,393][HYDRA] 	#270 : seed=1 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=OBD trainer.la.subset_size=600
+[2023-07-09 16:20:46,478][main][INFO] - Using device: cuda
+[2023-07-09 16:20:46,837][main][INFO] - Training LA_POSTHOC model
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 3037618.0 ON gcn36 CANCELLED AT 2023-07-09T16:20:47 ***
+slurmstepd: error: *** JOB 3037618 ON gcn36 CANCELLED AT 2023-07-09T16:20:47 ***
+
+JOB STATISTICS
+==============
+Job ID: 3037618
+Cluster: snellius
+User/Group: abhijith/abhijith
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:12:45
+CPU Efficiency: 9.20% of 02:18:36 core-walltime
+Job Wall-clock time: 00:07:42
+Memory Utilized: 2.69 GB
+Memory Efficiency: 0.00% of 0.00 MB

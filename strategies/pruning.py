@@ -1,4 +1,5 @@
 import torch
+import numpy as np
 from laplace import Laplace
 from torch.nn.utils import parameters_to_vector
 
@@ -53,8 +54,9 @@ class SPRSubnetMask(ScoreBasedSubnetMask):
         # Train the diagonal Laplace model
         self.diag_laplace_model.fit(train_loader)
         # Compute the parameter saliencies using (SPR)
-        V = 1/self.diag_laplace_model.H
-        saliencies = self.parameter_vector.abs() + torch.sqrt(V)
+        saliencies = self.parameter_vector.abs() + self.diag_laplace_model.posterior_scale
+        np.save('checkpoints/weights.npy', self.parameter_vector.cpu().numpy())
+        np.save('checkpoints/scale.npy', self.diag_laplace_model.posterior_scale.cpu().numpy())
         return saliencies
 
 class MNSubnetMask(ScoreBasedSubnetMask):
@@ -79,6 +81,47 @@ class MNSubnetMask(ScoreBasedSubnetMask):
         # Train the diagonal Laplace model
         self.diag_laplace_model.fit(train_loader)
         # Compute the parameter saliencies using MN
-        V = 1/self.diag_laplace_model.H
-        saliencies = self.parameter_vector.square() + V
+        saliencies = self.parameter_vector.square() + self.diag_laplace_model.posterior_variance
+        return saliencies
+    
+
+class SPRSWAGSubnetMask(ScoreBasedSubnetMask):
+    """Subnetwork mask identifying the parameters with SPR.
+
+    Parameters
+    ----------
+    model : torch.nn.Module
+    n_params_subnet : int
+        number of parameters in the subnetwork (i.e. number of top-scoring parameters to select)
+    diag_laplace_model : `laplace.baselaplace.DiagLaplace`
+        diagonal Laplace model to use for diagonal hessian estimation
+    """
+
+    def __init__(self, model, n_params_subnet, param_variances):
+        super().__init__(model, n_params_subnet)
+        self.param_variances = param_variances
+
+    def compute_param_scores(self, train_loader):
+        saliencies = self.parameter_vector.abs() + torch.sqrt(self.param_variances)
+        return saliencies
+
+class MNSWAGSubnetMask(ScoreBasedSubnetMask):
+    """Subnetwork mask identifying the parameters with the largest saliencies as calculated using MN.
+
+    Parameters
+    ----------
+    model : torch.nn.Module
+    n_params_subnet : int
+        number of parameters in the subnetwork (i.e. number of top-scoring parameters to select)
+    diag_laplace_model : `laplace.baselaplace.DiagLaplace`
+        diagonal Laplace model to use for diagonal hessian estimation
+    """
+
+    def __init__(self, model, n_params_subnet, param_variances):
+        super().__init__(model, n_params_subnet)
+        self.param_variances = param_variances
+
+    def compute_param_scores(self, train_loader):
+        # Compute the parameter saliencies using MN
+        saliencies = self.parameter_vector.square() + self.param_variances
         return saliencies

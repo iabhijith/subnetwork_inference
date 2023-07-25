@@ -244,6 +244,7 @@ class ModelTrainer:
                     best_la_nll = la_nll
                     best_prior_precision = prior_precision
             except Exception as e:
+                log.error(f"Exception training LA with prior pecision {prior_precision}")
                 continue
         return la, best_prior_precision
 

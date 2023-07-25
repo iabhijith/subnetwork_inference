@@ -1,0 +1,21 @@
+[2023-07-14 09:02:20,268][HYDRA] Launching 1 jobs locally
+[2023-07-14 09:02:20,268][HYDRA] 	#0 : seed=0 data.name=wine data.split=GAP data.split_index=4 trainer.la.selection_strategy=SPR trainer.la.subset_size=600
+[2023-07-14 09:02:20,514][main][INFO] - Using device: cuda
+[2023-07-14 09:02:20,970][main][INFO] - Training LA_POSTHOC model
+[2023-07-14 09:02:22,571][main][INFO] - Using SPR strategy for subnetwork selection
+[2023-07-14 09:02:25,221][main][INFO] - Test NLL=1.0408912639542707
+
+JOB STATISTICS
+==============
+Job ID: 3064772
+Cluster: snellius
+User/Group: abhijith/abhijith
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:06
+CPU Efficiency: 2.08% of 00:04:48 core-walltime
+Job Wall-clock time: 00:00:16
+Memory Utilized: 1.42 MB
+Memory Efficiency: 0.00% of 0.00 MB
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.

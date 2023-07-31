@@ -12,7 +12,6 @@ data:
 model:
   hidden_sizes:
     - 50
-    - 50
 
 trainer:
   epochs: 2000

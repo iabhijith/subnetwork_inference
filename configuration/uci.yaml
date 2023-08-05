@@ -5,7 +5,7 @@ data:
   path: data
   name: wine
   val_size: 0.15
-  split: STANDARD
+  split: GAP
   split_index: 1
   
 

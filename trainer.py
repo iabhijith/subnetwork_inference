@@ -214,7 +214,7 @@ class ModelTrainer:
                 model_copy.train()
                 if subnetwork_indices is None:
                     la = Laplace(
-                        model=model,
+                        model=model_copy,
                         likelihood="regression",
                         subset_of_weights=subset_of_weights,
                         hessian_structure=hessian_structure,
@@ -226,7 +226,7 @@ class ModelTrainer:
                     )
                 else:
                     la = Laplace(
-                        model=model,
+                        model=model_copy,
                         likelihood="regression",
                         subset_of_weights=subset_of_weights,
                         hessian_structure=hessian_structure,
